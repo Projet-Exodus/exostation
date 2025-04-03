@@ -16,13 +16,13 @@
 #_maps/shuttles/emergency_asteroid.dmm
 #_maps/shuttles/emergency_bar.dmm
 #_maps/shuttles/emergency_bballhooper.dmm
-#_maps/shuttles/emergency_clown.dmm
+_maps/shuttles/emergency_clown.dmm
 #_maps/shuttles/emergency_construction.dmm
 #_maps/shuttles/emergency_cramped.dmm
 #_maps/shuttles/emergency_discoinferno.dmm
 #_maps/shuttles/emergency_goon.dmm
 #_maps/shuttles/emergency_hugcage.dmm
-#_maps/shuttles/emergency_imfedupwiththisworld.dmm
+_maps/shuttles/emergency_imfedupwiththisworld.dmm
 #_maps/shuttles/emergency_lance.dmm
 #_maps/shuttles/emergency_luxury.dmm
 #_maps/shuttles/emergency_meteor.dmm

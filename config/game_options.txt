@@ -71,12 +71,12 @@ HUMANS_NEED_SURNAMES
 
 
 ## ALERT LEVELS ###
-ALERT_GREEN All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced.
-ALERT_BLUE_UPTO The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted.
-ALERT_BLUE_DOWNTO The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed.
-ALERT_RED_UPTO There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised. Additionally, access requirements on some doors have been lifted.
-ALERT_RED_DOWNTO The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised.
-ALERT_DELTA Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill.
+ALERT_GREEN Toutes les menaces pesant sur la station sont passées. La Sécurité ne doit pas porter d'armes ostensiblement, les droits à la vie privée sont restaurés.
+ALERT_BLUE_UPTO La station a reçu des informations fiables sur une possible activité hostile sur la station. La Sécurité peut avoir des armes visibles, les fouilles aléatoires sont autorisées.
+ALERT_BLUE_DOWNTO La menace immédiate est passée. La Sécurité ne peut plus avoir des armes à la main et prêtes à servir en permanence, mais peut continuer à les porter ostensiblement. Les fouilles aléatoires sont toujours autorisées.
+ALERT_RED_UPTO Une menace immédiate et sérieuse pèse sur la station. La Sécurité peut avoir des armes à la main et prêtes à servir en permanence. Les fouilles aléatoires sont autorisées et conseillées. De plus, les accès requis sur certaines portes ont été augmentés.
+ALERT_RED_DOWNTO La destruction de la station a été évitée. Une menace immédiate et sérieuse pèse cependant toujours sur la station. La Sécurité peut avoir des armes à la main et prêtes à servir en permanence. Les fouilles aléatoires sont autorisées et conseillées.
+ALERT_DELTA La destruction de la station est imminente. Tout l'équipage doit obéir à toutes les instructions données par les responsables des départements. Toute violation de ces ordres sera punie de mort. Ceci n'est pas un exercice.
 
 ## The total weight of station goals possible for a round (allows multiple goals)
 STATION_GOAL_BUDGET 1
@@ -108,7 +108,7 @@ CHANGELING_SCALING_COEFF 6
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-SECURITY_SCALING_COEFF 8
+SECURITY_SCALING_COEFF 6
 
 ## The number of objectives traitors get.
 ## Not including escaping/hijacking.
@@ -128,23 +128,23 @@ PROTECT_ROLES_FROM_ANTAGONIST
 ## "NON_HUMAN_WHITELIST": non-humans will not be able to play as heads of staff, unless that job incorporates the "allow non-humans" flag (Which can be configured via a variable or the job config txt).
 ## "ENFORCED": non-humans cannot be heads of staff, only humans can. the "allow non-humans" setting will be ignored.
 ## Uncomment to enable a human authority mode of your choice.
-#HUMAN_AUTHORITY HUMAN_WHITELIST
+HUMAN_AUTHORITY DISABLED
 
 ## If late-joining players have a chance to become a traitor/changeling
 ALLOW_LATEJOIN_ANTAGONISTS
 
 ## Uncomment to prevent the nuclear operative leader from getting the war declaration item
-#DISABLE_WAROPS
+DISABLE_WAROPS
 
 ## Uncomment to enable dynamic ruleset config file.
 DYNAMIC_CONFIG_ENABLED
 
 ## RANDOM EVENTS ###
 ## Comment this out to disable random events during the round.
-ALLOW_RANDOM_EVENTS
+#ALLOW_RANDOM_EVENTS
 
 ## Uncomment this to disable station traits.
-#FORBID_STATION_TRAITS
+FORBID_STATION_TRAITS
 
 ## Multiplier for earliest start time of dangerous events.
 ## Set to 0 to make dangerous events available from round start.
@@ -156,11 +156,11 @@ EVENTS_MIN_PLAYERS_MUL 1
 
 ## The lower bound, in deciseconds, for how soon another random event can be scheduled.
 ## Defaults to 1500 deciseconds or 2.5 minutes
-EVENTS_FREQUENCY_LOWER 1500
+EVENTS_FREQUENCY_LOWER 3000
 
 ## The upper bound, in deciseconds, for how soon another random event can be scheduled.
 ## Defaults to 4200 deciseconds or 7 minutes
-EVENTS_FREQUENCY_UPPER 4200
+EVENTS_FREQUENCY_UPPER 6000
 
 ## AI ###
 
@@ -211,13 +211,13 @@ MINIMAL_ACCESS_THRESHOLD 20
 #ASSISTANTS_HAVE_MAINT_ACCESS
 
 ## Uncoment to give security maint access. Note that if you deactivate JOBS_HAVE_MINIMAL_ACCESS security already gets maint from that.
-#SECURITY_HAS_MAINT_ACCESS
+SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
 #EVERYONE_HAS_MAINT_ACCESS
 
 ## Comment this out this to make security officers spawn in departmental security posts
-#SEC_START_BRIG
+SEC_START_BRIG
 
 ## This variable is how you may configure "Scaling Access" for Departmental Security Officers.
 ## Set to 0/commented out for "off", Departmental Security Officers will never get additional room-specific access (beyond general departmental doors).
@@ -228,11 +228,11 @@ DEPSEC_ACCESS_LEVEL 1
 
 ## GHOST INTERACTION ###
 ## Uncomment to let ghosts spin chairs. You may be wondering why this is a config option. Don't ask.
-#GHOST_INTERACTION
+GHOST_INTERACTION
 
 ## NEAR-DEATH EXPERIENCE ###
 ## Comment this out to disable mobs hearing ghosts when unconscious and very close to death
-NEAR_DEATH_EXPERIENCE
+#NEAR_DEATH_EXPERIENCE
 
 ## NON-VOCAL SILICONS ###
 ## Uncomment these to stop the AI, or cyborgs, from having vocal communication.
@@ -248,7 +248,7 @@ NEAR_DEATH_EXPERIENCE
 ## Set to 4 for "specified", silicons will start with an existing lawset. (If no specified lawset is identified, the AI will spawn with asimov.)
 
 
-DEFAULT_LAWS 0
+DEFAULT_LAWS 1
 
 ## SILICON ASIMOV SUPERIORITY OVERRIDE ###
 ## This makes "Asimov Superiority" show up as a perk for humans in the character creation menu even if asimov is not the default lawset, such as when used with asimov++
@@ -348,7 +348,7 @@ SILICON_MAX_LAW_AMOUNT 12
 ## SILICON LAW MAX LENGTH ###
 ## The maximum number of characters in a law uploaded
 ## Affects Freeform, Core Freeform, and Syndicate Hacked boards.
-#MAX_LAW_LEN 1024
+MAX_LAW_LEN 1024
 
 ##------------------------------------------------
 
@@ -371,9 +371,9 @@ ROUNDSTART_RACES plasmaman
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
-#ROUNDSTART_RACES jelly
+ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES abductor
-#ROUNDSTART_RACES snail
+ROUNDSTART_RACES snail
 
 ## Races that are straight upgrades. If these are on expect powergamers to always pick them
 #ROUNDSTART_RACES skeleton
@@ -422,8 +422,8 @@ OVERFLOW_CAP -1
 ##Limit Spell Choices##
 ## Uncomment to disallow wizards from using certain spells that may be too chaotic/fun for your playerbase
 
-#NO_SUMMON_GUNS
-#NO_SUMMON_MAGIC
+NO_SUMMON_GUNS
+NO_SUMMON_MAGIC
 #NO_SUMMON_EVENTS
 
 ## Comment this out for "normal" explosions, which ignore obstacles
@@ -455,7 +455,7 @@ LAVALAND_BUDGET 60
 ICEMOON_BUDGET 90
 
 ## Space Ruin Budget
-Space_Budget 16
+Space_Budget 40
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -469,10 +469,10 @@ ARRIVALS_SHUTTLE_DOCK_WINDOW 55
 
 ## How many wirechewing rodents you want to spawn on exposed maintenance wires at the start of the round. You may wish to set this to 0 if you're testing powernets.
 
-MICE_ROUNDSTART 10
+MICE_ROUNDSTART 0
 
 ## If the percentage of players alive (doesn't count conversions) drops below this threshold the emergency shuttle will be forcefully called (provided it can be)
-#EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
+EMERGENCY_SHUTTLE_AUTOCALL_THRESHOLD 0.2
 
 ## Uncomment to allow roundstart quirk selection in the character setup menu.
 ## This used to be named traits, hence the config name, but it handles quirks, not the other kind of trait!
@@ -482,7 +482,7 @@ ROUNDSTART_TRAITS
 #DISABLE_HUMAN_MOOD
 
 ## Enable night shifts
-#ENABLE_NIGHT_SHIFTS
+ENABLE_NIGHT_SHIFTS
 
 ## The shift start hour in 24-hour (0-23) notation
 SHIFT_TIME_START_HOUR 7
@@ -500,7 +500,7 @@ MONKEYCAP 64
 RATCAP 64
 
 ## Maximum fine for a citation
-MAXFINE 2000
+MAXFINE 9000
 
 ## Which role is required of playtime to be eligible for Maintenance Drones
 ## See code/__DEFINES/preferences.dm for available options, use the string portion without quotes

@@ -191,7 +191,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	apply_all_client_preferences()
 
 	//general preferences
-	lastchangelog = savefile.get_entry("lastchangelog", lastchangelog)
+	lastchangelog = savefile.get_entry("lastchangelog", lastchangelog) // exo changelogs needed ?
 	be_special = savefile.get_entry("be_special", be_special)
 	default_slot = savefile.get_entry("default_slot", default_slot)
 	chat_toggles = savefile.get_entry("chat_toggles", chat_toggles)
@@ -272,6 +272,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if (preference_type in value_cache)
 			write_preference(preference, preference.serialize(value_cache[preference_type]))
 
+	savefile.set_entry("last_exo_changelog", last_exo_changelog) // EXOSTATION EDIT ADDITION - EXO_CHANGELOG
 	savefile.set_entry("lastchangelog", lastchangelog)
 	savefile.set_entry("be_special", be_special)
 	savefile.set_entry("default_slot", default_slot)

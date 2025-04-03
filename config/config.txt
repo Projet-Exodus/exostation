@@ -9,6 +9,8 @@ $include interviews.txt
 $include lua.txt
 $include auxtools.txt
 $include map_vote.txt
+$include exostation/exostation_config.txt
+$include exostation/exostation_secrets.txt
 
 # You can use the @ character at the beginning of a config option to lock it from being edited in-game
 # Example usage:
@@ -19,19 +21,19 @@ $include map_vote.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME tgstation
+SERVERNAME Exostation
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME tgstation
+SERVERSQLNAME exostation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME Space Station 13
+STATIONNAME  Exostation 13
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 #HUB
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 120
+LOBBY_COUNTDOWN 240
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
 ROUND_END_COUNTDOWN 90
@@ -131,13 +133,13 @@ VOTE_PERIOD 600
 ## 0 = Cannot respawn (default)
 ## 1 = Can respawn
 ## 2 = Can respawn if choosing a different character
-ALLOW_RESPAWN 0
+ALLOW_RESPAWN 2
 
 ## Respawn delay (deciseconds), which doesn't allow to return to lobby
 RESPAWN_DELAY 0
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Yournamehere
+HOSTEDBY Thravalgur
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting)
 GUEST_BAN
@@ -177,15 +179,15 @@ IPINTEL_REJECT_BAD
 #USEWHITELIST
 
 ## The address shown for the game server in the TGS check command
-# PUBLIC_ADDRESS ss13.example.com:2506
+PUBLIC_ADDRESS ss13.thravalgur.ovh:5335
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 ## This is also used to show the server's address in the TGS check command if the public address isn't set
-# SERVER ss13.example.com:2506
+#SERVER ss13.thravalgur.ovh:5335
 
 ## forum address
-# FORUMURL http://tgstation13.org/phpBB/index.php
+FORUMURL https://discord.gg/6mbvStH7t5
 
 ## Wiki address
 # WIKIURL http://tgstation13.org/wiki
@@ -194,10 +196,10 @@ IPINTEL_REJECT_BAD
 # RULESURL http://tgstation13.org/wiki/Rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+GITHUBURL https://www.github.com/Projet-Exodus/exostation
 
 ## Discord bot command prefix, if the discord bot is used
-# DISCORDBOTCOMMANDPREFIX ?
+DISCORDBOTCOMMANDPREFIX ?
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -277,27 +279,27 @@ NOTE_FRESH_DAYS 91.31055
 NOTE_STALE_DAYS 365.2422
 
 ## Uncomment to allow drastic performance enhancement measures to turn on automatically once there are equal or more clients than the configured amount (will also prompt admin for veto)
-#AUTO_LAG_SWITCH_POP 75
+#AUTO_LAG_SWITCH_POP 20
 
 ##Note: all population caps can be used with each other if desired.
 
 ## Uncomment for 'soft' population caps, players will be warned while joining if the living crew exceeds the listed number.
-#SOFT_POPCAP 100
+SOFT_POPCAP 25
 
 ## Message for soft cap
-SOFT_POPCAP_MESSAGE Be warned that the server is currently serving a high number of users, consider using alternative game servers.
+SOFT_POPCAP_MESSAGE Attention, le serveur va connaître quelques lags car ses capacités actuelles ne lui permettent pas d'accueillir un très grand nombre de joueurs.
 
 ## Uncomment for 'hard' population caps, players will not be allowed to spawn if the living crew exceeds the listed number, though they may still observe or wait for the living crew to decrease in size.
-#HARD_POPCAP 150
+HARD_POPCAP 30
 
 ## Message for hard cap
-HARD_POPCAP_MESSAGE The server is currently serving a high number of users, You cannot currently join. You may wait for the number of living crew to decline, observe, or find alternative servers.
+HARD_POPCAP_MESSAGE Il y a beaucoup de monde en ce moment, vous ne pouvez pas rejoindre la partie pour le moment. Vous pouvez attendre qu'il y ait moins de joueurs en vie en observant, ou attendre la prochaine partie.
 
 ## Uncomment for 'extreme' population caps, players will not be allowed to join the server if living crew exceeds the listed number.
-#EXTREME_POPCAP 200
+EXTREME_POPCAP 35
 
 ## Message for extreme cap
-EXTREME_POPCAP_MESSAGE The server is currently serving a high number of users, find alternative servers.
+EXTREME_POPCAP_MESSAGE Le serveur est actuellement au maximum de ses capacités. Veuillez attendre une prochaine partie.
 
 ## Uncomment to allow BYOND subscribers to bypassing server connection population cap. (Living player population cap still applies.)
 BYOND_MEMBER_BYPASS_POPCAP
@@ -402,9 +404,9 @@ CLIENT_ERROR_BUILD 1590
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 or comment out to disable.
-SECOND_TOPIC_LIMIT 10
+SECOND_TOPIC_LIMIT 20
 
-MINUTE_TOPIC_LIMIT 200
+MINUTE_TOPIC_LIMIT 400
 
 
 ## CLICK RATE LIMITING
@@ -413,9 +415,9 @@ MINUTE_TOPIC_LIMIT 200
 ## Admins are exempt from these limits.
 ## Hitting the minute limit notifies admins.
 ## Set to 0 to disable.
-SECOND_CLICK_LIMIT 15
+SECOND_CLICK_LIMIT 30
 
-MINUTE_CLICK_LIMIT 400
+MINUTE_CLICK_LIMIT 800
 
 ##Error handling related options
 ## The "cooldown" time for each occurrence of a unique error
@@ -437,13 +439,13 @@ MINUTE_CLICK_LIMIT 400
 ## i.e. CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag_2
 
 ## Which channels will have a message about a new game starting, message includes the station name.
-#CHANNEL_ANNOUNCE_NEW_GAME
+CHANNEL_ANNOUNCE_NEW_GAME
 
 ## Which channels will have a message about a new game starting, message includes the round ID of the game that has just ended.
-#CHANNEL_ANNOUNCE_END_GAME
+CHANNEL_ANNOUNCE_END_GAME
 
 ## Ping users who use the `notify` command when a new game starts.
-#CHAT_NEW_GAME_NOTIFICATIONS
+CHAT_NEW_GAME_NOTIFICATIONS
 
 ## Uncomment this flag to validate admin commands from discord by requiring they come from linked discord accounts and that those discord accounts link to a ckey with the right admin permissions.
 # SECURE_CHAT_COMMANDS
@@ -532,13 +534,13 @@ DRIFT_PROFILE_DELAY 150
 URGENT_AHELP_COOLDOWN 300
 
 ## The message that is sent to the discord if an urgent ahelp is sent. Useful for sending a role ping.
-#URGENT_AHELP_MESSAGE
+URGENT_AHELP_MESSAGE Demande d'aide en jeu <@&1292450214271254549>
 
 ## See above, but for non-urgent ahelps.
-#AHELP_MESSAGE
+AHELP_MESSAGE Demande d'aide en jeu
 
 ## The message that the player receives whenever prompted whether they want to send an urgent ahelp or not.
-#URGENT_AHELP_USER_PROMPT This'll ping the admins!
+URGENT_AHELP_USER_PROMPT Même si aucun admin n'est connecté, un ahelp urgent notifie les admins sur Discord.
 
 ## The link that the title of a ticket can link to.
 ## If not set, it will link nowhere
@@ -554,8 +556,8 @@ URGENT_AHELP_COOLDOWN 300
 ## Sets an MOTD of the server.
 ## You can use this multiple times, and the MOTDs will be appended in order.
 ## Based on config directory, so "motd.txt" points to "config/motd.txt"
-MOTD motd.txt
-#MOTD motd_extra.txt
+#MOTD motd.txt
+MOTD motd_exo.txt
 
 ## Assets can opt-in to caching their results into `cache/`.
 ## This is important, as preferences assets take upwards of 30 seconds (without sleeps) to collect.

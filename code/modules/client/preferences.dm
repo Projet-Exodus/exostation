@@ -21,6 +21,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Cached changelog size, to detect new changelogs since last join
 	var/lastchangelog = ""
 
+	/// EXOSTATION EDIT ADDITION START - EXO_CHANGELOGS
+	var/last_exo_changelog = ""
+	/// EXOSTATION EDIT ADDITION END - EXO_CHANGELOGS
+
 	/// List of ROLE_X that the client wants to be eligible for
 	var/list/be_special = list() //Special role selection
 

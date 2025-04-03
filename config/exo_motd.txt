@@ -1,0 +1,6 @@
+<h1>Bienvenue sur Exostation !</h1>
+
+<i>Ce serveur est un downstream de /tg/station 13 axé sur le roleplay et la création d'histoires.</i>
+
+<i>Respectez les règles du serveur.</i>
+<i>L'accès au serveur de test n'est pas restreint, mais vous devez être présents sur Discord pour jouer sur le serveur des parties organisées (système de liste blanche).</i>

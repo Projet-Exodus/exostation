@@ -1,0 +1,5 @@
+#include "_changelog.dm"
+
+#include "code/changelog_datum.dm"
+#include "code/changelog_item.dm"
+#include "code/changelog_verb.dm"

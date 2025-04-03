@@ -222,6 +222,7 @@ export const DmTarget = new Juke.Target({
     'icons/**',
     'interface/**',
     'sound/**',
+    'modular_exostation/**', // EXOSTATION EDIT ADDITION - BASE_CONFIG
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
