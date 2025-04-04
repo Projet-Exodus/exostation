@@ -8,8 +8,7 @@ Tous les fichiers changés ou créés pour l'arborescence de base du repository 
 
 ### Procs ou fichiers de TG changés :
 
-- `code/controllers/subsystem/mapping.dm` :
-- `code/__DEFINES/subsystems.dm` : `#define INIT_ORDER_AUTOMAPPER 51`
+- `code/controllers/subsystem/mapping.dm` : multiples ajouts et dependencies
 
 ### Overrides modulaires :
 
@@ -22,7 +21,7 @@ Exemple :
 
 ### Defines:
 
-- `code/__DEFINES/subsystems.dm` : `#define INIT_ORDER_AUTOMAPPER 51`
+- NA/A
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 - `_maps/exostation/automapper` : dossier non-modulaire
