@@ -6,3 +6,4 @@
 #include "_exohelpers/_exohelpers.dme"
 #include "changelog/_changelog.dme"
 #include "automapper/_automapper.dme"
+#include "keybinding/_keybinding.dme"
