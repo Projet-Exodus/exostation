@@ -24,4 +24,4 @@
 	if (!..(preferences))
 		return FALSE
 
-	return !CONFIG_GET(flag/sec_start_brig)
+	return /* !CONFIG_GET(flag/sec_start_brig) */ //
