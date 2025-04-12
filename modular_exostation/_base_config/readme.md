@@ -28,13 +28,13 @@ Modules & CI
 - `tgstation.dme` : ajout de `modular_exostation.dme`
 
 Config
-- `config/admins.txt` : ajout de Thravalgur comme admin par défaut
+- `config/admins.txt` : ajout de Thravalgur comme admin par défaut et du staff
 - `config/config.txt` : ajout de `$include exostation/exostation_secrets.txt` et `$ include exostation/exostation_config.txt`, réglages de configuration
 - `config/dbconfig.txt` : réglages de configuration
 - `config/game_options.txt` : réglages de configuration
 - `.gitignore` : ajout de `config/exostation_secrets.txt`
 - `config/maps.txt` : configuration des maps par défaut
-
+- `code\modules\client\preferences\security_department.dm` : permet de choisir son département à surveiller en sécurité même en commençant au brig
 Config blacklist
 - `config/iceruinblacklist.txt`
 - `config/lavaruinblacklist.txt`
