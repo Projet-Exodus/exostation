@@ -84,7 +84,7 @@ STATION_GOAL_BUDGET 1
 ## GAME MODES ###
 
 ## Uncomment to not send a roundstart intercept report. Gamemodes may override this.
-#NO_INTERCEPT_REPORT
+NO_INTERCEPT_REPORT
 
 ## Percent weight reductions for three of the most recent modes
 
@@ -112,8 +112,8 @@ SECURITY_SCALING_COEFF 6
 
 ## The number of objectives traitors get.
 ## Not including escaping/hijacking.
-TRAITOR_OBJECTIVES_AMOUNT 2
-BROTHER_OBJECTIVES_AMOUNT 2
+TRAITOR_OBJECTIVES_AMOUNT 0
+BROTHER_OBJECTIVES_AMOUNT 0
 
 ## Uncomment to prohibit jobs that start with loyalty
 ## implants from being most antagonists.

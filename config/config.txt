@@ -190,10 +190,10 @@ PUBLIC_ADDRESS ss13.thravalgur.ovh:5335
 FORUMURL https://discord.gg/6mbvStH7t5
 
 ## Wiki address
-# WIKIURL http://tgstation13.org/wiki
+WIKIURL https://ss13.thravalgur.ovh/exowiki/
 
 ## Rules address
-# RULESURL http://tgstation13.org/wiki/Rules
+RULESURL https://ss13.thravalgur.ovh/exowiki/index.php/R%C3%A8gles
 
 ## Github address
 GITHUBURL https://www.github.com/Projet-Exodus/exostation
