@@ -1,8 +1,6 @@
-#define INIT_ORDER_MODPACKS 84
-
 SUBSYSTEM_DEF(modpacks)
 	name = "Modpacks"
-	init_order = INIT_ORDER_MODPACKS
+	init_stage = INITSTAGE_FIRST
 	flags = SS_NO_FIRE
 	var/list/loaded_modpacks = list()
 

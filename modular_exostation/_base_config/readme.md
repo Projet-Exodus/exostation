@@ -22,7 +22,7 @@ Disabled workflows
 - `.github/workflows/stale.yml`
 
 Modules & CI
-- `.github/workflows/run_linters.yml` : ajout de `tools/exostation_check_grep.sh`
+- `.github/workflows/run_linters.yml` : ajout de `modular_exostation/tools/exostation_check_grep.sh`
 - `code/_compile_options.dm` : édition de `#define PRELOAD_RSC 0`
 - `tools/build/build.js` : ajout de `modular_exostation/**`
 - `tgstation.dme` : ajout de `modular_exostation.dme`
@@ -44,16 +44,9 @@ Config blacklist
 ### Overrides modulaires :
 
 - N/A
-<!-- Si vous ajoutez un nouvel override modulaire (d'un fichier ou d'un extrait de code) pour votre module, listez-les ici. Les fichiers de code devraient spécifier quels procs ils changent, au cas où de multiples modules utilisent le même fichier.
-Exemple :
-- `modular_exostation/master_files/sound/my_cool_sound.ogg`
-- `modular_exostation/master_files/code/my_modular_override.dm`: `proc/overriden_proc`, `var/overriden_var`
--->
 
 ### Defines :
-
 - N/A
-<!-- Si vous avez besoin d'ajouter des defines, mentionnez les fichiers où vous avez ajouté ces defines, ainsi que le nom de ces defines. -->
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 
@@ -65,7 +58,7 @@ Autolaber
 - `.github/labeler.yml` : fichier créé
 
 Modules & CI
-- `tools/exostation_check_grep.sh` : fichier créé
+- `modular_exostation/tools/exostation_check_grep.sh` : fichier créé
 
 Config
 - `exostation/exostation_config.txt` : fichier créé
@@ -74,4 +67,4 @@ Config
 
 ### Crédits :
 Général : Thravalgur
-Modularité : inspiration et ports des codebases SS220, Skyrat/NovaSector, FulpStation, orbstation, BubberStation, MappleStation...
+Modularité : inspiration et ports des codebases SS220 (Bandastation), Skyrat/NovaSector, FulpStation, orbstation, BubberStation, MappleStation...
