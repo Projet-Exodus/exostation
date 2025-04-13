@@ -15,9 +15,6 @@
 SUBSYSTEM_DEF(automapper)
 	name = "Automapper"
 	flags = SS_NO_FIRE
-	dependents = list(
-		/datum/controller/subsystem/mapping
-	)
 	/// The path to our TOML file
 	var/config_file = "_maps/exomaps/automapper/automapper_config.toml"
 	/// Our loaded TOML file
