@@ -2,7 +2,7 @@
 
 Module ID: AUTOMAPPER
 
-### Description:
+### Description :
 
 Tous les fichiers changés ou créés pour l'arborescence de base du repository et sa gestion
 
@@ -19,14 +19,14 @@ Exemple :
 - `modular_exostation/master_files/code/my_modular_override.dm`: `proc/overriden_proc`, `var/overriden_var`
 -->
 
-### Defines:
+### Defines :
 
 - NA/A
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 - `_maps/exostation/automapper` : dossier non-modulaire
 
-### Crédits:
+### Crédits :
 Adaptation par Thravalgur
 Code original par Gandalf2k15
 Port de fonctionnalités de Skyrat/NovaSector/TaleStation/Bandastation

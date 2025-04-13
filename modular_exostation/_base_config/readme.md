@@ -2,7 +2,7 @@
 
 Module ID: BASE_CONFIG
 
-### Description:
+### Description :
 
 Tous les fichiers changés ou créés pour l'arborescence de base du repository et sa gestion
 
@@ -50,7 +50,7 @@ Exemple :
 - `modular_exostation/master_files/code/my_modular_override.dm`: `proc/overriden_proc`, `var/overriden_var`
 -->
 
-### Defines:
+### Defines :
 
 - N/A
 <!-- Si vous avez besoin d'ajouter des defines, mentionnez les fichiers où vous avez ajouté ces defines, ainsi que le nom de ces defines. -->
@@ -72,6 +72,6 @@ Config
 - `exostation/exostation_secrets.txt` : fichier créé (non inclus)
 - `config/exo_motd.txt` : fichier créé
 
-### Crédits:
+### Crédits :
 Général : Thravalgur
 Modularité : inspiration et ports des codebases SS220, Skyrat/NovaSector, FulpStation, orbstation, BubberStation, MappleStation...

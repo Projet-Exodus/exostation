@@ -22,7 +22,7 @@ Exemple :
 
 - Presque tout le fichier `code/datums/keybinding`
 
-### Defines:
+### Defines :
 
 - N/A
 <!-- Si vous avez besoin d'ajouter des defines, mentionnez les fichiers où vous avez ajouté ces defines, ainsi que le nom de ces defines. -->
@@ -32,6 +32,6 @@ Exemple :
 - N/A
 <!-- S'il y avait un fichier non-modulaire ou un fichier modulaire non compris dans ce dossier, qui appartient à ce module spéficique, il doit être mentionné ici. Par exemple, des icônes ou des sons utilisés par plusieurs modules. -->
 
-### Crédits:
+### Crédits :
 
 Thravalgur

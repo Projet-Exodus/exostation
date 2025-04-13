@@ -2,7 +2,7 @@
 
 Module ID: EXO_CHANGELOG
 
-### Description:
+### Description :
 
 Tous les fichiers changés ou créés pour l'arborescence de base du repository et sa gestion
 
@@ -22,7 +22,7 @@ Tous les fichiers changés ou créés pour l'arborescence de base du repository 
 
 - N/A
 
-### Defines:
+### Defines :
 
 - N/A
 
@@ -30,6 +30,6 @@ Tous les fichiers changés ou créés pour l'arborescence de base du repository 
 - `modular_exostation/changelogs` : dossier des changelogs archivés
 - `tgui/packages/interfaces/ExoChangelog.jsx` : création du fichier des changelogs
 
-### Crédits:
+### Crédits :
 Thravalgur
 Port de fonctionnalités des codebases Bandastation (Maxiemar) et FulpStation (QuiteLiterallyAnything, FernandoJ8), adaptation du changelog de /tg/ (celotajstg)

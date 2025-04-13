@@ -6,7 +6,7 @@ https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
 
 Module ID: <!-- Nom de votre module en majuscules, sans espaces mais avec un tiret du bas (underscore). Cela permettra de faire une recherche sensible à la casse de vos éditions, si nécessaire. -->
 
-### Description:
+### Description :
 
 <!-- Ici, décrivez ce que votre PR fait, quelles fonctionnalités il apporte et toute autre information utile. -->
 
@@ -27,7 +27,7 @@ Exemple :
 - `modular_exostation/master_files/code/my_modular_override.dm`: `proc/overriden_proc`, `var/overriden_var`
 -->
 
-### Defines:
+### Defines :
 
 - N/A
 <!-- Si vous avez besoin d'ajouter des defines, mentionnez les fichiers où vous avez ajouté ces defines, ainsi que le nom de ces defines. -->
@@ -37,6 +37,6 @@ Exemple :
 - N/A
 <!-- S'il y avait un fichier non-modulaire ou un fichier modulaire non compris dans ce dossier, qui appartient à ce module spéficique, il doit être mentionné ici. Par exemple, des icônes ou des sons utilisés par plusieurs modules. -->
 
-### Crédits:
+### Crédits :
 
 <!-- Ici, créditez-vous vous-même et dans le cas de travail collaboratif ou de ports, les crédits aux co-auteurs ou aux auteurs du code source original. -->
