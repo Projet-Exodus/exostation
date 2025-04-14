@@ -381,7 +381,7 @@ GLOBAL_LIST_EMPTY(turf_test_effects)
 /obj/effect/turf_test
 	name = "PASS"
 	icon = 'modular_exostation/automapper/icons/area_test.dmi'
-	icon_state = "area_test"
+	icon_state = "test"
 	color = COLOR_BLUE
 	anchored = TRUE
 	layer = LOW_OBJ_LAYER
