@@ -1,14 +1,14 @@
 /datum/keybinding/carbon/toggle_throw_mode
 	hotkey_keys = list("Southwest") // Original: R, Southwest
-	full_name = "Toggle throw mode"
-	description = "Toggle throwing the current item or not."
+	full_name = "Active/Désactive le mode Lancer"
+	description = "Active/Désactive le mode lancer pour l'objet actuel."
 
 /datum/keybinding/carbon/hold_throw_mode
 	hotkey_keys = list("Space")
-	full_name = "Hold throw mode"
-	description = "Hold this to turn on throw mode, and release it to turn off throw mode"
+	full_name = "Rester en mode Lancer"
+	description = "Garder cette touche appuyée active le mode lancer, et la relâcher désactive ce mode"
 
 /datum/keybinding/carbon/give
 	hotkey_keys = list("G")
-	full_name = "Give item"
-	description = "Give the item you're currently holding"
+	full_name = "Offrir un objet"
+	description = "Offre l'objet que vous tenez actuellement à toutes les personnes autour"

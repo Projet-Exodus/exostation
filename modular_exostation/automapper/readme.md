@@ -1,4 +1,6 @@
-## Base de la configuration du repo
+https://github.com/Projet-Exodus/Exostation/pull/6
+
+## Automapper
 
 Module ID: AUTOMAPPER
 
@@ -13,11 +15,6 @@ Tous les fichiers changés ou créés pour l'arborescence de base du repository 
 ### Overrides modulaires :
 
 - N/A
-<!-- Si vous ajoutez un nouvel override modulaire (d'un fichier ou d'un extrait de code) pour votre module, listez-les ici. Les fichiers de code devraient spécifier quels procs ils changent, au cas où de multiples modules utilisent le même fichier.
-Exemple :
-- `modular_exostation/master_files/sound/my_cool_sound.ogg`
-- `modular_exostation/master_files/code/my_modular_override.dm`: `proc/overriden_proc`, `var/overriden_var`
--->
 
 ### Defines :
 
