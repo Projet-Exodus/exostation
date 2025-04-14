@@ -24,6 +24,14 @@ if [ -d ".git" ]; then
   cp -r .git/logs/* $1/.git/logs/
 fi
 
+# EXOSTATION EDIT ADDITION START - Get all the .dmis from modular_exostation
+mkdir -p \
+		$1/modular_exostation
+
+find modular_exostation/ -name \*.dmi -exec cp --parents {} $1 \;
+# find modular_exostation/modules/GAGS/json_configs -name \*.json -exec cp --parents {} $1 \;
+# EXOSTATION EDIT ADDITION STOP
+
 cp tgstation.dmb tgstation.rsc $1/
 cp -r _maps/* $1/_maps/
 cp -r code/datums/greyscale/json_configs/* $1/code/datums/greyscale/json_configs/
@@ -32,6 +40,10 @@ cp -r sound/runtime/* $1/sound/runtime/
 cp -r strings/* $1/strings/
 cp -r tgui/public/* $1/tgui/public/
 cp -r tgui/packages/tgfont/dist/* $1/tgui/packages/tgfont/dist/
+
+# EXOSTATION EDIT ADDITION START - Excludes from modular_exostation
+rsync -a --exclude='**/*.dm' --exclude='**/*.dme' modular_exostation/* $1/modular_exostation/
+# EXOSTATION EDIT ADDITION STOP
 
 #remove .dm files from _maps
 

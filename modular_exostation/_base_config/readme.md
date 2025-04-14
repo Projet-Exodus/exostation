@@ -24,6 +24,7 @@ Disabled workflows
 Modules & CI
 - `.github/workflows/run_linters.yml` : ajout de `modular_exostation/tools/exostation_check_grep.sh`
 - `code/_compile_options.dm` : édition de `#define PRELOAD_RSC 0`
+- `tools/deploy.sh` : ajout de `modular_exostation` et exclusions pour les tests
 - `tools/build/build.js` : ajout de `modular_exostation/**`
 - `tgstation.dme` : ajout de `modular_exostation.dme`
 
