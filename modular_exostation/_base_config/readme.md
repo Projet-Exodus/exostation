@@ -46,6 +46,9 @@ Config blacklist
 - `config/spaceruinblacklist.txt`
 - `config/unbyableshuttles.txt`
 
+Apparence
+- `interface/skin.dmf` : changement de l'icône
+
 ### Overrides modulaires :
 
 - N/A
