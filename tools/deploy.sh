@@ -30,7 +30,7 @@ mkdir -p \
 
 find modular_exostation/ -name \*.dmi -exec cp --parents {} $1 \;
 # find modular_exostation/modules/GAGS/json_configs -name \*.json -exec cp --parents {} $1 \;
-# EXOSTATION EDIT ADDITION STOP
+# EXOSTATION EDIT ADDITION END
 
 cp tgstation.dmb tgstation.rsc $1/
 cp -r _maps/* $1/_maps/
@@ -43,7 +43,7 @@ cp -r tgui/packages/tgfont/dist/* $1/tgui/packages/tgfont/dist/
 
 # EXOSTATION EDIT ADDITION START - Excludes from modular_exostation
 rsync -a --exclude='**/*.dm' --exclude='**/*.dme' modular_exostation/* $1/modular_exostation/
-# EXOSTATION EDIT ADDITION STOP
+# EXOSTATION EDIT ADDITION END
 
 #remove .dm files from _maps
 
