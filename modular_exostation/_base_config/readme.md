@@ -37,8 +37,6 @@ Config
 - `config/maps.txt` : configuration des maps par défaut
 - `config/jobconfig.toml` : config des jobs
 - `config/silicons_laws.txt` : config des lois IA/cyborgs
-- `code/modules/client/preferences/security_department.dm` : permet de choisir son département à surveiller en sécurité même en commençant au brig
-- `code/modules/client/preferences.dm` : plus de slots de sauvegarde de personnages
 
 Config blacklist
 - `config/iceruinblacklist.txt`
