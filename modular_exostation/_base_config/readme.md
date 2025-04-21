@@ -47,6 +47,9 @@ Config blacklist
 Apparence
 - `interface/skin.dmf` : changement de l'icône
 
+Marche par défaut :
+- `` :
+
 ### Overrides modulaires :
 
 - N/A
