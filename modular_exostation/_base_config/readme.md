@@ -48,7 +48,7 @@ Apparence
 - `interface/skin.dmf` : changement de l'icône
 
 Marche par défaut :
-- `` :
+- `code/modules/mob/living/living_defines.dm` : édition de `var/move_intent`ssssss
 
 ### Overrides modulaires :
 
