@@ -1,6 +1,4 @@
-<!-- Ce fichier doit être copié-collé à la racine de votre dossier de module en tant que readme.md -->
-
-https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
+https://github.com/Projet-Exodus/Exostation/pull/9
 
 ## LOOC
 
@@ -36,4 +34,4 @@ Ajout d'un canal LOOC.
 - `\tgui\packages\tgui-say\styles\colors.scss`
 
 ### Crédits :
-Thràvalgur (port)
+Thràvalgur (port de la version de Bandastation par larentoun)
