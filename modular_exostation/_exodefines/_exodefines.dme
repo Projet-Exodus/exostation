@@ -1,3 +1,5 @@
 #include "_exodefines.dm"
 
+// --- MODULES START --- //
 #include "code/automapper.dm"
+#include "code/LOOC.dm"

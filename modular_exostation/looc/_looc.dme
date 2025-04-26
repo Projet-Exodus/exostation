@@ -1,0 +1,6 @@
+#include "_looc.dm"
+
+// --- MODULES START --- //
+#include "code/LOOC_keybinding.dm"
+#include "code/LOOC_prefs.dm"
+#include "code/LOOC.dm"

@@ -7,3 +7,4 @@
 #include "changelog/_changelog.dme"
 #include "automapper/_automapper.dme"
 #include "keybinding/_keybinding.dme"
+#include "looc/_looc.dme"
