@@ -1,6 +1,6 @@
 <!-- Merci d'écrire **SOUS** les titres et **AU-DESSUS** des commentaires pour que tout s'affiche correctement. -->
 
-## Contenu des modifications appoertées
+## Contenu des modifications apportées
 
 <!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->
 
