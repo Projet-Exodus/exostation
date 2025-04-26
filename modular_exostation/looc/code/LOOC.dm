@@ -47,7 +47,7 @@ GLOBAL_VAR_INIT(looc_allowed, TRUE)
 		if(handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_boldannounce("<B>La publicité pour les autres serveurs is n'est pas autorisé.</B>"))
+			to_chat(src, span_boldannounce("<B>La publicité pour les autres serveurs n'est pas autorisé.</B>"))
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			return
 		if(prefs.muted & MUTE_LOOC)
