@@ -8,7 +8,15 @@ export type Channel = 'Say' | 'Radio' | 'Me' | 'LOOC' | 'OOC' | 'Admin'; // EXOS
  */
 export class ChannelIterator {
   private index: number = 0;
-  private readonly channels: Channel[] = ['Say', 'Radio', 'Me', 'LOOC', 'OOC', 'Admin']; // EXOSTATION EDIT ADDITION - LOOC
+  private readonly channels: Channel[] = [
+    // EXOSTATION EDIT ADDITION START - LOOC & prettier
+    'Say',
+    'Radio',
+    'Me',
+    'LOOC',
+    'OOC',
+    'Admin',
+  ]; // EXOSTATION EDIT ADDITION EN - LOOC
   private readonly blacklist: Channel[] = ['Admin'];
   private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin']; // EXOSTATION EDIT ADDITION - LOOC
 
