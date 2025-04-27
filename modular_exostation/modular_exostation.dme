@@ -7,4 +7,6 @@
 #include "changelog/_changelog.dme"
 #include "automapper/_automapper.dme"
 #include "keybinding/_keybinding.dme"
+#include "local_fixes/_local_fixes.dme"
 #include "looc/_looc.dme"
+// --- MODULES END --- //
