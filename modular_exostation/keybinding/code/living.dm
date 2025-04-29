@@ -2,7 +2,6 @@
 	hotkey_keys = list("R") //Original B
 	full_name = "Résister"
 	description = "Se débarasser de votre situation actuelle. Attaché ? En feu ? Résistez !"
-	keybind_signal = COMSIG_KB_LIVING_RESIST_DOWN
 
 /datum/keybinding/living/look_up
 	hotkey_keys = list("ShiftZ") //Original L
@@ -40,6 +39,6 @@
 	description = "Garder cette touche appuyée échange votre mode de déplacement, et la relâcher désactive ce mode"
 
 /datum/keybinding/living/toggle_move_intent_alternative
-	hotkey_keys = list("ShiftZ") //Original Unbound
+	hotkey_keys = list("ShiftC") //Original Unbound
 	full_name = "Inverser le mode de déplacement"
 	description = "Inverse votre mode de déplacement, sans retour arrière."
