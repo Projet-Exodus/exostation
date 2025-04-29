@@ -1,7 +1,3 @@
-/datum/keybinding/movement
-	category = CATEGORY_MOVEMENT
-	weight = WEIGHT_HIGHEST
-
 /datum/keybinding/movement/north
 	hotkey_keys = list("Z", "North") // Original W
 	full_name = "Aller au Nord"
