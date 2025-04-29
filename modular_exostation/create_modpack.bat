@@ -6,7 +6,7 @@ xcopy "example" "%moduleName%" /s /i
 
 ren "%moduleName%\_example.dm" "_%moduleName%.dm"
 ren "%moduleName%\_example.dme" "_%moduleName%.dme"
-ren "%moduleName%\code\example.dm" "%moduleName%.dm"
+ren "%moduleName%\code\example_wall.dm" "%moduleName%.dm"
 
 mkdir "%moduleName%\icons"
 
@@ -14,7 +14,7 @@ Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'Exa
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'example', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'Example modpack', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'example', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
-Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'furior', '%USERNAME%' | Set-Content '%moduleName%\_%moduleName%.dm'"
+Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'XXX', '%USERNAME%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 
 Powershell -Command ^
     "$dmeFile = 'modular_exostation.dme';" ^
