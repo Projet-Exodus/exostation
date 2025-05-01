@@ -6,8 +6,7 @@ Module ID: HOLOMAPS
 
 ### Description :
 
-Holomaps intégrées aux PDA, aux IA et aux robots.
-Engineering holomaps (pour voir l'emplacement des air alarms en alerte).
+Holomaps intégrées aux PDA (et aux robots).
 
 ### Procs ou fichiers de TG changés :
 
