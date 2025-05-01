@@ -19,7 +19,7 @@
 		return FALSE
 	if(isliving(user))
 		if(!can_use(user))
-			to_chat(user, "<span class='warning'>You can't do that right now...</span>")
+			to_chat(user, span_warning("Vous ne pouvez pas effectuer cette action maintenant..."))
 			return FALSE
 	else
 		user = holder.loc //Alright, seems like they clicked the item's action instead.
@@ -136,4 +136,3 @@
 		watching_mob.hud_used.holomap.used_station_map = null
 		watching_mob = null
 	return TRUE
-
