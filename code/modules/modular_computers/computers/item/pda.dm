@@ -55,6 +55,7 @@
 	. = ..()
 	if(inserted_item)
 		inserted_item = new inserted_item(src)
+	return INITIALIZE_HINT_LATELOAD //EXOSTATION EDIT ADDITION : HOLOMAPS
 
 /obj/item/modular_computer/pda/Destroy()
 	if(istype(inserted_item))

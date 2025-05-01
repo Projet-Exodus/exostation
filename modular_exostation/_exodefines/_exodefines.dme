@@ -3,3 +3,6 @@
 // --- MODULES START --- //
 #include "code/automapper.dm"
 #include "code/LOOC.dm"
+#include "code/holomap.dm"
+#include "code/holomap_global_lists.dm"
+// --- MODULES STOP --- //
