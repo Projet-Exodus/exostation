@@ -113,7 +113,7 @@
 
 	var/datum/hud/human/user_hud = user.hud_used
 	holomap_datum.base_map.loc = user_hud.holomap  // Put the image on the holomap hud
-	playsound(src, 'modular_exostation/holomap/sounds/holomap_open.ogg', 125)
+	playsound(user, 'modular_exostation/holomap/sounds/holomap_open.ogg', 125)
 
 	user.hud_used.holomap.used_station_map = src
 	user.hud_used.holomap.mouse_opacity = MOUSE_OPACITY_ICON
@@ -132,7 +132,7 @@
 	if(!watching_mob)
 		return
 	holomap_visible = FALSE
-	playsound(src, 'modular_exostation/holomap/sounds/holomap_close.ogg', 125)
+	playsound(user, 'modular_exostation/holomap/sounds/holomap_close.ogg', 125)
 	if(watching_mob?.client)
 		watching_mob.client?.screen -= watching_mob.hud_used.holomap
 		watching_mob.client?.images -= holomap_datum.base_map
@@ -140,3 +140,38 @@
 		watching_mob = null
 	return TRUE
 
+/datum/component/holomap/engineering
+
+/datum/component/holomap/engineering/summon_holomap(datum/user)
+	. = ..()
+	if(.)
+		holomap_datum.update_map(handle_overlays())
+
+/datum/component/holomap/engineering/handle_overlays()
+	var/list/extra_overlays = ..()
+	if(bogus)
+		return extra_overlays
+
+	var/list/fire_alarms = list()
+	for(var/obj/machinery/firealarm/alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
+		if(alarm?.z == current_z_level && alarm?.my_area?.active_alarms[ALARM_FIRE])
+			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker")
+			alarm_icon.pixel_x = alarm.x + HOLOMAP_CENTER_X - 1
+			alarm_icon.pixel_y = alarm.y + HOLOMAP_CENTER_Y
+			fire_alarms += alarm_icon
+
+	if(length(fire_alarms))
+		extra_overlays["Fire Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker"), "markers" = fire_alarms)
+
+	var/list/air_alarms = list()
+	for(var/obj/machinery/airalarm/air_alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
+		if(air_alarm?.z == current_z_level && air_alarm?.my_area?.active_alarms[ALARM_ATMOS])
+			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker")
+			alarm_icon.pixel_x = air_alarm.x + HOLOMAP_CENTER_X - 1
+			alarm_icon.pixel_y = air_alarm.y + HOLOMAP_CENTER_Y
+			air_alarms += alarm_icon
+
+	if(length(air_alarms))
+		extra_overlays["Air Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker"), "markers" = air_alarms)
+
+	return extra_overlays
