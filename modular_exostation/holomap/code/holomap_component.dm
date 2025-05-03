@@ -6,7 +6,7 @@
 	button_icon = 'modular_exostation/holomap/icons/32x32.dmi'
 	button_icon_state = "map"
 	var/atom/holder = null
-	var/datum/component/holomap/holo = null
+	var/datum/component/holomap/newcomponent = null
 
 /datum/action/toggle_holomap/proc/can_use(mob/living/user)
 	return (user && user.mind && user.stat == CONSCIOUS)
@@ -15,7 +15,7 @@
 	action(holder)
 
 /datum/action/toggle_holomap/proc/action(mob/living/user)
-	if(!holo)
+	if(!newcomponent)
 		return FALSE
 	if(isliving(user))
 		if(!can_use(user))
@@ -23,7 +23,7 @@
 			return FALSE
 	else
 		user = holder.loc //Alright, seems like they clicked the item's action instead.
-	holo.summon_holomap(user)
+	newcomponent.summon_holomap(user)
 
 /datum/component/holomap
 	var/datum/action/toggle_holomap/holobutton = new
@@ -37,16 +37,11 @@
 	/// This set to FALSE when the station map is initialized on a zLevel that has its own icon formatted for use by station holomaps.
 	var/bogus = TRUE
 
-/datum/component/holomap/proc/get_user()
-	RETURN_TYPE(/mob/living)
-	var/atom/movable/holder = parent
-	return (isliving(holder) || !isatom(holder)) ? holder : holder.loc //FIXME - This proc is terrible (and can runtime). Just save the user and track if they get del'd like a sane person. Why is this like this??????
-
 /datum/component/holomap/Initialize()
 	. = ..()
 	if(isatom(parent))
 		holobutton.holder = parent
-		holobutton.holo = src
+		holobutton.newcomponent = src
 
 	if(isliving(parent))
 		holobutton.Grant(parent)
@@ -59,7 +54,7 @@
 		if(isliving(holder.loc)) //Account for items pre-spawned on people...
 			on_equip(holder, holder.loc, null)
 		return
-	qdel(holobutton)
+	QDEL_NULL(holobutton)
 
 /datum/component/holomap/proc/on_equip(datum/source, mob/equipper, slot)
 	if(slot && slot == ITEM_SLOT_BACKPACK)
@@ -74,19 +69,11 @@
 /datum/component/holomap/proc/on_drop(datum/source, mob/user)
 	holobutton.Remove(user)
 
-/datum/component/holomap/Destroy(force, silent)
-	if(istype(parent, /obj/item))
-		var/obj/item/holder = parent
-		UnregisterSignal(holder, list(
-		COMSIG_ITEM_EQUIPPED,
-		COMSIG_ITEM_DROPPED,
-	))
-	if(holomap_visible)
-		deactivate_holomap(get_user())
-	if(holobutton)
-		holobutton.Remove(get_user())
-		qdel(holobutton)
-	return ..()
+/datum/component/holomap/Destroy()
+	deactivate_holomap()
+	QDEL_NULL(holobutton)
+	QDEL_NULL(holomap_datum)
+	. = ..()
 
 /datum/component/holomap/proc/summon_holomap(datum/user)
 	if(holomap_visible)
@@ -113,6 +100,10 @@
 	current_z_level = current_turf.z
 	holomap_datum = new()
 	bogus = FALSE
+	if(!holomap_datum)
+		// Something is very wrong if we have to un-fuck ourselves here.
+		stack_trace("\[HOLOMAP] WARNING: Holomap at [x], [y], [z] [ADMIN_FLW(src)] had to set itself up on interact! Something during Initialize went very wrong!")
+
 	if(!("[HOLOMAP_EXTRA_STATIONMAP]_[current_z_level]" in SSholomaps.extra_holomaps))
 		bogus = TRUE
 		holomap_datum.initialize_holomap_bogus()
