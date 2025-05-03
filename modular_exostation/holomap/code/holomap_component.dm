@@ -74,8 +74,19 @@
 /datum/component/holomap/proc/on_drop(datum/source, mob/user)
 	holobutton.Remove(user)
 
-/datum/component/holomap/Destroy()
+/datum/component/holomap/Destroy(force)
 	. = ..()
+	holomap_datum = null
+	watching_mob = null
+	current_z_level = null
+	holomap_visible = null
+	bogus = null
+	if(holomap_visible)
+		deactivate_holomap(get_user())
+	if(holobutton)
+		holobutton.Remove(get_user())
+		return
+	qdel(holobutton)
 
 /datum/component/holomap/proc/summon_holomap(datum/user)
 	if(holomap_visible)
