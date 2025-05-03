@@ -100,10 +100,6 @@
 	current_z_level = current_turf.z
 	holomap_datum = new()
 	bogus = FALSE
-	if(!holomap_datum)
-		// Something is very wrong if we have to un-fuck ourselves here.
-		stack_trace("\[HOLOMAP] WARNING: Holomap at [x], [y], [z] [ADMIN_FLW(src)] had to set itself up on interact! Something during Initialize went very wrong!")
-
 	if(!("[HOLOMAP_EXTRA_STATIONMAP]_[current_z_level]" in SSholomaps.extra_holomaps))
 		bogus = TRUE
 		holomap_datum.initialize_holomap_bogus()
