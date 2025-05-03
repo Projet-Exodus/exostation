@@ -1,12 +1,13 @@
 https://github.com/Projet-Exodus/Exostation/pull/9
+https://github.com/Projet-Exodus/Exostation/pull/21
 
-## LOOC
+## Verbes de communication additionnels : LOOC et Whisper
 
-Module ID: LOOC
+Module ID: COM_VERBS
 
 ### Description :
 
-Ajout d'un canal LOOC.
+Ajout d'un canal LOOC : chat OOC de proximité. Ajout d'un canal Whis, similaire au canal Me mais pour chuchoter plutôt que pour emote.
 
 ### Procs ou fichiers de TG changés :
 - `code/datums/chatmessage.dm`
@@ -24,11 +25,11 @@ Ajout d'un canal LOOC.
 
 ### Overrides modulaires :
 
-- `/datum/tgui_say/delegate_speech(entry, channel)`
-- `/datum/tgui_say/alter_entry(payload)`
+- `/datum/tgui_say/delegate_speech(entry, channel)` : proc réutilisé
+- `/datum/tgui_say/alter_entry(payload)` : proc réutilisé
 
 ### Defines :
-- `modular_exostation/_exodefines/code/LOOC.dm`
+- `modular_exostation/_exodefines/code/com_verbs.dm`
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 
