@@ -1,4 +1,4 @@
-https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
+https://github.com/Projet-Exodus/Exostation/pull/20
 
 ## Holomap
 
@@ -6,7 +6,7 @@ Module ID: HOLOMAPS
 
 ### Description :
 
-Holomaps intégrées aux PDA (et aux robots).
+Holomaps intégrées aux PDA (avec variante destinée aux ingénieurs et aux silicones)
 
 ### Procs ou fichiers de TG changés :
 
@@ -18,14 +18,15 @@ Holomaps intégrées aux PDA (et aux robots).
 
 ### Defines :
 
-- `_exodefines/code/holomap.dm`
-- `_exodefines/code/holomap_global_lists.dm`
+- `modular_exostation/_exodefines/code/holomap.dm`
+- `modular_exostation/_exodefines/code/holomap_global_lists.dm`
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 
 - N/A
 
 ### Crédits :
+
 Thravalgur (port de la fonctionnalité pour Exostation)
 Bobbanz1 et DeltaFire15 (NSV13)
 RimiNosha (Port original dans les downstreams de tg)
