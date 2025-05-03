@@ -13,15 +13,19 @@
 
 /area/shuttle/pod_1
 	holomap_should_draw = TRUE
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/pod_2
 	holomap_should_draw = TRUE
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/pod_3
 	holomap_should_draw = TRUE
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/shuttle/pod_4
 	holomap_should_draw = TRUE
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/ruin
 	holomap_should_draw = FALSE
