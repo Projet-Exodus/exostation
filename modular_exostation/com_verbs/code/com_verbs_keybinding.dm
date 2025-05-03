@@ -12,7 +12,7 @@
 	return TRUE
 
 /datum/keybinding/client/communication/whisper
-	hotkey_keys = list("Y")
+	hotkey_keys = list("U")
 	name = WHIS_CHANNEL
 	full_name = "IC Whisper"
 	keybind_signal = COMSIG_KB_CLIENT_WHISPER_DOWN
