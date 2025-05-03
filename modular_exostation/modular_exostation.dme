@@ -8,5 +8,5 @@
 #include "changelog/_changelog.dme"
 #include "keybinding/_keybinding.dme"
 #include "local_fixes/_local_fixes.dme"
-#include "looc/_looc.dme"
+#include "com_verbs/_com_verbs.dme"
 // --- MODULES END --- //

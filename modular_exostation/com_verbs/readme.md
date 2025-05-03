@@ -12,6 +12,9 @@ Ajout d'un canal LOOC.
 - `code/datums/chatmessage.dm`
 - `tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss`
 - `tgui\packages\tgui-panel\styles\tgchat\chat-light.scss`
+- `\tgui\packages\tgui-say\ChannelIterator.test.ts`
+- `\tgui\packages\tgui-say\ChannelIterator.ts`
+- `\tgui\packages\tgui-say\styles\colors.scss`
 
 **Fichiers de base contenant des éléments de looc**
 - `code/_DEFINES/span.dm`
@@ -21,7 +24,8 @@ Ajout d'un canal LOOC.
 
 ### Overrides modulaires :
 
-- N/A
+- `/datum/tgui_say/delegate_speech(entry, channel)`
+- `/datum/tgui_say/alter_entry(payload)`
 
 ### Defines :
 - `modular_exostation/_exodefines/code/LOOC.dm`
@@ -29,9 +33,6 @@ Ajout d'un canal LOOC.
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 
 - `tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\game_preferences\looc.tsx`
-- `\tgui\packages\tgui-say\ChannelIterator.test.ts`
-- `\tgui\packages\tgui-say\ChannelIterator.ts`
-- `\tgui\packages\tgui-say\styles\colors.scss`
 
 ### Crédits :
 Thràvalgur (port de la version de Bandastation par larentoun)
