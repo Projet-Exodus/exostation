@@ -76,11 +76,6 @@
 
 /datum/component/holomap/Destroy(force)
 	. = ..()
-	holomap_datum = null
-	watching_mob = null
-	current_z_level = null
-	holomap_visible = null
-	bogus = null
 	if(holomap_visible)
 		deactivate_holomap(get_user())
 	if(holobutton)
