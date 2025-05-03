@@ -14,7 +14,7 @@
 /datum/keybinding/client/communication/whisper
 	hotkey_keys = list("U")
 	name = WHIS_CHANNEL
-	full_name = "IC Whisper"
+	full_name = "Murmure local (Whis) (IC)"
 	keybind_signal = COMSIG_KB_CLIENT_WHISPER_DOWN
 
 /datum/keybinding/client/communication/whisper/down(client/user)
