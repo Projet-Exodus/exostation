@@ -75,12 +75,16 @@
 	holobutton.Remove(user)
 
 /datum/component/holomap/Destroy(force, silent)
+	if(istype(get_user(), /obj/item))
+		var/obj/item/holder = get_user()
+		UnregisterSignal(holder, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
+		UnregisterSignal(holder, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
 	if(holomap_visible)
 		deactivate_holomap(get_user())
 	if(holobutton)
 		holobutton.Remove(get_user())
 		qdel(holobutton)
-	. = ..()
+	return ..()
 
 /datum/component/holomap/proc/summon_holomap(datum/user)
 	if(holomap_visible)
