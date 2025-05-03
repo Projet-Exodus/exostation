@@ -1,5 +1,5 @@
 https://github.com/Projet-Exodus/Exostation/pull/9
-https://github.com/Projet-Exodus/Exostation/pull/21
+https://github.com/Projet-Exodus/Exostation/pull/22
 
 ## Verbes de communication additionnels : LOOC et Whisper
 
