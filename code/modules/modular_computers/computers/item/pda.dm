@@ -60,6 +60,7 @@
 /obj/item/modular_computer/pda/Destroy()
 	if(istype(inserted_item))
 		QDEL_NULL(inserted_item)
+	remove_holomap() //EXOSTATION EDIT ADDITION : HOLOMAPS
 	return ..()
 
 /obj/item/modular_computer/pda/install_default_programs()

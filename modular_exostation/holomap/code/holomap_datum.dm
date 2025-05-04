@@ -101,8 +101,3 @@
 	cursor = null
 	overlay_data = null
 	disabled_overlays = null
-	total_legend_y = null
-	map_x = null
-	map_y = null
-	map_z = null
-	legend = null

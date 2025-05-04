@@ -41,18 +41,11 @@
 
 /datum/component/holomap/Initialize()
 	. = ..()
-	if(!isatom(parent) || !isliving(parent) || !isitem(parent))
+	if(!isatom(parent) || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	if(isatom(parent))
 		holobutton.holder = parent
-		holobutton.newcomponent = src
-
-	if(isliving(parent))
-		holobutton.Grant(parent)
-		return
-
-	if(istype(parent, /obj/item))
+		holobutton.newholomap = src
 		var/obj/item/holder = parent
 		RegisterSignal(holder, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
 		RegisterSignal(holder, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
@@ -80,13 +73,8 @@
 /datum/component/holomap/proc/on_drop(datum/source, mob/user)
 	holobutton.Remove(user)
 
-/datum/component/holomap/Destroy(force, silent)
+/datum/component/holomap/Destroy(force)
 	deactivate_holomap(get_user())
-	if(holobutton)
-		holobutton.Remove(get_user())
-		qdel(holobutton)
-	QDEL_NULL(holobutton)
-	QDEL_NULL(holomap_datum)
 	. = ..()
 
 // Activate and deactivate holomap
