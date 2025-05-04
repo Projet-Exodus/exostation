@@ -11,3 +11,7 @@
       pas devoir les désactiver. Peut mal ressortir dans certaines versions antérieures
       de BYOND (à partir de la version 516.1657)
   - bugfix: Maj+C pour changer de mode de déplacement (courir/marcher)
+2025-05-04:
+  Thravalgur:
+  - rscadd: Ajout d'un canal Whisper pour chuchoter sans formatage de texte.
+  - qol: Le canal Whisper fait partie des canaux qu'on peut faire défiler avec Tab.
