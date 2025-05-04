@@ -6,16 +6,39 @@
 	apply_holomap()
 
 /obj/item/modular_computer/pda/proc/apply_holomap()
+	if(holo_base)
+		holo_base.RemoveComponent()
+		QDEL_NULL(holo_base)
 	AddComponent(/datum/component/holomap)
 
 /obj/item/modular_computer/pda/heads/ce/apply_holomap()
+	if(holo_base)
+		holo_base.RemoveComponent()
+		QDEL_NULL(holo_base)
 	AddComponent(/datum/component/holomap/engineering)
 
 /obj/item/modular_computer/pda/atmos/apply_holomap()
+	if(holo_base)
+		holo_base.RemoveComponent()
+		QDEL_NULL(holo_base)
 	AddComponent(/datum/component/holomap/engineering)
 
 /obj/item/modular_computer/pda/engineering/apply_holomap()
+	if(holo_base)
+		holo_base.RemoveComponent()
+		QDEL_NULL(holo_base)
 	AddComponent(/datum/component/holomap/engineering)
 
 /obj/item/modular_computer/pda/silicon/apply_holomap()
+	if(holo_base)
+		holo_base.RemoveComponent()
+		QDEL_NULL(holo_base)
 	AddComponent(/datum/component/holomap/engineering)
+
+/obj/item/modular_computer/pda/Destroy()
+. = ..()
+	remove_holomap()
+
+/obj/item/modular_computer/pda/proc/remove_holomap()
+	RemoveComponentSource(source, /datum/component/holomap)
+	RemoveComponentSource(source, /datum/component/holomap/engineering)

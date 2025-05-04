@@ -117,16 +117,16 @@ SUBSYSTEM_DEF(holomaps)
 
 					z_transition_positions["Stairs Up"]["markers"] += image_to_use
 
-				var/turf/checking = get_step_multiz(get_turf(z_transition_obj), UP)
-				if(istype(checking))
-					var/list/transitions = holomap_z_transitions["[checking.z]"]
+				var/turf/holomap_checking = get_step_multiz(get_turf(z_transition_obj), UP)
+				if(istype(holomap_checking))
+					var/list/transitions = holomap_z_transitions["[holomap_checking.z]"]
 					if(!transitions)
 						transitions = list()
-						holomap_z_transitions["[checking.z]"] = transitions
+						holomap_z_transitions["[holomap_checking.z]"] = transitions
 
 						image_to_use = image('modular_exostation/holomap/icons/8x8.dmi', "stairs_down")
-						image_to_use.pixel_x = checking.x + HOLOMAP_CENTER_X
-						image_to_use.pixel_y = checking.y + HOLOMAP_CENTER_Y
+						image_to_use.pixel_x = holomap_checking.x + HOLOMAP_CENTER_X
+						image_to_use.pixel_y = holomap_checking.y + HOLOMAP_CENTER_Y
 
 					if(!transitions["Stairs Down"])
 						transitions["Stairs Down"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "stairs_down"), "markers" = list())

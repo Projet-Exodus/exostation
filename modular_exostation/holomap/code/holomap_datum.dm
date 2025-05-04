@@ -95,3 +95,14 @@
 	legend.pixel_y = 224
 
 	update_map(overlays_to_use = list("" = list("icon" = legend)))
+
+/datum/station_holomap/proc/clear_holomap()
+	base_map = null
+	cursor = null
+	overlay_data = null
+	disabled_overlays = null
+	total_legend_y = null
+	map_x = null
+	map_y = null
+	map_z = null
+	legend = null

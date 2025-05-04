@@ -6,16 +6,16 @@
 	button_icon = 'modular_exostation/holomap/icons/32x32.dmi'
 	button_icon_state = "map"
 	var/atom/holder = null
-	var/datum/component/holomap/newcomponent = null
+	var/datum/component/holomap/newholomap = null
 
 /datum/action/toggle_holomap/proc/can_use(mob/living/user)
 	return (user && user.mind && user.stat == CONSCIOUS)
 
 /datum/action/toggle_holomap/Trigger(trigger_flags)
-	action(holder)
+	toggle_summon(holder)
 
-/datum/action/toggle_holomap/proc/action(mob/living/user)
-	if(!newcomponent)
+/datum/action/toggle_holomap/proc/toggle_summon(mob/living/user)
+	if(!newholomap)
 		return FALSE
 	if(isliving(user))
 		if(!can_use(user))
@@ -23,7 +23,7 @@
 			return FALSE
 	else
 		user = holder.loc //Alright, seems like they clicked the item's action instead.
-	newcomponent.summon_holomap(user)
+	newholomap.summon_holomap(user)
 
 /datum/component/holomap
 	var/datum/action/toggle_holomap/holobutton = new
@@ -37,8 +37,13 @@
 	/// This set to FALSE when the station map is initialized on a zLevel that has its own icon formatted for use by station holomaps.
 	var/bogus = TRUE
 
+/datum/component/holomap/engineering
+
 /datum/component/holomap/Initialize()
 	. = ..()
+	if(!isatom(parent) || !isliving(parent) || !isitem(parent))
+		return COMPONENT_INCOMPATIBLE
+
 	if(isatom(parent))
 		holobutton.holder = parent
 		holobutton.newcomponent = src
@@ -54,9 +59,15 @@
 		if(isliving(holder.loc)) //Account for items pre-spawned on people...
 			on_equip(holder, holder.loc, null)
 		return
-	QDEL_NULL(holobutton)
+
+/datum/component/holomap/proc/get_user()
+	RETURN_TYPE(/mob/living)
+	var/atom/movable/holder = parent
+	return (isliving(holder) || !isatom(holder)) ? holder : holder.loc //FIXME - This proc is terrible (and can runtime). Just save the user and track if they get del'd like a sane person. Why is this like this??????
 
 /datum/component/holomap/proc/on_equip(datum/source, mob/equipper, slot)
+	if(!(source || equipper))
+		return
 	if(slot && slot == ITEM_SLOT_BACKPACK)
 		on_drop(source, equipper)
 		return
@@ -69,17 +80,29 @@
 /datum/component/holomap/proc/on_drop(datum/source, mob/user)
 	holobutton.Remove(user)
 
-/datum/component/holomap/Destroy()
-	deactivate_holomap()
+/datum/component/holomap/Destroy(force, silent)
+	deactivate_holomap(get_user())
+	if(holobutton)
+		holobutton.Remove(get_user())
+		qdel(holobutton)
 	QDEL_NULL(holobutton)
 	QDEL_NULL(holomap_datum)
 	. = ..()
+
+// Activate and deactivate holomap
 
 /datum/component/holomap/proc/summon_holomap(datum/user)
 	if(holomap_visible)
 		deactivate_holomap(user)
 	else
 		activate_holomap(user)
+
+/datum/component/holomap/engineering/summon_holomap(datum/user)
+	. = ..()
+	if(.)
+		holomap_datum.update_map(handle_overlays())
+
+// Handle overlays
 
 /datum/component/holomap/proc/handle_overlays()
 	// Each entry in this list contains the text for the legend, and the icon and icon_state use. Null or non-existent icon_state ignore hiding logic.
@@ -94,6 +117,35 @@
 		if(length(escape_pods))
 			legend += escape_pods
 	return legend
+
+/datum/component/holomap/engineering/handle_overlays()
+	var/list/extra_overlays = ..()
+	if(bogus)
+		return extra_overlays
+
+	var/list/fire_alarms = list()
+	for(var/obj/machinery/firealarm/alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
+		if(alarm?.z == current_z_level && alarm?.my_area?.active_alarms[ALARM_FIRE])
+			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker")
+			alarm_icon.pixel_x = alarm.x + HOLOMAP_CENTER_X - 1
+			alarm_icon.pixel_y = alarm.y + HOLOMAP_CENTER_Y
+			fire_alarms += alarm_icon
+
+	if(length(fire_alarms))
+		extra_overlays["Fire Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker"), "markers" = fire_alarms)
+
+	var/list/air_alarms = list()
+	for(var/obj/machinery/airalarm/air_alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
+		if(air_alarm?.z == current_z_level && air_alarm?.my_area?.active_alarms[ALARM_ATMOS])
+			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker")
+			alarm_icon.pixel_x = air_alarm.x + HOLOMAP_CENTER_X - 1
+			alarm_icon.pixel_y = air_alarm.y + HOLOMAP_CENTER_Y
+			air_alarms += alarm_icon
+
+	if(length(air_alarms))
+		extra_overlays["Air Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker"), "markers" = air_alarms)
+
+	return extra_overlays
 
 /datum/component/holomap/proc/activate_holomap(mob/user)
 	var/turf/current_turf = get_turf(user.client.eye)
@@ -136,40 +188,5 @@
 		watching_mob.client?.images -= holomap_datum.base_map
 		watching_mob.hud_used.holomap.used_station_map = null
 		watching_mob = null
+	holomap_datum.clear_holomap()
 	return TRUE
-
-/datum/component/holomap/engineering
-
-/datum/component/holomap/engineering/summon_holomap(datum/user)
-	. = ..()
-	if(.)
-		holomap_datum.update_map(handle_overlays())
-
-/datum/component/holomap/engineering/handle_overlays()
-	var/list/extra_overlays = ..()
-	if(bogus)
-		return extra_overlays
-
-	var/list/fire_alarms = list()
-	for(var/obj/machinery/firealarm/alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
-		if(alarm?.z == current_z_level && alarm?.my_area?.active_alarms[ALARM_FIRE])
-			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker")
-			alarm_icon.pixel_x = alarm.x + HOLOMAP_CENTER_X - 1
-			alarm_icon.pixel_y = alarm.y + HOLOMAP_CENTER_Y
-			fire_alarms += alarm_icon
-
-	if(length(fire_alarms))
-		extra_overlays["Fire Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "fire_marker"), "markers" = fire_alarms)
-
-	var/list/air_alarms = list()
-	for(var/obj/machinery/airalarm/air_alarm as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/airalarm))
-		if(air_alarm?.z == current_z_level && air_alarm?.my_area?.active_alarms[ALARM_ATMOS])
-			var/image/alarm_icon = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker")
-			alarm_icon.pixel_x = air_alarm.x + HOLOMAP_CENTER_X - 1
-			alarm_icon.pixel_y = air_alarm.y + HOLOMAP_CENTER_Y
-			air_alarms += alarm_icon
-
-	if(length(air_alarms))
-		extra_overlays["Air Alarms"] = list("icon" = image('modular_exostation/holomap/icons/8x8.dmi', "atmos_marker"), "markers" = air_alarms)
-
-	return extra_overlays
