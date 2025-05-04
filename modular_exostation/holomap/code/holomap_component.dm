@@ -76,7 +76,7 @@
 	if(holomap_datum)
 		QDEL_NULL(holomap_datum)
 
-datum/component/holomap/on_source_remove(source)
+datum/component/holomap/on_source_remove()
 	. = ..()
 	if(holomap_visible)
 		deactivate_holomap(get_user())
