@@ -1,0 +1,3 @@
+#include "_pets.dm"
+
+#include "code/parrot.dm"

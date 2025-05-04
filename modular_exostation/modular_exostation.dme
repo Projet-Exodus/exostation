@@ -6,7 +6,8 @@
 #include "_exohelpers/_exohelpers.dme"
 #include "automapper/_automapper.dme"
 #include "changelog/_changelog.dme"
+#include "com_verbs/_com_verbs.dme"
 #include "keybinding/_keybinding.dme"
 #include "local_fixes/_local_fixes.dme"
-#include "com_verbs/_com_verbs.dme"
+#include "pets/_pets.dme"
 // --- MODULES END --- //
