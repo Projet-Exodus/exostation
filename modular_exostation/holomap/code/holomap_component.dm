@@ -3,13 +3,12 @@
  */
 /datum/action/toggle_holomap
 	name = "Toggle Holomap"
+	desc = "Faire apparaître une carte holographique de la station, avec divers marqueurs utiles."
 	button_icon = 'modular_exostation/holomap/icons/32x32.dmi'
 	button_icon_state = "map"
+	check_flags = AB_CHECK_CONSCIOUS
 	var/atom/holder = null
 	var/datum/component/holomap/newholomap = null
-
-/datum/action/toggle_holomap/proc/can_use(mob/living/user)
-	return (user && user.mind && user.stat == CONSCIOUS)
 
 /datum/action/toggle_holomap/Trigger(trigger_flags)
 	toggle_summon(holder)
@@ -17,10 +16,6 @@
 /datum/action/toggle_holomap/proc/toggle_summon(mob/living/user)
 	if(!newholomap)
 		return FALSE
-	if(isliving(user))
-		if(!can_use(user))
-			to_chat(user, span_warning("Vous ne pouvez pas effectuer cette action maintenant..."))
-			return FALSE
 	else
 		user = holder.loc //Alright, seems like they clicked the item's action instead.
 	newholomap.summon_holomap(user)
@@ -67,18 +62,28 @@
 	if(slot && slot == ITEM_SLOT_BACKPACK)
 		on_drop(source, equipper)
 		return
-	if(has_use_permission(source, equipper))
-		holobutton.Grant(equipper)
-
-/datum/component/holomap/proc/has_use_permission(datum/source, mob/equipper)
-	return TRUE
+	holobutton.Grant(equipper)
 
 /datum/component/holomap/proc/on_drop(datum/source, mob/user)
 	holobutton.Remove(user)
 
 /datum/component/holomap/Destroy(force)
-	deactivate_holomap(get_user())
 	. = ..()
+	if(holomap_visible)
+		deactivate_holomap(get_user())
+	if(holobutton)
+		QDEL_NULL(holobutton)
+	if(holomap_datum)
+		QDEL_NULL(holomap_datum)
+
+datum/component/holomap/on_source_remove(source)
+	. = ..()
+	if(holomap_visible)
+		deactivate_holomap(get_user())
+	if(holobutton)
+		QDEL_NULL(holobutton)
+	if(holomap_datum)
+		QDEL_NULL(holomap_datum)
 
 // Activate and deactivate holomap
 
