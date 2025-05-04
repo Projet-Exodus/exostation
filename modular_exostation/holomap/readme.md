@@ -10,7 +10,7 @@ Holomaps intégrées aux PDA (avec variante destinée aux ingénieurs et aux sil
 
 ### Procs ou fichiers de TG changés :
 
-- `code\modules\modular_computers\computers\item\pda.dm` : `Initialize(mapload)` : ajout de `return INITIALIZE_HINT_LATELOAD`
+- `code\modules\modular_computers\computers\item\pda.dm` : `Initialize(mapload)` : ajout de `return INITIALIZE_HINT_LATELOAD` - `Destroy` : ajout de `remove_holomap`.
 
 ### Overrides modulaires :
 
