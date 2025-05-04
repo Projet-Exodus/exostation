@@ -44,8 +44,11 @@
 	if(!isatom(parent) || !isitem(parent))
 		return COMPONENT_INCOMPATIBLE
 
+	if(isatom(parent))
 		holobutton.holder = parent
 		holobutton.newholomap = src
+
+	if(istype(parent, /obj/item))
 		var/obj/item/holder = parent
 		RegisterSignal(holder, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
 		RegisterSignal(holder, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
