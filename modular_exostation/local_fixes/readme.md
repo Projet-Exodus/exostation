@@ -1,6 +1,8 @@
 <!-- Ce fichier doit être copié-collé à la racine de votre dossier de module en tant que readme.md -->
 
 https://github.com/Projet-Exodus/Exostation/pull/11
+https://github.com/Projet-Exodus/Exostation/pull/25
+
 
 ## Local Fixes
 
