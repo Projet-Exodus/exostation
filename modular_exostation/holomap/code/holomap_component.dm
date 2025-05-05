@@ -72,6 +72,8 @@
 	if(holomap_visible)
 		deactivate_holomap(get_user())
 	if(holobutton)
+		holobutton.holder = null
+		holobutton.newholomap = null
 		QDEL_NULL(holobutton)
 	if(holomap_datum)
 		QDEL_NULL(holomap_datum)
