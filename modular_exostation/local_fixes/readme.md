@@ -1,6 +1,6 @@
-<!-- Ce fichier doit être copié-collé à la racine de votre dossier de module en tant que readme.md -->
-
 https://github.com/Projet-Exodus/Exostation/pull/11
+https://github.com/Projet-Exodus/Exostation/pull/25
+
 
 ## Local Fixes
 
@@ -16,6 +16,10 @@ Solutions temporaires pour des problèmes ou bugs présents upstream
 
 - `code/datums/screentips/screentips.dm` : édition de #define HINT_ICON_FILE
 - `code/game/atom/_atom.dm` : ne pas désactiver les icônes de screentips
+
+**Pour les unit tests :**
+- Déplacement de `code/modules/unit_tests/area_contents.dm` vers `modular_exostation/local_fixes/disabled_code/area_contents.dm`
+- Désactivation de `area_contents` dans `code/modules/unit_tests/_unit_tests.dm` : pas de commentaire possible, mais aurat dû figurer avant ligne 97 //EXOSTATION EDIT REMOVAL : LOCAL_FIXES Test qui n'est pas cohérent : conflits avec Holomap ? ORIGINAL include "area_contents.dm"
 
 ### Overrides modulaires :
 
