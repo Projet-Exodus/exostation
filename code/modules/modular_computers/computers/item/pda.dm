@@ -350,6 +350,7 @@
 	if(robotact)
 		robotact.tablet = null
 		qdel(robotact)
+	remove_holomap() //EXOSTATION EDIT ADDITION : HOLOMAPS
 	return ..()
 
 ///Silicons don't have the tools (or hands) to make circuits setups with their own PDAs.
