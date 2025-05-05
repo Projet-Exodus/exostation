@@ -346,6 +346,10 @@
 
 /obj/item/modular_computer/pda/silicon/Destroy()
 	silicon_owner = null
+	// EXOSTATION EDIT ADDITION : test
+	if(robotact)
+		robotact.tablet = null
+		qdel(robotact)
 	return ..()
 
 ///Silicons don't have the tools (or hands) to make circuits setups with their own PDAs.
