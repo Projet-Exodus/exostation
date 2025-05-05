@@ -7,6 +7,7 @@
 #include "automapper/_automapper.dme"
 #include "changelog/_changelog.dme"
 #include "com_verbs/_com_verbs.dme"
+#include "holomap/_holomap.dme"
 #include "keybinding/_keybinding.dme"
 #include "local_fixes/_local_fixes.dme"
 #include "pets/_pets.dme"

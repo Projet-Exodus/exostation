@@ -1,0 +1,5 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - rscadd: "Ajout des holomaps, image holographique de la station affichable grâce au PDA. (Adaptation de NSV13)"
+  - qol: "Les holomaps indiquent les escaliers, les ascenseurs et les échelles."
