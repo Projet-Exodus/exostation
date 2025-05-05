@@ -1,4 +1,4 @@
-https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
+https://github.com/Projet-Exodus/Exostation/pull/24
 
 ## Pets
 
@@ -28,4 +28,4 @@ Perroquets : Poly obéit aux ordres du chef ingé pour venir se percher sur son 
 
 ### Crédits :
 Thràvalgur (adaptations)
-Codebases de Skyrat/Nova (commandes de Poly)
+tf-4 & Codebases de Skyrat/Nova (commandes de Poly)
