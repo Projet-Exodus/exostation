@@ -94,7 +94,7 @@
 #include "anonymous_themes.dm"
 #include "antag_conversion.dm"
 #include "antag_moodlets.dm"
-// #include "area_contents.dm" EXOSTATION EDIT REMOVAL : Test qui n'est pas cohérent : conflits avec Holomap ?
+//EXOSTATION EDIT REMOVAL : LOCAL_FIXES Test qui n'est pas cohérent : conflits avec Holomap ? ORIGINAL include "area_contents.dm"
 #include "armor_verification.dm"
 #include "asset_smart_cache.dm"
 #include "atmospherics_sanity.dm"
