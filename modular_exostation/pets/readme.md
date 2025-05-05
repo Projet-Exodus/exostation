@@ -12,7 +12,7 @@ Perroquets : Poly obéit aux ordres du chef ingé pour venir se percher sur son 
 ### Procs ou fichiers de TG changés :
 
 - `code/datums.components/listen_and_repeat.dm` : `on_hear`
-- `code\modules\mob\living\basic\pets\parrot\parrot_ai\_parrot_controller.dm` : /datum/idle_behavior/idle_random_walk/parrot : var
+- `code\modules\mob\living\basic\pets\parrot\parrot_ai\_parrot_controller.dm` : `/datum/idle_behavior/idle_random_walk/parrot` : `var/walk_chance_when_perched`
 
 ### Overrides modulaires :
 
