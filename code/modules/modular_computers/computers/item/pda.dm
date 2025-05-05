@@ -346,10 +346,6 @@
 
 /obj/item/modular_computer/pda/silicon/Destroy()
 	silicon_owner = null
-	// EXOSTATION EDIT ADDITION : test
-	if(robotact)
-		robotact.tablet = null
-		qdel(robotact)
 	remove_holomap() //EXOSTATION EDIT ADDITION : HOLOMAPS
 	return ..()
 
