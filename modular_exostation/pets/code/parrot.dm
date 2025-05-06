@@ -42,7 +42,7 @@
 	if(get_dist(src, human_target) > 1 || buckled) // Only adjacent
 		manual_emote("incline la tête vers [human_target], avant de crier bruyamment et de rester sur place.")
 		return
-	manual_emote("vient se percher docilement sur l'épaule de [human_target], battant des ailes un moment avant de se poser pour de bon.")
+	manual_emote("vient se percher docilement sur [human_target], battant des ailes un moment avant de se poser pour de bon.")
 	if(start_perching(human_target))
 		buckled_to_human = TRUE
 
@@ -54,6 +54,6 @@
 		return
 
 	if(buckled)
-		to_chat(src, span_notice("YoVous n'êtes plus perché sur [human_target]."))
+		to_chat(src, span_notice("Vous n'êtes plus perché sur [human_target]."))
 		buckled.unbuckle_mob(src, TRUE)
 		manual_emote("crie et s'envole de [human_target], volant au loin.")
