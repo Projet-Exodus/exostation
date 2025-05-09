@@ -20,45 +20,46 @@ endmap
 map birdshot
 	#default
 	maxplayers 66
-	votable
+	#votable
 endmap
 
 map deltastation
 	minplayers 50
-	votable
+	#votable
 endmap
 
 map icebox
-	minplayers 25
+	#minplayers 25
 	votable
 endmap
 
 map catwalkstation
-	minplayers 25
+	#minplayers 25
 	votable
 endmap
 
 map metastation
-	minplayers 25
+	#minplayers 25
 	#voteweight 0.5
+	default
 	votable
 	#feedbacklink https://www.youtube.com/watch?v=XG8b7WhANNA
 	#webmap_url https://webmap.affectedarc07.co.uk/maps/tgstation/metastation
 endmap
 
 map tramstation
-	minplayers 35
-	votable
+	#minplayers 35
+	#votable
 endmap
 
 map nebulastation
-	minplayers 35
-	votable
+	#minplayers 35
+	#votable
 endmap
 
 map wawastation
-	votable
-	minplayers 40
+	#votable
+	#minplayers 40
 endmap
 
 # Debug-only maps.
