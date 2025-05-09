@@ -20,17 +20,17 @@ endmap
 map birdshot
 	#default
 	maxplayers 66
-	#votable
+	disabled
 endmap
 
 map deltastation
 	minplayers 50
-	#votable
+	disabled
 endmap
 
 map icebox
-	#minplayers 25
-	votable
+	minplayers 25
+	disabled
 endmap
 
 map catwalkstation
@@ -49,16 +49,16 @@ endmap
 
 map tramstation
 	#minplayers 35
-	#votable
+	disabled
 endmap
 
 map nebulastation
 	#minplayers 35
-	#votable
+	disabled
 endmap
 
 map wawastation
-	#votable
+	disabled
 	#minplayers 40
 endmap
 
