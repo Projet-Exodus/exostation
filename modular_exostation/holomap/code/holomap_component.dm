@@ -59,7 +59,7 @@
 /datum/component/holomap/proc/on_equip(datum/source, mob/equipper, slot)
 	if(!(source || equipper))
 		return
-	if(slot && slot == ITEM_SLOT_BACKPACK)
+	if(slot && slot == ITEM_SLOT_BACK)
 		on_drop(source, equipper)
 		return
 	holobutton.Grant(equipper)

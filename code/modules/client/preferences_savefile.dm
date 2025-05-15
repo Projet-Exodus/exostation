@@ -191,7 +191,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	apply_all_client_preferences()
 
 	//general preferences
-	lastchangelog = savefile.get_entry("lastchangelog", lastchangelog) // exo changelogs needed ?
+	last_exo_changelog = savefile.get_entry("last_exo_changelog", last_exo_changelog) // EXOSTATION EDIT ADDITION - EXO_CHANGELOG
+	lastchangelog = savefile.get_entry("lastchangelog", lastchangelog)
 	be_special = savefile.get_entry("be_special", be_special)
 	default_slot = savefile.get_entry("default_slot", default_slot)
 	chat_toggles = savefile.get_entry("chat_toggles", chat_toggles)
@@ -227,6 +228,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	key_bindings_by_key = get_key_bindings_by_key(key_bindings)
 
 	//Sanitize
+	last_exo_changelog = sanitize_text(last_exo_changelog, initial(last_exo_changelog))  // EXOSTATION EDIT ADDITION - EXO_CHANGELOG
 	lastchangelog = sanitize_text(lastchangelog, initial(lastchangelog))
 	default_slot = sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles = sanitize_integer(toggles, 0, SHORT_REAL_LIMIT-1, initial(toggles))

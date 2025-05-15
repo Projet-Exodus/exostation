@@ -875,7 +875,7 @@
 
 			if (contextual_screentip_returns & CONTEXTUAL_SCREENTIP_SET)
 				var/screentip_images = active_hud.screentip_images
-				/* EXOSTATION EDIT REMOVAL START : BASE_CONFIG : icônes non désactivées.
+				/* EXOSTATION EDIT REMOVAL START - BASE_CONFIG : icônes non désactivées.
 				// Disable screentip images for clients affected by https://www.byond.com/forum/post/2967731
 				if(ISINRANGE(client?.byond_build, MIN_BYOND_BUILD_DISABLE_SCREENTIP_ICONS, MAX_BYOND_BUILD_DISABLE_SCREENTIP_ICONS))
 					screentip_images = FALSE
