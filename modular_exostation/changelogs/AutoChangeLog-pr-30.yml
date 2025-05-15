@@ -1,0 +1,5 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - map: "Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox"
+  - config: "Metastation est la map par défaut et Icebox n'a plus de limite minimale de joueurs"
