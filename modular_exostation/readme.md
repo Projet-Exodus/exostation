@@ -55,7 +55,7 @@ Quand les commentaires en // ne sont pas possibles :
 
 Les "defines" (définitions) ont besoin d'être placées dans le .dme avant les fichiers où elles sont utilisées pour être chargées au bon moment. Cela inclut les "helpers", certaines constantes ("symbolic constants"), etc.
 De ce fait, un fichier de définitions placé dans le dossier `modular_exostation` sera chargé avant nos fichiers, mais après les fichiers de TG. Si le define est utilisé en dehors de nos fichiers modulaires, cela posera un problème.
-Pour cette raison, toutes les définitions qui sont utilisées en dehors des modules **doivent** être déclarées dans un sous-dossier appelé `~exodefines`, dans le dossier `code/__DEFINES` et incluses dans `tgstation.dme`.
+Pour cette raison, toutes les définitions qui sont utilisées en dehors des modules **doivent** être déclarées dans un sous-dossier appelé `exodefines`, dans le dossier `code/__DEFINES` et incluses dans `tgstation.dme`.
 Pour les définitions utilisées dans les modules, elles doivent être déclarées dans le module `modular_exostation/_exodefines`.
 Pour les définitions utilisées dans un seul fichier, les déclarer en début de fichier, puis `#undef MY_DEFINE` à la fin du fichier, pour éviter toute confusion.
 
