@@ -23,3 +23,8 @@
 2025-05-07:
   Thravalgur:
   - rscadd: ' Ajout de commandes verbales pour Poly'
+2025-05-16:
+  Thravalgur:
+  - map: Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox
+  - config: Metastation est la map par défaut et Icebox n'a plus de limite minimale
+      de joueurs
