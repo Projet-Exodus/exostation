@@ -29,13 +29,13 @@ map deltastation
 endmap
 
 map icebox
-	minplayers 25
-	disabled
+	#minplayers 25
+	votable
 endmap
 
 map catwalkstation
-	#minplayers 25
-	votable
+	minplayers 25
+	disabled
 endmap
 
 map metastation
