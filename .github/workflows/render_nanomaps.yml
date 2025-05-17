@@ -29,6 +29,8 @@ jobs:
     - name: 'Update Branch'
       uses: actions/checkout@v4
       with:
+        fetch-depth: 25
+        persist-credentials: false      
         token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
 
     - name: Branch
@@ -44,7 +46,7 @@ jobs:
     - name: 'Commit Maps and open PR'
       run: |
         git config --local user.email "action@github.com"
-        git config --local user.name "NanoMap Generation"
+        git config --local user.name "NanoMap Generation [bot]"
         git pull origin master
         git commit -m "NanoMap Auto-Update (`date`)" -a || true
         git push -f -u origin nanomap-render
