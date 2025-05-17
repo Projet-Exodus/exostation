@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	/// Ensures that we always load the last used save, QOL
 	var/default_slot = 1
 	/// The maximum number of slots we're allowed to contain
-	var/max_save_slots = 3
+	var/max_save_slots = 6 // EXOSTATION EDIT CHANGE - BASE_CONFIG
 
 	/// Bitflags for communications that are muted
 	var/muted = NONE
@@ -20,6 +20,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	/// Cached changelog size, to detect new changelogs since last join
 	var/lastchangelog = ""
+
+	/// EXOSTATION EDIT ADDITION START - EXO_CHANGELOGS
+	var/last_exo_changelog = ""
+	/// EXOSTATION EDIT ADDITION END - EXO_CHANGELOGS
 
 	/// List of ROLE_X that the client wants to be eligible for
 	var/list/be_special = list() //Special role selection

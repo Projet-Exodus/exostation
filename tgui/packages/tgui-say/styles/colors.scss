@@ -27,6 +27,9 @@ $_channel_map: (
   'Supp': hsl(33.7, 44.9%, 49.8%),
   'Svc': hsl(88.1, 60.6%, 40.8%),
   'Synd': hsl(359.1, 31.8%, 42.5%),
+  // EXOSTATION EDIT ADDITION  START - COM_VERBS : LOOC
+  'LOOC': hsl(20, 100%, 86%),
+  'Whis': hsl(213.6, 37.9%, 74.1%), // EXOSTATION EDIT ADDITION END
 );
 
 $channel_keys: map.keys($_channel_map) !default;

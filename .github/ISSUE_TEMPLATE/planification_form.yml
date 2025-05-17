@@ -1,0 +1,29 @@
+name: Planification
+description: Planification d'ajouts/retraits/changements.
+title: "[Planning] "
+labels: ["planning"]
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: "Contenu :"
+      description: |
+        Décrivez l'ajout/retrait/changement.
+    validations:
+      required: true
+  - type: textarea
+    id: interest
+    attributes:
+      label: "Améliorations attendues :"
+      description: |
+        Intérêt de l'ajout/retrait/changement
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: "Notes utiles :"
+      description: |
+        Notes utiles (si c'est un élément à importer/adapter, si ce sera une création, si c'est long/difficile)
+    validations:
+      required: false

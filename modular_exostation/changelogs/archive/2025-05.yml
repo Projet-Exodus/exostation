@@ -1,0 +1,30 @@
+2025-05-02:
+  Thravalgur:
+  - rscadd: Canal Local OOC
+  - admin: Préférence admin pour voir le canal LOOC
+  - server: Personnalisation, paramétrage de la database et de la whitelist
+  - config: Configuration de base du serveur Exostation (sujette à changements ultérieurs)
+  - qol: Raccourcis claviers azerty
+  - rscadd: Changelogs séparés
+  - spellcheck: Traduction des niveaux d'alertes (config) et des raccourcis claviers
+  - bugfix: Remplacement temporaire de la taille des icônes de screentips, pour ne
+      pas devoir les désactiver. Peut mal ressortir dans certaines versions antérieures
+      de BYOND (à partir de la version 516.1657)
+  - bugfix: Maj+C pour changer de mode de déplacement (courir/marcher)
+2025-05-04:
+  Thravalgur:
+  - rscadd: Ajout d'un canal Whisper pour chuchoter sans formatage de texte.
+  - qol: Le canal Whisper fait partie des canaux qu'on peut faire défiler avec Tab.
+2025-05-06:
+  Thravalgur:
+  - rscadd: Ajout des holomaps, image holographique de la station affichable grâce
+      au PDA. (Adaptation de NSV13)
+  - qol: Les holomaps indiquent les escaliers, les ascenseurs et les échelles.
+2025-05-07:
+  Thravalgur:
+  - rscadd: ' Ajout de commandes verbales pour Poly'
+2025-05-16:
+  Thravalgur:
+  - map: Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox
+  - config: Metastation est la map par défaut et Icebox n'a plus de limite minimale
+      de joueurs
