@@ -13,7 +13,7 @@ jobs:
     name: 'Generate NanoMaps'
     runs-on: ubuntu-22.04
     permissions:
-      contents: write    
+      contents: write
     steps:
     - name: Generate App Token
       id: app-token-generation
@@ -34,14 +34,13 @@ jobs:
 
     - name: Branch
       run: |
-        git fetch origin master:refs/remotes/origin/master      
+        git fetch origin master:refs/remotes/origin/master
         git branch -f nanomap-render
         git checkout nanomap-render
         git reset --hard origin/master
 
     - name: 'Generate Maps'
-      run: |
-        bash modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh
+      run: './modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh'
 
     - name: 'Commit Maps and open PR'
       run: |
