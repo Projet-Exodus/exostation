@@ -12,6 +12,8 @@ jobs:
   generate_maps:
     name: 'Generate NanoMaps'
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write    
     steps:
     - name: Generate App Token
       id: app-token-generation
