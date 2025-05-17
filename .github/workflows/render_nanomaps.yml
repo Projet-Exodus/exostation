@@ -12,6 +12,8 @@ jobs:
   generate_maps:
     name: 'Generate NanoMaps'
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
     - name: Generate App Token
       id: app-token-generation
@@ -27,10 +29,12 @@ jobs:
     - name: 'Update Branch'
       uses: actions/checkout@v4
       with:
+        fetch-depth: 0
         token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
 
     - name: Branch
       run: |
+        git fetch origin master:refs/remotes/origin/master
         git branch -f nanomap-render
         git checkout nanomap-render
         git reset --hard origin/master
@@ -42,7 +46,7 @@ jobs:
     - name: 'Commit Maps and open PR'
       run: |
         git config --local user.email "action@github.com"
-        git config --local user.name "NanoMap Generation"
+        git config --local user.name "NanoMap Generation [bot]"
         git pull origin master
         git commit -m "NanoMap Auto-Update (`date`)" -a || true
         git push -f -u origin nanomap-render
