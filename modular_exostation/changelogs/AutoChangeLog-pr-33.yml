@@ -1,0 +1,5 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - rscadd: "Ajout des nanomaps, des mini-cartes intégrées aux consoles de la sécurité et de la medbay"
+  - qol: "Les crew monitors peuvent afficher l'emplacement précis d'une personne sur une mini-carte si ses sensors sont activés. Les camera consoles permettent de sélectionner une caméra depuis une mini-carte."
