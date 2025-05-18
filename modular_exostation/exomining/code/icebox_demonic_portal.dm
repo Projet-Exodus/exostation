@@ -6,15 +6,7 @@
 	switch(loot)
 		if(1)
 			new /obj/item/clothing/neck/cloak/wolf_coat(loc)
-			var/static/list/funny_wands = list(
-				/obj/item/gun/magic/wand/teleport,
-				/obj/item/gun/magic/wand/zap,
-				/obj/item/gun/magic/wand/freeze,
-				/obj/item/gun/magic/wand/repulse,
-				/obj/item/gun/magic/wand/teleport_rune,
-				/obj/item/gun/magic/wand/swap)
-			var/picked_type = pick(funny_wands)
-			new picked_type(loc)
+			new /obj/item/gun/magic/wand/teleport(loc)
 		if(2)
 			new /obj/item/clothing/glasses/godeye(loc)
 		if(3)
