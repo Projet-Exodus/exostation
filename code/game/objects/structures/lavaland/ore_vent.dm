@@ -68,6 +68,8 @@
 	/// We use a cooldown to prevent players from tapping boulders rapidly from vents.
 	COOLDOWN_DECLARE(manual_vent_cooldown)
 
+	var/miner_count = 0 //EXOSTATION EDIT ADDITION - EXOMINING : équilibrage en fonction des mineurs présents.
+
 /obj/structure/ore_vent/Initialize(mapload)
 	if(mapload)
 		generate_description()
@@ -241,11 +243,9 @@
  * Will summon a number of waves of mobs, ending in the vent being tapped after the final wave.
  */
 /obj/structure/ore_vent/proc/start_wave_defense()
-// EXOSTATION EDIT ADDITION START - EXOMINING : prise en compte du nombre de mineurs
-	var/miner_count = 0
+// EXOSTATION EDIT ADDITION & CHANGE START - EXOMINING : prise en compte du nombre de mineurs
 	for(var/mob/living/miner in range(20, src))
 		miner_count++
-// EXOSTATION EDIT ADDITION END - EXOMINING
 	AddComponent(\
 		/datum/component/spawner, \
 		spawn_types = defending_mobs, \
@@ -256,6 +256,7 @@
 		spawn_distance = 4, \
 		spawn_distance_exclude = 3, \
 	)
+// EXOSTATION EDIT ADDITION & CHANGE END - EXOMINING
 	COOLDOWN_START(src, wave_cooldown, wave_timer)
 	addtimer(CALLBACK(src, PROC_REF(handle_wave_conclusion)), wave_timer)
 	icon_state = icon_state_tapped
