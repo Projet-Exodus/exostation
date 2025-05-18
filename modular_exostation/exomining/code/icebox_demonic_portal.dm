@@ -12,8 +12,7 @@
 				/obj/item/gun/magic/wand/freeze,
 				/obj/item/gun/magic/wand/repulse,
 				/obj/item/gun/magic/wand/teleport_rune,
-				/obj/item/gun/magic/wand/swap,
-				/obj/item/gun/magic/wand/babel,)
+				/obj/item/gun/magic/wand/swap)
 			var/picked_type = pick(funny_wands)
 			new picked_type(loc)
 		if(2)
