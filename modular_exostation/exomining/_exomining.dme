@@ -8,5 +8,4 @@
 #include "code\safer_chasm.dm"
 #include "code\safer_lava.dm"
 #include "code\safer_stomach.dm"
-#include "code\safer_tendril.dm"
 #include "code\voucher_sets.dm"
