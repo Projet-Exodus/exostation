@@ -241,12 +241,17 @@
  * Will summon a number of waves of mobs, ending in the vent being tapped after the final wave.
  */
 /obj/structure/ore_vent/proc/start_wave_defense()
+// EXOSTATION EDIT ADDITION START - EXOMINING : prise en compte du nombre de mineurs
+	var/miner_count = 0
+	for(var/mob/living/miner in range(20, src))
+		miner_count++
+// EXOSTATION EDIT ADDITION END - EXOMINING
 	AddComponent(\
 		/datum/component/spawner, \
 		spawn_types = defending_mobs, \
-		spawn_time = (10 SECONDS + (5 SECONDS * (boulder_size/5))), \
-		max_spawned = 10, \
-		max_spawn_per_attempt = (1 + (boulder_size/5)), \
+		spawn_time = (10 SECONDS + ((10 SECONDS - (miner_count)) * (boulder_size/5))), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original 5 SECONDS
+		max_spawned = (4 + (miner_count) + (boulder_size/5)), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original 10
+		max_spawn_per_attempt = (boulder_size/5), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original : (1 + (boulder_size/5))
 		spawn_text = "emerges to assault", \
 		spawn_distance = 4, \
 		spawn_distance_exclude = 3, \
