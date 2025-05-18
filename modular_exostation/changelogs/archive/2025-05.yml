@@ -28,3 +28,10 @@
   - map: Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox
   - config: Metastation est la map par défaut et Icebox n'a plus de limite minimale
       de joueurs
+2025-05-18:
+  Thravalgur:
+  - rscadd: Ajout des nanomaps, des mini-cartes intégrées aux consoles de la sécurité
+      et de la medbay
+  - qol: Les crew monitors peuvent afficher l'emplacement précis d'une personne sur
+      une mini-carte si ses sensors sont activés. Les camera consoles permettent de
+      sélectionner une caméra depuis une mini-carte.
