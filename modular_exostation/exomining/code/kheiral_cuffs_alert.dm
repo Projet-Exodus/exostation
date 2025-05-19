@@ -5,7 +5,7 @@
 	var/list/alert_channels = list(RADIO_CHANNEL_MEDICAL, RADIO_CHANNEL_SUPPLY)
 
 /obj/item/kheiral_cuffs/Initialize(mapload)
-	..()
+	. = ..()
 	radio = new /obj/item/radio/headset/silicon/ai(src)
 
 /obj/item/kheiral_cuffs/connect_kheiral_network(mob/living/user)
