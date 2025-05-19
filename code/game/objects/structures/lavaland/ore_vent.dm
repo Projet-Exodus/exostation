@@ -249,7 +249,7 @@
 	AddComponent(\
 		/datum/component/spawner, \
 		spawn_types = defending_mobs, \
-		spawn_time = (10 SECONDS + ((10 SECONDS - miner_count) * (boulder_size/5))), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original 5 SECONDS
+		spawn_time = (10 + ((10 - miner_count) * (boulder_size/5))) SECONDS, \ //EXOSTATION EDIT CHANGE - EXOMINING : Original 5 SECONDS
 		max_spawned = (4 + miner_count + (boulder_size/5)), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original 10
 		max_spawn_per_attempt = (boulder_size/5), \ //EXOSTATION EDIT CHANGE - EXOMINING : Original : (1 + (boulder_size/5))
 		spawn_text = "emerges to assault", \
