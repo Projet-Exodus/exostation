@@ -26,7 +26,6 @@
 
 // Override to climb calmly out of a chasm instead of hurling yourself in a random direction
 /obj/effect/abstract/chasm_storage/on_revive(mob/living/escapee)
-	SIGNAL_HANDLER
 	var/turf/turf = get_turf(src)
 
 	if(!turf.GetComponent(/datum/component/chasm))
