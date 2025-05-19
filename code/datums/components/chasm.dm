@@ -220,7 +220,7 @@
 			fallen_mob.death(TRUE)
 			fallen_mob.apply_damage(300)
 			EXOSTATION EDIT REMOVAL END */
-			on_living_fallen(dropped_thing) // EXOSTATION EDIT ADDITION - EXOMINING : Ne plus mourir en tombant
+			on_living_fallen(fallen_mob) // EXOSTATION EDIT ADDITION - EXOMINING : Ne plus mourir en tombant
 
 	falling_atoms -= falling_ref
 
