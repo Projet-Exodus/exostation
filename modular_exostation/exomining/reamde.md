@@ -14,6 +14,7 @@ Diverses modifications (rééquilibrage, qol) pour le minage.
 - `code\modules\mob\living\basic\lavaland\bileworm\bileworm_actions.dm` : ajout de `target.AddElement(/datum/element/safer_stomach)`
 - `code\datums\components\chasm.dm` : remplacement par le proc `on_living_fallen` dans le proc `/datum/component/chasm/proc/drop(atom/movable/dropped_thing)` pour la condition `else if(isliving(dropped_thing))`
 - `code\game\objects\structures\lavaland\ore_vent.dm` : édition du proc `start_wave_defense()`
+- `code\modules\unit_tests\fish_unit_tests.dm` : édition de `/datum/unit_test/fish_rescue_hook/Run()`
 
 ### Overrides modulaires :
 
