@@ -1,6 +1,34 @@
 /obj/structure/ore_vent
 	var/drone_vent_name = null
+	var/miner_count = null
 
+/**
+ * Prise en compte du nombre de mineurs, rééquilibrage de la défense d'un node
+ */
+/obj/structure/ore_vent/start_wave_defense()
+	update_miner_count()
+	AddComponent(\
+		/datum/component/spawner, \
+		spawn_types = defending_mobs, \
+		spawn_time = (10 SECONDS + ((10 - miner_count) SECONDS * (boulder_size/5))), \
+		max_spawned = (4 + miner_count + (boulder_size/5)), \
+		max_spawn_per_attempt = (boulder_size/5), \
+		spawn_text = "emerges to assault", \
+		spawn_distance = 4, \
+		spawn_distance_exclude = 3, \
+	)
+	COOLDOWN_START(src, wave_cooldown, wave_timer)
+	addtimer(CALLBACK(src, PROC_REF(handle_wave_conclusion)), wave_timer)
+	icon_state = icon_state_tapped
+	update_appearance(UPDATE_ICON_STATE)
+
+/obj/structure/ore_vent/proc/update_miner_count()
+	for(var/mob/living/miner in range(20, src))
+		miner_count++
+
+/**
+ * Alerte des drones sur les ore vents
+ */
 /mob/living/basic/node_drone/arrive(obj/structure/ore_vent/parent_vent)
 	. = ..()
 	if(isnull(attached_vent.drone_vent_name))

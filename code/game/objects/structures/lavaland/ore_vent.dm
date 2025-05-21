@@ -68,8 +68,6 @@
 	/// We use a cooldown to prevent players from tapping boulders rapidly from vents.
 	COOLDOWN_DECLARE(manual_vent_cooldown)
 
-	var/miner_count = null //EXOSTATION EDIT ADDITION - EXOMINING : équilibrage en fonction des mineurs présents.
-
 /obj/structure/ore_vent/Initialize(mapload)
 	if(mapload)
 		generate_description()
@@ -243,28 +241,22 @@
  * Will summon a number of waves of mobs, ending in the vent being tapped after the final wave.
  */
 /obj/structure/ore_vent/proc/start_wave_defense()
-// EXOSTATION EDIT ADDITION & CHANGE START - EXOMINING : prise en compte du nombre de mineurs
-	update_miner_count()
+/** EXOSTATION EDIT REMOVAL START - EXOMINING : prise en compte du nombre de mineurs
 	AddComponent(\
 		/datum/component/spawner, \
 		spawn_types = defending_mobs, \
-		spawn_time = (10 SECONDS + ((10 - miner_count) SECONDS * (boulder_size/5))), \
-		max_spawned = (4 + miner_count + (boulder_size/5)), \
-		max_spawn_per_attempt = (boulder_size/5), \
+		spawn_time = (10 SECONDS + (5 SECONDS * (boulder_size/5))), \
+		max_spawned = 10, \
+		max_spawn_per_attempt = (1 + (boulder_size/5)), \
 		spawn_text = "emerges to assault", \
 		spawn_distance = 4, \
 		spawn_distance_exclude = 3, \
 	)
-// EXOSTATION EDIT ADDITION & CHANGE END - EXOMINING
 	COOLDOWN_START(src, wave_cooldown, wave_timer)
 	addtimer(CALLBACK(src, PROC_REF(handle_wave_conclusion)), wave_timer)
 	icon_state = icon_state_tapped
 	update_appearance(UPDATE_ICON_STATE)
-
-/obj/structure/ore_vent/proc/update_miner_count()
-	for(var/mob/living/miner in range(20, src))
-		miner_count++
-
+EXOSTATION EDIT ADDITION & CHANGE END - EXOMINING */
 /**
  * Called when the wave defense event ends, after a variable amount of time in start_wave_defense.
  *
