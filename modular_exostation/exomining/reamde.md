@@ -22,6 +22,8 @@ Diverses modifications (rééquilibrage, qol) pour le minage.
 - `code\modules\mining\equipment\kheiral_cuffs.dm` : procs `/obj/item/kheiral_cuffs/Initialize(mapload)`, `/obj/item/kheiral_cuffs/connect_kheiral_network(mob/living/user)`, `/obj/item/kheiral_cuffs/remove_kheiral_network(mob/user)` overrides dans `kheiral_cuffs_alert.dm`
 - `code\datums\components\chasm.dm` : proc `/obj/effect/abstract/chasm_storage/proc/on_revive(mob/living/escapee)` overrides dans `safer_climb_chasm.dm`
 - `code\game\turfs\open\lava.dm` : vars de `/turf/open/lava` dans `safer_lava.dm`
+- `code\game\objects\structures\lavaland\ore_vent.dm` : proc `start_wave_defense()` override dans `modular_exostation\exomining\code\ore_vents_spawn_node_alert.dm`
+- `code\modules\mob\living\basic\lavaland\node_drone\node_drone.dm` : procs `/mob/living/basic/node_drone/arrive(obj/structure/ore_vent/parent_vent)` & `/mob/living/basic/node_drone/pre_escape(success)` override dans `modular_exostation\exomining\code\ore_vents_spawn_node_alert.dm`
 
 ### Defines :
 
