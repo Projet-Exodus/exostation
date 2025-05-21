@@ -211,6 +211,7 @@
 		var/mob/living/fallen_mob = dropped_thing
 		REMOVE_TRAIT(fallen_mob, TRAIT_NO_TRANSFORM, REF(src))
 		if (fallen_mob.stat != DEAD)
+			/* EXOSTATION EDIT REMOVAL START - EXOMINING : Ne plus mourir en tombant
 			fallen_mob.investigate_log("has died from falling into a chasm.", INVESTIGATE_DEATHS)
 			if(issilicon(fallen_mob))
 				//Silicons are held together by hopes and dreams, unfortunately, I'm having a nightmare
@@ -218,6 +219,8 @@
 				fallen_borg.mmi = null
 			fallen_mob.death(TRUE)
 			fallen_mob.apply_damage(300)
+			EXOSTATION EDIT REMOVAL END */
+			on_living_fallen(fallen_mob) // EXOSTATION EDIT ADDITION - EXOMINING : Ne plus mourir en tombant
 
 	falling_atoms -= falling_ref
 

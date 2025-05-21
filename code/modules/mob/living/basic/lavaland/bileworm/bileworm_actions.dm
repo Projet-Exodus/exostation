@@ -126,3 +126,5 @@
 	playsound(devourer, 'sound/effects/splat.ogg', 50, TRUE)
 	//to be received on death
 	target.forceMove(devourer)
+	target.AddElement(/datum/element/safer_stomach) // EXOSTATION EDIT ADDITION - EXOMINING : Preserve mob, has to go here because of sleep loop
+
