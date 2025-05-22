@@ -20,7 +20,7 @@
 
 /datum/idle_behavior/idle_random_walk/parrot
 	///chance of us moving while perched
-	var/walk_chance_when_perched = 5
+	var/walk_chance_when_perched = 1 // EXOSTATION EDIT CHANGE - PETS : Poly plus affectueuse ORIGINAL : var/walk_chance_when_perched = 5
 
 /datum/idle_behavior/idle_random_walk/parrot/perform_idle_behavior(seconds_per_tick, datum/ai_controller/controller)
 	var/mob/living/living_pawn = controller.pawn

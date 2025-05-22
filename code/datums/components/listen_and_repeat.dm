@@ -71,6 +71,11 @@
 
 	if(over_radio && prob(RADIO_IGNORE_CHANCE))
 		return
+	// EXOSTATION EDIT ADDITION START - PETS : parrot poly commands
+	var/mob/living/basic/parrot/maybe_parrot = parent
+	if(!over_radio && istype(maybe_parrot))
+		maybe_parrot.check_command(message, speaker)
+	// EXOSTATION EDIT ADDITION END - PETS : parrot poly commands
 
 	var/number_of_excess_strings = LAZYLEN(speech_buffer) - MAX_SPEECH_BUFFER_SIZE
 	if(number_of_excess_strings > 0) // only remove if we're overfull

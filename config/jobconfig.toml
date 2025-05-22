@@ -110,8 +110,8 @@
 "# Playtime Requirements" = 0
 "# Required Account Age" = 0
 "# Required Character Age" = 0
-"# Spawn Positions" = 1
-"# Total Positions" = 1
+"Spawn Positions" = 0
+"Total Positions" = 0
 
 [COOK]
 "# Playtime Requirements" = 0
@@ -138,8 +138,8 @@
 "# Playtime Requirements" = 120
 "# Required Account Age" = 21
 "# Required Character Age" = 0
-"# Spawn Positions" = 3
-"# Total Positions" = 0
+"Spawn Positions" = 3
+"Total Positions" = 3
 
 [DETECTIVE]
 "# Playtime Requirements" = 300
@@ -196,8 +196,8 @@
 "# Playtime Requirements" = 0
 "# Required Account Age" = 0
 "# Required Character Age" = 0
-"# Spawn Positions" = 1
-"# Total Positions" = 1
+"Spawn Positions" = 0
+"Total Positions" = 0
 
 [PARAMEDIC]
 "# Playtime Requirements" = 0
@@ -275,8 +275,8 @@
 "# Playtime Requirements" = 6000
 "# Required Account Age" = 7
 "# Required Character Age" = 0
-"# Spawn Positions" = 0
-"# Total Positions" = 0
+"Spawn Positions" = 1
+"Total Positions" = 1
 
 [WARDEN]
 "# Playtime Requirements" = 300

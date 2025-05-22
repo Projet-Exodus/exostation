@@ -1,4 +1,11 @@
-export type Channel = 'Say' | 'Radio' | 'Me' | 'OOC' | 'Admin';
+export type Channel =
+  | 'Say'
+  | 'Radio'
+  | 'Me'
+  | 'Whis'
+  | 'LOOC'
+  | 'OOC'
+  | 'Admin'; // EXOSTATION EDIT ADDITION - COM_VERBS : LOOC, Whis & prettier
 
 /**
  * ### ChannelIterator
@@ -8,9 +15,18 @@ export type Channel = 'Say' | 'Radio' | 'Me' | 'OOC' | 'Admin';
  */
 export class ChannelIterator {
   private index: number = 0;
-  private readonly channels: Channel[] = ['Say', 'Radio', 'Me', 'OOC', 'Admin'];
+  private readonly channels: Channel[] = [
+    // EXOSTATION EDIT ADDITION START - COM_VERBS : LOOC, WHIS & prettier
+    'Say',
+    'Radio',
+    'Me',
+    'Whis',
+    'LOOC',
+    'OOC',
+    'Admin',
+  ]; // EXOSTATION EDIT ADDITION END
   private readonly blacklist: Channel[] = ['Admin'];
-  private readonly quiet: Channel[] = ['OOC', 'Admin'];
+  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin']; // EXOSTATION EDIT ADDITION - COM_VERBS : LOOC
 
   public next(): Channel {
     if (this.blacklist.includes(this.channels[this.index])) {

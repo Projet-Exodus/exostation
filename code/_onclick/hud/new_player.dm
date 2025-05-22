@@ -432,7 +432,7 @@
 
 /atom/movable/screen/lobby/button/bottom/changelog_button/Click(location, control, params)
 	. = ..()
-	usr.client?.changelog()
+	usr.client?.exo_changelog() // EXOSTATION EDIT CHANGE - EXO_CHANGELOG : original : usr.client?.changelog()
 
 /atom/movable/screen/lobby/button/bottom/crew_manifest
 	name = "View Crew Manifest"

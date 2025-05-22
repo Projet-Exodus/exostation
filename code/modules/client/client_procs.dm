@@ -531,10 +531,12 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	apply_clickcatcher()
 
-	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+	// EXOSTATION EDIT ADDITION START - EXO_CHANGELOG : modification de lastchangelog, changelog_hash et changelog en last_exo_changelog, exo_changelog_hash et exochangelog
+	if(prefs.last_exo_changelog != GLOB.exo_changelog_hash) //bolds the changelog button on the interface so we know there are updates. Valeur d'origine : 	if(prefs.lastchangelog != GLOB.changelog_hash)
+		to_chat(src, span_info("Vous avez des mises à jour non-lues dans le changelog d'Exostation.")) // traduction FR
 		if(CONFIG_GET(flag/aggressive_changelog))
-			changelog()
+			exo_changelog() // Valeur d'origine : changelog()
+		// EXOSTATION EDIT ADDITION END - EXO_CHANGELOG
 		else
 			winset(src, "infobuttons.changelog", "font-style=bold")
 

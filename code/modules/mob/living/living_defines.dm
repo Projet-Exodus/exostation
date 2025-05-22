@@ -36,7 +36,7 @@
 	var/fireloss = 0
 
 	/// The movement intent of the mob (run/wal)
-	var/move_intent = MOVE_INTENT_RUN
+	var/move_intent =  MOVE_INTENT_WALK // EXOSTATION EDIT CHANGE - BASE_CONFIG : Orignal MOVE_INTENT_RUN
 
 	/// Rate at which fire stacks should decay from this mob
 	var/fire_stack_decay_rate = -0.05
