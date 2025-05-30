@@ -73,6 +73,7 @@
 	contains = list(/obj/item/portable_wind_turbine/loaded)
 	crate_name = "wind turbine crate"
 
+/** EXOSTATION EDIT REMOVAL START - MODERATION
 /datum/supply_pack/imports/bananium
 	name = "A Single Sheet of Bananium"
 	desc = "Don't let the clown know that he can order this. It costs a fortune even for this much."
@@ -80,6 +81,7 @@
 	contains = list(/obj/item/stack/sheet/mineral/bananium)
 	crate_name = "bananium sheet crate"
 	discountable = SUPPLY_PACK_RARE_DISCOUNTABLE
+	EXOSTATION EDIT REMOVAL END */
 
 /datum/supply_pack/imports/dumpstercorpse
 	name = "A....Dumpster?"

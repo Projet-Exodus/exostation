@@ -144,10 +144,10 @@ Charged extracts:
 
 /obj/item/slimecross/charged/pyrite
 	colour = SLIME_TYPE_PYRITE
-	effect_desc = "Creates bananium. Oh no."
+	effect_desc = "Creates bluespace bananas. Oh no." // EXOSTATION EDIT CHANGE - MODERATION : Original : "Creates bananium. Oh no."
 
 /obj/item/slimecross/charged/pyrite/do_effect(mob/user)
-	new /obj/item/stack/sheet/mineral/bananium(get_turf(user), 10)
+	new /obj/item/food/grown/banana/bluespace(get_turf(user), 10) // EXOSTATION EDIT CHANGE - MODERATION : Original :/obj/item/stack/sheet/mineral/bananium(get_turf(user), 10)
 	user.visible_message(span_warning("[src] solidifies with a horrifying banana stench!"))
 	..()
 

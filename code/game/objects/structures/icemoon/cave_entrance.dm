@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/diamond = 25,
-	/obj/item/stack/ore/bananium = 5,
+	/* /obj/item/stack/ore/bananium = 5, EXOSTATION EDIT REMOVAL - MODERATION*/
 	/obj/item/stack/ore/titanium = 75,
 	))
 
