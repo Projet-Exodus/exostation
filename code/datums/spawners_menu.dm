@@ -22,6 +22,7 @@
 /datum/spawners_menu/ui_static_data(mob/user)
 	var/list/data = list()
 	data["spawners"] = list()
+/** EXOSTATION EDIT REMOVAL START - MODERATION : pas de ghost roles via le menu spawners
 	for(var/spawner in GLOB.mob_spawners)
 		var/list/this = list()
 		this["name"] = spawner
@@ -45,6 +46,7 @@
 			this["infinite"] += mob_spawner.infinite_use
 		if(this["amount_left"] > 0 || this["infinite"])
 			data["spawners"] += list(this)
+EXOSTATION EDIT REMOVAL END */
 	for(var/mob_type in GLOB.joinable_mobs)
 		var/list/this = list()
 		this["name"] = mob_type

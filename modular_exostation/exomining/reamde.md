@@ -18,7 +18,6 @@ Diverses modifications (rééquilibrage, qol) pour le minage.
 
 ### Overrides modulaires :
 
-- `\code\game\objects\structures\icemoon\cave_entrance.dm` : proc `/obj/effect/collapsing_demonic_portal/drop_loot()` override dans `icebox_demonic_portal.dm`
 - `code\modules\mining\equipment\kheiral_cuffs.dm` : procs `/obj/item/kheiral_cuffs/Initialize(mapload)`, `/obj/item/kheiral_cuffs/connect_kheiral_network(mob/living/user)`, `/obj/item/kheiral_cuffs/remove_kheiral_network(mob/user)` overrides dans `kheiral_cuffs_alert.dm`
 - `code\datums\components\chasm.dm` : proc `/obj/effect/abstract/chasm_storage/proc/on_revive(mob/living/escapee)` overrides dans `safer_climb_chasm.dm`
 - `code\game\turfs\open\lava.dm` : vars de `/turf/open/lava` dans `safer_lava.dm`

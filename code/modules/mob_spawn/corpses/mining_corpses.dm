@@ -43,7 +43,7 @@
 /obj/effect/mob_spawn/corpse/human/legioninfested/proc/select_outfit()
 	var/corpse_theme = pick_weight(list(
 		"Miner" = 64,
-		"Clown" = 5,
+		// "Clown" = 5, EXOSTATION EDIT REMOVAL - MODERATION
 		"Ashwalker" = 15,
 		"Golem" = 10,
 		pick(list(
@@ -61,8 +61,10 @@
 			return /datum/outfit/consumed_ashwalker
 		if("Golem")
 			return /datum/outfit/consumed_golem
+/** EXOSTATION EDIT REMOVAL START - MODERATION
 		if("Clown")
 			return /datum/outfit/consumed_clown
+EXOSTATION EDIT REMOVAL END - MODERATION */
 		if("Cultist")
 			return /datum/outfit/consumed_cultist
 		if("Dame")
@@ -85,7 +87,7 @@
 /obj/effect/mob_spawn/corpse/human/legioninfested/snow/select_outfit()
 	var/corpse_theme = pick_weight(list(
 		"Miner" = 64,
-		"Clown" = 5,
+		// "Clown" = 5, EXOSTATION EDIT REMOVAL - MODERATION
 		"Golem" = 15,
 		"Settler" = 10,
 		pick(list(
@@ -103,8 +105,10 @@
 			return /datum/outfit/consumed_ice_settler
 		if("Heremoth")
 			return /datum/outfit/consumed_heremoth
+/** EXOSTATION EDIT REMOVAL START - MODERATION
 		if("Clown")
 			return /datum/outfit/consumed_clown
+EXOSTATION EDIT REMOVAL END - MODERATION */
 		if("Cultist")
 			return /datum/outfit/consumed_cultist
 		if("Golem")
@@ -225,7 +229,7 @@
 		l_pocket = /obj/item/knife/combat/bone
 	if(prob(30))
 		r_pocket = /obj/item/knife/combat/bone
-
+/** EXOSTATION EDIT REMOVAL START - MODERATION
 //takes a lot from the clown job, notably NO PDA and different backpack loot + pocket goodies
 /datum/outfit/consumed_clown
 	name = "Legion-Consumed Clown"
@@ -274,7 +278,7 @@
 	. = ..()
 	if(drop_a_pie_cannon)
 		new /obj/item/pneumatic_cannon/pie(get_turf(clown))
-
+EXOSTATION EDIT REMOVAL END - MODERATION */
 /datum/outfit/consumed_golem
 	name = "Legion-Consumed Golem"
 	//Oops! All randomized!

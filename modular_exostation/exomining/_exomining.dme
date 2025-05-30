@@ -1,6 +1,5 @@
 #include "_exomining.dm"
 
-#include "code\icebox_demonic_portal.dm"
 #include "code\kheiral_cuffs_alert.dm"
 #include "code\legion_chest.dm"
 #include "code\megafauna_sleep.dm"

@@ -173,7 +173,7 @@
 /obj/machinery/anomalous_crystal/ex_act()
 	ActivationReaction(null, ACTIVATE_BOMB)
 	return TRUE
-
+/* EXOSTATION REMOVAL START - MODERATION : no fun allowed
 /obj/machinery/anomalous_crystal/honk //Revives the dead, but strips and equips them as a clown
 	observer_desc = "This crystal revives targets around it as clowns. Oh, that's horrible...."
 	activation_method = ACTIVATE_TOUCH
@@ -212,7 +212,7 @@
 		clowned_mob_refs += clown_ref
 
 	return TRUE
-
+**/
 /// Transforms the area to look like a new one
 /obj/machinery/anomalous_crystal/theme_warp
 	observer_desc = "This crystal warps the area around it to a theme."
