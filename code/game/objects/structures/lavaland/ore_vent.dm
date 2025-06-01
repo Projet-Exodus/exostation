@@ -241,6 +241,7 @@
  * Will summon a number of waves of mobs, ending in the vent being tapped after the final wave.
  */
 /obj/structure/ore_vent/proc/start_wave_defense()
+/** EXOSTATION EDIT REMOVAL START - EXOMINING : prise en compte du nombre de mineurs
 	AddComponent(\
 		/datum/component/spawner, \
 		spawn_types = defending_mobs, \
@@ -255,7 +256,7 @@
 	addtimer(CALLBACK(src, PROC_REF(handle_wave_conclusion)), wave_timer)
 	icon_state = icon_state_tapped
 	update_appearance(UPDATE_ICON_STATE)
-
+EXOSTATION EDIT ADDITION & CHANGE END - EXOMINING */
 /**
  * Called when the wave defense event ends, after a variable amount of time in start_wave_defense.
  *

@@ -77,10 +77,11 @@
 
 /obj/machinery/computer/crew/syndie
 	icon_keyboard = "syndie_key"
-
+/* EXOSTATION EDIT REMOVAL - NANOMAP : exocrewconsole
 /obj/machinery/computer/crew/ui_interact(mob/user)
 	. = ..()
 	GLOB.crewmonitor.show(user,src)
+	*/
 
 GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 
@@ -275,7 +276,14 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		// Location
 		if (sensor_mode >= SENSOR_COORDS)
 			entry["area"] = get_area_name(tracked_living_mob, format_text = TRUE)
-
+			// EXOSTATION EDIT ADDITION START - NANOMAPS : crew console
+			entry["position"] = list(
+				"area" = get_area_name(tracked_living_mob, format_text = TRUE),
+				"x" = tracked_living_mob.x,
+				"y" = tracked_living_mob.y,
+				"z" = tracked_living_mob.z,
+			)
+			// EXOSTATION EDIT ADDITION END
 		// Trackability
 		entry["can_track"] = tracked_living_mob.can_track()
 

@@ -59,6 +59,11 @@
 	/// Boolean that tells SSmapping to load all away missions in the codebase.
 	var/load_all_away_missions = FALSE
 
+// EXOSTATION EDIT ADDITION START - EXOMAPPING
+	/// Main floor of the map. Null as default, if not specified in json
+	var/main_floor = null
+	// EXOSTATION EDIT ADDITION END - EXOMAPPING
+
 /**
  * Proc that simply loads the default map config, which should always be functional.
  */

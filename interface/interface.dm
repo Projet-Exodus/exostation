@@ -100,7 +100,7 @@
 	DIRECT_OUTPUT(src, link(jointext(concatable, "")))
 
 /client/verb/changelog()
-	set name = "Changelog"
+	set name = "/TG/ Changelog" // EXOSTATION EDIT CHANGE - EXO_CHANGELOG
 	set category = "OOC"
 
 	if(!GLOB.changelog_tgui)

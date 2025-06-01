@@ -35,8 +35,10 @@ export async function processAutoChangelog({ github, context }) {
   github.rest.repos.createOrUpdateFileContents({
     owner: context.repo.owner,
     repo: context.repo.repo,
-    path: `html/changelogs/AutoChangeLog-pr-${context.payload.pull_request.number}.yml`,
-    message: `Automatic changelog for PR #${context.payload.pull_request.number} [ci skip]`,
+    // EXOSTATION EDIT CHANGE START - EXO_CHANGELOG : chemin et message
+    path: `modular_exostation/changelogs/AutoChangeLog-pr-${context.payload.pull_request.number}.yml`,
+    message: `Changelog automatique PR #${context.payload.pull_request.number} [ci skip]`,
+    // EXOSTATION EDIT CHANGE END - EXO_CHANGELOG : chemin et message
     content: Buffer.from(yml).toString("base64"),
   });
 }

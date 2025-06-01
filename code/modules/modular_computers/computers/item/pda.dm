@@ -58,10 +58,12 @@
 	. = ..()
 	if(inserted_item)
 		inserted_item = new inserted_item(src)
+	return INITIALIZE_HINT_LATELOAD //EXOSTATION EDIT ADDITION - HOLOMAPS
 
 /obj/item/modular_computer/pda/Destroy()
 	if(istype(inserted_item))
 		QDEL_NULL(inserted_item)
+	remove_holomap() //EXOSTATION EDIT ADDITION - HOLOMAPS
 	return ..()
 
 /obj/item/modular_computer/pda/install_default_programs()
@@ -351,6 +353,7 @@
 
 /obj/item/modular_computer/pda/silicon/Destroy()
 	silicon_owner = null
+	remove_holomap() //EXOSTATION EDIT ADDITION - HOLOMAPS
 	return ..()
 
 ///Silicons don't have the tools (or hands) to make circuits setups with their own PDAs.

@@ -1,12 +1,33 @@
-## /tg/station codebase
+## Exostation codebase
 
-[![Build Status](https://github.com/tgstation/tgstation/workflows/CI%20Suite/badge.svg)](https://github.com/tgstation/tgstation/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/tgstation/tgstation.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/tgstation/tgstation.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue")
-![Coverage](https://img.shields.io/badge/coverage---4%25-red.svg)
+> [!WARNING]
+> Exostation est une branche dont la langue principale est le français. Elle est dérivée de la codebase /tg/station, elle-même une branche du jeu SpaceStation 13. Elle comprend des fonctionnalités transposées depuis d'autres serveurs. Voir les crédits des modules de `modular_exostation`.
 
-[![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+![magic](https://forthebadge.com/images/badges/powered-by-black-magic.svg)
+![opti](https://forthebadge.com/images/badges/0-percent-optimized.svg)
+![spaghetti](https://forthebadge.com/images/badges/contains-tasty-spaghetti-code.svg)
 
+[![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png)
+[![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png)
+[![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+
+| Site         | Lien                                                                    |
+| ------------ | ----------------------------------------------------------------------- |
+| Site général | [Site du Projet-Exodus](https://ss13.thravalgur.ovh)                    |
+| Code         | [Repository](https://github.com/Projet-Exodus/exostation)               |
+| Wiki         | [Exowiki](https://ss13.thravalgur.ovh/exowiki)                          |
+| Discord      | [Discord du Projet-Exodus](https://ss13.thravalgur.ovh/exowiki/Discord) |
+
+## /TG/STATION
+
+| Website             | Link                                                                                                 |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| Website             | [https://tgstation13.org](https://tgstation13.org)                                                   |
+| Code                | [https://github.com/tgstation/tgstation](https://github.com/tgstation/tgstation)                     |
+| Wiki                | [https://tgstation13.org/wiki/Main_Page](https://tgstation13.org/wiki/Main_Page)                     |
+| Codedocs            | [https://codedocs.tgstation13.org/](https://codedocs.tgstation13.org/)                               |
+| /tg/station Discord | [https://tgstation13.org/phpBB/viewforum.php?f=60](https://tgstation13.org/phpBB/viewforum.php?f=60) |
+| Coderbus Discord    | [https://discord.gg/Vh8TJp9](https://discord.gg/Vh8TJp9)                                             |
 | Website             | Link                                                                                                 |
 | ------------------- | ---------------------------------------------------------------------------------------------------- |
 | Website             | [https://tgstation13.org](https://tgstation13.org)                                                   |

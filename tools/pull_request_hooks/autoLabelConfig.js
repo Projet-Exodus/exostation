@@ -34,6 +34,27 @@ export const file_labels = {
     filepaths: ["tgui"],
     add_only: true,
   },
+  Refactor: {
+    filepaths: ["tools/UpdatePaths/Scripts"],
+    add_only: true,
+  },
+  "Alerte traduction images": {
+    filepaths: ["icons/stamp_icons", "icons/hud", "icons/ui/screentips"],
+  },
+  "Alerte traduction datums": {
+    filepaths: [
+      "code/datums/ai_laws",
+      "code/datums/keybinding",
+      "code/datums/quirks",
+      "code/datums/mood_events",
+    ],
+  },
+  "Alerte traduction sons": {
+    filepaths: ["code/datums/announcers"],
+  },
+  "Alertes traduction strings": {
+    filepaths: ["strings"],
+  },
 };
 
 // Title Labels
@@ -63,6 +84,15 @@ export const title_labels = {
   },
   "Test Merge Only": {
     keywords: ["[tm only]", "[test merge only]"],
+  },
+  "Mirror (/tg/)": {
+    keywords: ["tg update", "tg mirror"],
+  },
+  Port: {
+    keywords: ["port"],
+  },
+  Traductions: {
+    keywords: ["traduction"],
   },
 };
 

@@ -63,6 +63,11 @@ jobs:
       - name: Run Grep Checks
         if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: bash tools/ci/check_grep.sh
+      # EXOSTATION EDIT ADDITION START - checking modular_exostation code
+      - name: Run modular Grep Checks
+        if: steps.linter-setup.conclusion == 'success' && !cancelled()
+        run: bash modular_exostation/tools/exostation_check_grep.sh
+      # EXOSTATION EDIT ADDITION END - checking modular_exostation code
       - name: Ticked File Enforcement
         if: steps.linter-setup.conclusion == 'success' && !cancelled()
         run: |

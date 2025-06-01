@@ -6668,4 +6668,5 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "modular_exostation\modular_exostation.dme" // EXOSTATION EDIT ADDITION
 // END_INCLUDE

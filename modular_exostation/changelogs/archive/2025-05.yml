@@ -1,0 +1,60 @@
+2025-05-02:
+  Thravalgur:
+  - rscadd: Canal Local OOC
+  - admin: Préférence admin pour voir le canal LOOC
+  - server: Personnalisation, paramétrage de la database et de la whitelist
+  - config: Configuration de base du serveur Exostation (sujette à changements ultérieurs)
+  - qol: Raccourcis claviers azerty
+  - rscadd: Changelogs séparés
+  - spellcheck: Traduction des niveaux d'alertes (config) et des raccourcis claviers
+  - bugfix: Remplacement temporaire de la taille des icônes de screentips, pour ne
+      pas devoir les désactiver. Peut mal ressortir dans certaines versions antérieures
+      de BYOND (à partir de la version 516.1657)
+  - bugfix: Maj+C pour changer de mode de déplacement (courir/marcher)
+2025-05-04:
+  Thravalgur:
+  - rscadd: Ajout d'un canal Whisper pour chuchoter sans formatage de texte.
+  - qol: Le canal Whisper fait partie des canaux qu'on peut faire défiler avec Tab.
+2025-05-06:
+  Thravalgur:
+  - rscadd: Ajout des holomaps, image holographique de la station affichable grâce
+      au PDA. (Adaptation de NSV13)
+  - qol: Les holomaps indiquent les escaliers, les ascenseurs et les échelles.
+2025-05-07:
+  Thravalgur:
+  - rscadd: ' Ajout de commandes verbales pour Poly'
+2025-05-16:
+  Thravalgur:
+  - map: Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox
+  - config: Metastation est la map par défaut et Icebox n'a plus de limite minimale
+      de joueurs
+2025-05-18:
+  Thravalgur:
+  - rscadd: Ajout des nanomaps, des mini-cartes intégrées aux consoles de la sécurité
+      et de la medbay
+  - qol: Les crew monitors peuvent afficher l'emplacement précis d'une personne sur
+      une mini-carte si ses sensors sont activés. Les camera consoles permettent de
+      sélectionner une caméra depuis une mini-carte.
+2025-05-22:
+  Thravalgur:
+  - balance: La Megafauna considère à présent les mineurs de Nanotrasen en-dessous
+      de leur intérêt, jusqu'à ce qu'ils fassent quelque chose de suffisamment fou
+      pour éveiller leur intérêt. Il faut venir cliquer sur le monstre et attendre
+      5 secondes pour l'éveiller, sinon il est passif et invulnérable jusque là.
+  - balance: La lave est un peu moins brûlante.
+  - balance: Les gouffres ne tuent plus les gens instantément, ils blessent mais permettent
+      de s'en extraire en grimpant en dix secondes.
+  - balance: Le corps des gens avalés par un Legion ou Bileworm est préservé dans
+      leur estomac si jamais ils sont secourus.
+  - rscadd: Les kheiral cuffs envoient une alerte dans les radios med et supply lorsque
+      leur porteur meurt en dehors des z-level de la station. Avec un mining voucher,
+      un mineur peut aussi obtenir un kit contenant une paire de kheiral cuffs et
+      un emergency medipen.
+  - rscadd: Les drones de minage de nodes informent à présent le cargo chaque fois
+      qu'un vote commence leur excavation ou la terminent.
+  - bugfix: Le Legion megafauna drop maintenant des necropolis chests qui sont invisibles
+      jusqu'à ce que vous les touchiez, pour éviter que le legion ne les casse.
+  - balance: Les demonic portals n'ont plus de loot complètement inutile ou dangereux
+      pour les mineurs.
+  - balance: Les vagues de défense des ore vents sont encore plus graduelles, basées
+      sur le nombre de mineurs présents.

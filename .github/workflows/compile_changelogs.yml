@@ -40,11 +40,11 @@ jobs:
         with:
           fetch-depth: 25
           persist-credentials: false
-
+        # EXOSTATION EDIT ADDITION START - BASE_CONFIG
       - name: "Compile"
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
-          python tools/ss13_genchangelog.py html/changelogs
+          python tools/ss13_genchangelog.py modular_exostation/changelogs
 
       - name: Commit
         if: steps.value_holder.outputs.ACTIONS_ENABLED
@@ -52,9 +52,9 @@ jobs:
           git config --local user.name "tgstation-ci[bot]"
           git config --local user.email "179393467+tgstation-ci[bot]@users.noreply.github.com"
           git pull origin master
-          git add html/changelogs
+          git add modular_exostation/changelogs
           git commit -m "Automatic changelog compile [ci skip]" -a || true
-
+        # EXOSTATION EDIT ADDITION END - BASE_CONFIG
       - name: Generate App Token
         id: app-token-generation
         uses: actions/create-github-app-token@v2
