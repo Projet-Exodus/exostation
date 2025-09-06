@@ -20,7 +20,7 @@ For the tgui representation, most preferences will create a `.tsx` file in `tgui
 From here, you will want to write code resembling:
 
 ```ts
-import { Feature } from "../base";
+import { type Feature } from "../base";
 
 export const savefile_key_here: Feature<T> = {
 	name: "Preference Name Here",
@@ -82,7 +82,7 @@ Examples include enabling tooltips.
 Your `.tsx` file would look like:
 
 ```ts
-import { CheckboxInput, FeatureToggle } from "../base";
+import { CheckboxInput, type FeatureToggle } from "../base";
 
 export const enable_breathing: FeatureToggle = {
 	name: "Enable breathing",
@@ -199,7 +199,7 @@ These refer to colors, such as your OOC color. When read, these values will be g
 Your `.tsx` file would look like:
 
 ```ts
-import { FeatureColorInput, Feature } from "../base";
+import { FeatureColorInput, type Feature } from "../base";
 
 export const eyeliner_color: Feature<string> = {
 	name: "Eyeliner color",

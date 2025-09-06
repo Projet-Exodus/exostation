@@ -26,7 +26,7 @@ Modules & CI
 - `.github/workflows/discord_pr_announce.yml` : remplacement de l'avatar
 - `code/_compile_options.dm` : édition de `#define PRELOAD_RSC 0`
 - `tools/deploy.sh` : ajout de `modular_exostation` et exclusions pour les tests
-- `tools/build/build.js` : ajout de `modular_exostation/**`
+- `tools/build/build.ts` : ajout de `modular_exostation/**`
 - `tgstation.dme` : ajout de `modular_exostation.dme`
 
 Config

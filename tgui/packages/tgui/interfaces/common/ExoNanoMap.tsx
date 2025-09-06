@@ -119,7 +119,7 @@ export function NanoMap(props: Props) {
   }
 
   // Send component data to UI, if he has useState for them.
-  onLevelChange && onLevelChange(mapState.currentLevel);
+  onLevelChange?.(mapState.currentLevel);
   function handleTransformed({ state }) {
     setMapState({
       scale: state.scale,

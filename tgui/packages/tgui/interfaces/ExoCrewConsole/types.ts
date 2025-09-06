@@ -1,5 +1,5 @@
 // FICHIER TGUI EXOSTATION
-import { BooleanLike } from 'tgui-core/react';
+import type { BooleanLike } from 'tgui-core/react';
 
 import { type MapData } from '../common/ExoNanoMap';
 

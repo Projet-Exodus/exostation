@@ -3217,7 +3217,7 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hauntedtradingpost/public)
 "BS" = (
-/mob/living/basic/cockroach,
+/obj/effect/mob_spawn/cockroach,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
 	},
@@ -4518,7 +4518,7 @@
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/ruin/space/has_grav/hauntedtradingpost/public/corridor)
 "MR" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal{
+/turf/closed/wall/r_wall/plastitanium/syndicate/nodiagonal{
 	desc = "An ominous looking wall.";
 	name = "reinforced wall"
 	},
