@@ -177,6 +177,7 @@ export const DmTarget = new Juke.Target({
     'interface/**',
     'sound/**',
     'tgui/public/tgui.html',
+    "modular_exostation/**", // EXOSTATION EDIT ADDITION - BASE_CONFIG
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
