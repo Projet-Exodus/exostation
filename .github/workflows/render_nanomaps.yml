@@ -27,7 +27,7 @@ jobs:
         APP_ID: ${{ secrets.APP_ID }}
 
     - name: 'Update Branch'
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
         token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
@@ -40,8 +40,7 @@ jobs:
         git reset --hard origin/master
 
     - name: 'Generate Maps'
-      run: |
-        bash modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh
+      run: "modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh"
 
     - name: 'Commit Maps and open PR'
       run: |
