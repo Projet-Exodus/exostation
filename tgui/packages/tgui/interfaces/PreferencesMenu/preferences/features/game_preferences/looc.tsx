@@ -1,5 +1,5 @@
-// EXOSTATION FILE
-import { CheckboxInput, FeatureToggle } from '../base';
+// EXOSTATION TGUI FILE
+import { CheckboxInput, type FeatureToggle } from '../base';
 
 export const looc_admin_pref: FeatureToggle = {
   name: 'Voir LOOC',
