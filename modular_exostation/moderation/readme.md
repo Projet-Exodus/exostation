@@ -28,7 +28,7 @@ Verbes et menus
 
 Grossophobie
 
-- `code\modules\reagents\chemistry\reagents\food_reagents.dm` : pas d'effet à l'extrait de menthe (`/datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)`)
+- `code\modules\reagents\chemistry\reagents\food_reagents.dm` : pas d'effet mortel à l'extrait de menthe (`/datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)`)
 
 Religion
 
@@ -45,6 +45,10 @@ Bananium
 Grossophobie
 
 - `code\game\machinery\fat_sucker.dm` : remplacement de la phrase grossophobe
+
+Psychologie
+
+- `code\datums\mood.dm` : remplacement de sanity par stress
 
 Verbes et menus
 

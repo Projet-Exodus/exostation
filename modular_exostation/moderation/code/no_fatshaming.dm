@@ -13,7 +13,7 @@
 	name = "nutritional recycler"
 	desc = "Convertit en toute sécurité les nutriments absorbés par le sujet en viande délicieuse."
 	fat_facts = list(\
-	"On mange tellement de choses toxiques, que les gens ne devraient plus dire bon appétit aux autres, mais bonne chance !", \
+	"On mange tellement de choses toxiques que les gens ne devraient plus dire bon appétit aux autres, mais bonne chance !", \
 	"Aucune nourriture n'est bonne, si l'appétit ne l'assaisonne.", \
 	"Les aliments mal revenus font les repas mal partis.", \
 	"Il y a de la lumière dans les frigos pour que les aliments voient en permanence la date avant laquelle ils n'ont pas le droit de pourrir.", \
