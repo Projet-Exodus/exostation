@@ -142,14 +142,14 @@ function TitleActions(props) {
             selected={tab === 'Liste'}
             onClick={() => setTab('Liste')}
           >
-            List
+            Liste
           </Tabs.Tab>
           <Tabs.Tab
             icon="map"
             selected={tab === 'Carte'}
             onClick={() => setTab('Carte')}
           >
-            Map
+            Carte
           </Tabs.Tab>
         </Tabs>
       </Stack.Item>
