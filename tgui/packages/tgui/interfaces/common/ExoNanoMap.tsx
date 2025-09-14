@@ -176,7 +176,7 @@ function NanoMapControls(props) {
           className="NanoMap__Controls--zoom"
           style={{ width: `${clamp01(zoom) * 100}%` }}
         />
-        Центр
+        Zoom
       </Button>
       <Button icon="plus" onClick={() => zoomIn(maxScale)} />
     </div>
@@ -244,7 +244,7 @@ function NanoMapLevelSelector(props) {
           <Button
             icon="volcano"
             selected={currentLevel === lavalandLevel}
-            tooltip="Лаваленд"
+            tooltip="Lavaland"
             onClick={() =>
               setLevel(
                 currentLevel === lavalandLevel ? mainFloor : lavalandLevel,

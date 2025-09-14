@@ -101,7 +101,7 @@ export const ExoCameraConsole = (props) => {
 
 export const CameraContent = (props) => {
   const [searchText, setSearchText] = useState('');
-  const [tab, setTab] = useState('Map');
+  const [tab, setTab] = useState('Carte');
   const decideTab = (tab) => {
     switch (tab) {
       case 'List':
@@ -111,7 +111,7 @@ export const CameraContent = (props) => {
             setSearchText={setSearchText}
           />
         );
-      case 'Map':
+      case 'Carte':
         return <CameraMapSelector />;
       default:
         return "WE SHOULDN'T BE HERE!";
@@ -125,18 +125,18 @@ export const CameraContent = (props) => {
           <Stack.Item textAlign="center">
             <Tabs fluid>
               <Tabs.Tab
-                key="Map"
+                key="Carte"
                 icon="map-marked-alt"
-                selected={tab === 'Map'}
-                onClick={() => setTab('Map')}
+                selected={tab === 'Carte'}
+                onClick={() => setTab('Carte')}
               >
                 Carte
               </Tabs.Tab>
               <Tabs.Tab
-                key="List"
+                key="Liste"
                 icon="table"
-                selected={tab === 'List'}
-                onClick={() => setTab('List')}
+                selected={tab === 'Liste'}
+                onClick={() => setTab('Liste')}
               >
                 Liste
               </Tabs.Tab>
@@ -145,7 +145,7 @@ export const CameraContent = (props) => {
           <Stack.Item grow>{decideTab(tab)}</Stack.Item>
         </Stack>
       </Stack.Item>
-      <Stack.Item grow={tab === 'Map' ? 1.5 : 3}>
+      <Stack.Item grow={tab === 'Carte' ? 1.5 : 3}>
         <CameraControls searchText={searchText} />
       </Stack.Item>
     </Stack>
@@ -254,7 +254,7 @@ const CameraControls = (props: { searchText: string }) => {
               {!!can_spy && (
                 <Button
                   icon="magnifying-glass"
-                  tooltip="Track Person"
+                  tooltip="Suivre la personne"
                   onClick={() => act('start_tracking')}
                 />
               )}
