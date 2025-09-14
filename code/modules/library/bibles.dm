@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(biblenames, list(
 	"Scrapbook",
 	"Burning Bible",
 /**	EXOSTATION EDIT REMOVAL START - MODERATION
- 	"Clown Bible",
+	"Clown Bible",
 	"Banana Bible",
 	"Creeper Bible", */
 	"White Bible",
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(biblestates, list(
 	"scrapbook",
 	"burning",
 /**	EXOSTATION EDIT REMOVAL START - MODERATION
- 	"honk1",
+	"honk1",
 	"honk2",
 	"creeper", */
 	"white",
