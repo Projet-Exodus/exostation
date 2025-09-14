@@ -18,7 +18,7 @@ import type { CrewConsoleData, CrewSensor } from './types';
 
 export function ExoCrewConsole(props) {
   return (
-    <Window title="Crew Monitor" width={1000} height={750}>
+    <Window title="Suivi de l'équipage" width={1000} height={750}>
       <Window.Content>
         <CrewContent />
       </Window.Content>
@@ -30,7 +30,7 @@ function CrewContent() {
   const { data } = useBackend<CrewConsoleData>();
   const { sensors } = data;
 
-  const [tab, setTab] = useSharedState('crewConsole-tab', 'List');
+  const [tab, setTab] = useSharedState('crewConsole-tab', 'Liste');
   const [searchText, setSearchText] = useSharedState('crewConsole-search', '');
   const [highlightedSensors, setHighlightedSensors] = useSharedState<string[]>(
     'crewConsole-highlighted',
@@ -56,7 +56,7 @@ function CrewContent() {
 
   const decideTab = (tab) => {
     switch (tab) {
-      case 'List':
+      case 'Liste':
         return (
           <TableView
             highlight={highlight}
@@ -64,7 +64,7 @@ function CrewContent() {
             highlightedSensors={highlightedSensors}
           />
         );
-      case 'Map':
+      case 'Carte':
         return (
           <MapView
             highlight={highlight}
@@ -93,7 +93,7 @@ function CrewContent() {
   }
 
   return (
-    <Stack fill vertical>
+    <Stack fill vertical g={0}>
       <Stack.Item>
         <Section
           fill
@@ -114,9 +114,7 @@ function CrewContent() {
           }
         />
       </Stack.Item>
-      <Stack.Item grow mt={0}>
-        {decideTab(tab)}
-      </Stack.Item>
+      <Stack.Item grow>{decideTab(tab)}</Stack.Item>
     </Stack>
   );
 }
@@ -141,17 +139,17 @@ function TitleActions(props) {
         <Tabs m={-1}>
           <Tabs.Tab
             icon="table"
-            selected={tab === 'List'}
-            onClick={() => setTab('List')}
+            selected={tab === 'Liste'}
+            onClick={() => setTab('Liste')}
           >
-            List
+            Liste
           </Tabs.Tab>
           <Tabs.Tab
             icon="map"
-            selected={tab === 'Map'}
-            onClick={() => setTab('Map')}
+            selected={tab === 'Carte'}
+            onClick={() => setTab('Carte')}
           >
-            Map
+            Carte
           </Tabs.Tab>
         </Tabs>
       </Stack.Item>
@@ -163,7 +161,7 @@ function TitleActions(props) {
           onChange={setSearchText}
         />
       </Stack.Item>
-      {tab === 'Map' && (
+      {tab === 'Carte' && (
         <Stack.Item>
           <Button
             icon="star"
@@ -174,7 +172,7 @@ function TitleActions(props) {
           />
         </Stack.Item>
       )}
-      {tab === 'List' && (
+      {tab === 'Liste' && (
         <>
           <Stack.Item>
             <Dropdown

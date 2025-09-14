@@ -4,3 +4,4 @@
 #include "code/crew_monitor.dm"
 #include "code/nanomap_assets.dm"
 #include "code/nanomap_datum.dm"
+#include "code/nanomap_turf.dm"
