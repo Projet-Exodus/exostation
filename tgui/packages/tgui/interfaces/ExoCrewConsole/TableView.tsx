@@ -107,7 +107,7 @@ function CrewTableEntry(props) {
               })
             }
           >
-            Track
+            Suivre
           </Button>
         </Table.Cell>
       )}

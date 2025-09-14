@@ -65,6 +65,7 @@
 		// Open UI
 		ui = new(user, src, "ExoCameraConsole", name) // EXOSTATION EDIT CHANGE : NANOMAP : UI changed from CameraConsole to ExoCameraConsole
 		ui.open()
+		ui.set_autoupdate(FALSE) // EXOSTATION EDIT ADDITION : NANOMAP
 		// Register map objects
 		cam_screen.display_to(user, ui.window)
 

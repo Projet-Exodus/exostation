@@ -10,10 +10,8 @@ on:
 
 jobs:
   generate_maps:
-    name: 'Generate NanoMaps'
+    name: Generate NanoMaps
     runs-on: ubuntu-22.04
-    permissions:
-      contents: write
     steps:
     - name: Generate App Token
       id: app-token-generation
@@ -26,10 +24,11 @@ jobs:
         APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
         APP_ID: ${{ secrets.APP_ID }}
 
-    - name: 'Update Branch'
+    - run: echo "GH_TOKEN=${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}" >> "$GITHUB_ENV"
+
+    - name: Update Branch
       uses: actions/checkout@v5
       with:
-        fetch-depth: 0
         token: ${{ steps.app-token-generation.outputs.token || secrets.GITHUB_TOKEN }}
 
     - name: Branch
@@ -39,18 +38,18 @@ jobs:
         git checkout nanomap-render
         git reset --hard origin/master
 
-    - name: 'Generate Maps'
-      run: "modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh"
+    - name: Generate Maps
+      run: "./modular_exostation/tools/nanomap_renderer/nanomap-renderer-invoker.sh"
 
-    - name: 'Commit Maps and open PR'
+    - name: Commit Maps and open PR
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "NanoMap Generation [bot]"
-        git pull origin master
-        git commit -m "NanoMap Auto-Update (`date`)" -a || true
-        git push -f -u origin nanomap-render
-        result=$(gh pr create -t "Automatic NanoMap Update" -b "This pull request updates the server NanoMaps. Please review the diff images before merging." -l "NanoMaps" -H "nanomap-render" -B "master") || true
-        if echo "$result" | grep -q "No commits between master and nanomap-render"; then
-          echo "No NanoMaps update required, skipping."
-          exit 78
-        fi
+          git config --local user.email "action@github.com"
+          git config --local user.name "NanoMap Generation"
+          git pull origin master
+          git commit -m "NanoMap Auto-Update (`date`)" -a || true
+          git push -f -u origin nanomap-render
+          result=$(gh pr create -t "Automatic NanoMap Update" -b "This pull request updates the server NanoMaps. Please review the diff images before merging." -l "NanoMaps" -H "nanomap-render" -B "master") || true
+          if echo "$result" | grep -q "No commits between master and nanomap-render"; then
+            echo "No NanoMaps update required, skipping."
+            exit 78
+          fi
