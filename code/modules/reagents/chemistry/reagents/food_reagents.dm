@@ -1227,10 +1227,11 @@
 
 /datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
+	/** EXOSTATION
 	if(HAS_TRAIT(affected_mob, TRAIT_FAT))
 		affected_mob.investigate_log("has been gibbed by consuming [src] while fat.", INVESTIGATE_DEATHS)
 		affected_mob.inflate_gib()
-
+*/
 /datum/reagent/consumable/worcestershire
 	name = "Worcestershire Sauce"
 	description = "That's \"Woostershire\" sauce, by the way."

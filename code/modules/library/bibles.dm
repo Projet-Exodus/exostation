@@ -3,9 +3,10 @@ GLOBAL_LIST_INIT(biblenames, list(
 	"Quran",
 	"Scrapbook",
 	"Burning Bible",
+/**	EXOSTATION EDIT REMOVAL START - MODERATION
 	"Clown Bible",
 	"Banana Bible",
-	"Creeper Bible",
+	"Creeper Bible", */
 	"White Bible",
 	"Holy Light",
 	"The God Delusion",
@@ -15,7 +16,7 @@ GLOBAL_LIST_INIT(biblenames, list(
 	"Scientology",
 	"Melted Bible",
 	"Necronomicon",
-	"Insulationism",
+/**	"Insulationism", EXOSTATION EDIT REMOVAL - MODERATION*/
 	"Guru Granth Sahib",
 	"Kojiki",
 ))
@@ -26,9 +27,10 @@ GLOBAL_LIST_INIT(biblestates, list(
 	"koran",
 	"scrapbook",
 	"burning",
+/**	EXOSTATION EDIT REMOVAL START - MODERATION
 	"honk1",
 	"honk2",
-	"creeper",
+	"creeper", */
 	"white",
 	"holylight",
 	"atheist",
@@ -38,7 +40,7 @@ GLOBAL_LIST_INIT(biblestates, list(
 	"scientology",
 	"melted",
 	"necronomicon",
-	"insuls",
+/**	"insuls", EXOSTATION EDIT REMOVAL - MODERATION*/
 	"gurugranthsahib",
 	"kojiki",
 ))
@@ -47,9 +49,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list(
 	"koran",
 	"scrapbook",
 	"burning",
+/**	EXOSTATION EDIT REMOVAL START - MODERATION
 	"honk1",
 	"honk2",
-	"creeper",
+	"creeper", */
 	"white",
 	"holylight",
 	"atheist",
@@ -59,7 +62,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list(
 	"scientology",
 	"melted",
 	"necronomicon",
-	"kingyellow",
+/**	"kingyellow", EXOSTATION EDIT REMOVAL - MODERATION*/
 	"gurugranthsahib",
 	"kojiki",
 ))

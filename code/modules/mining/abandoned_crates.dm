@@ -132,8 +132,8 @@
 	. = ..()
 	if(qdel_on_open)
 		qdel(src)
-
 /obj/structure/closet/crate/secure/loot/proc/spawn_loot()
+/* EXOSTATION EDIT REMOVAL START - MODERATION : Modular override
 	var/loot = rand(1,100) //100 different crates with varying chances of spawning
 	switch(loot)
 		if(1 to 5) //5% chance
@@ -259,3 +259,4 @@
 		if(100)
 			new /obj/item/melee/skateboard/hoverboard(src)
 	spawned_loot = TRUE
+EXOSTATION EDIT REMOVAL END - MODERATION */

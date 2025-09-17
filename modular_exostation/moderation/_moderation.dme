@@ -1,0 +1,11 @@
+#include "_moderation.dm"
+
+#include "code/loot_limits.dm"
+#include "code/no_clowning.dm"
+#include "code/no_fatshaming.dm"
+#include "code/no_forced_genderchange.dm"
+#include "code/no_graffitis.dm"
+#include "code/no_lizard_hate.dm"
+#include "code/no_overdose.dm"
+#include "code/no_posters.dm"
+#include "code/no_suicide.dm"
