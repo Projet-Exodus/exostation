@@ -19,12 +19,14 @@
 
 	var/next_fact = 10 //in ticks, so about 20 seconds
 	var/static/list/fat_facts = list(\
-	"Fats are triglycerides made up of a combination of different building blocks; glycerol and fatty acids.", \
-	"Adults should get a recommended 20-35% of their energy intake from fat.", \
-	"Being overweight or obese puts you at an increased risk of chronic diseases, such as cardiovascular diseases, metabolic syndrome, type 2 diabetes and some types of cancers.", \
-	"Not all fats are bad. A certain amount of fat is an essential part of a healthy balanced diet. " , \
-	"Saturated fat should form no more than 11% of your daily calories.", \
-	"Unsaturated fat, that is monounsaturated fats, polyunsaturated fats and omega-3 fatty acids, is found in plant foods and fish." \
+	// EXOSTATION EDIT CHANGE START - MODERATION & TRADUCTION : Original : phrases en anglais
+	"On mange tellement de choses toxiques que les gens ne devraient plus dire bon appétit aux autres, mais bonne chance !", \
+	"Aucune nourriture n'est bonne, si l'appétit ne l'assaisonne.", \
+	"Les aliments mal revenus font les repas mal partis.", \
+	"Il y a de la lumière dans les frigos pour que les aliments voient en permanence la date avant laquelle ils n'ont pas le droit de pourrir.", \
+	"La gastronomie est l'art d'utiliser la nourriture pour créer le bonheur.", \
+	"Un être vivant est comme une horloge. Il se remonte par la nourriture deux ou trois fois par jour."
+	// EXOSTATION EDIT CHANGE END - MODERATION & TRADUCTION
 	)
 
 /obj/machinery/fat_sucker/Initialize(mapload)
@@ -165,7 +167,7 @@
 			update_appearance()
 			set_light(2, 1, "#ff0000")
 		else
-			say("Subject not fat enough.")
+			say("Le sujet manque de nutriments.") // EXOSTATION EDIT CHANGE - MODERATION : Original : Subject not fat enough.
 			playsound(src, 'sound/machines/buzz/buzz-sigh.ogg', 40, FALSE)
 			overlays += "[icon_state]_red" //throw a red light icon over it, to show that it won't work
 

@@ -341,7 +341,7 @@
 	icon_state = "bananium"
 	dropamt = 4
 	hits = 175 //Honks everything, including space tiles. Depending on the angle/how much stuff it hits, there's a fair chance that it will spare the station from the actual explosion
-	meteordrop = list(/obj/item/stack/ore/bananium)
+	meteordrop = list(/obj/item/food/grown/banana/bluespace) // EXOSTATION EDIT CHANGE - MODERATION - Original : /obj/item/stack/ore/bananium
 	meteorsound = 'sound/items/bikehorn.ogg'
 	threat = 15
 	movement_type = PHASING

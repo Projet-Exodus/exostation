@@ -57,12 +57,12 @@
 	GLOB.ghost_menu.ui_interact(usr)
 
 /atom/movable/screen/ghost/minigames_menu
-	name ="Minigames"
-	icon_state = "minigames"
+	name = "Respawn" // EXOSTATION EDIT CHANGE - MODERATION : Original "Minigames"
+	icon_state = "spawners" // EXOSTATION EDIT CHANGE - MODERATION : Original : "minigames"
 
 /atom/movable/screen/ghost/minigames_menu/Click()
 	var/mob/dead/observer/observer = usr
-	observer.open_minigames_menu()
+	observer.abandon_mob() // EXOSTATION EDIT CHANGE - MODERATION : original : 	observer.open_minigames_menu()
 
 /datum/hud/ghost/New(mob/owner)
 	..()

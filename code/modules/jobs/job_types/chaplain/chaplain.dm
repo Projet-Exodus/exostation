@@ -70,6 +70,7 @@
 
 	holy_bible.deity_name = new_deity
 	switch(LOWER_TEXT(new_religion))
+	/** EXOSTATION EDIT REMOVAL START - MODERATION : Retrait des religions stupides, problème joueur
 		if("homosexuality", "gay", "penis", "ass", "cock", "cocks")
 			new_bible = pick("Guys Gone Wild","Coming Out of The Closet","War of Cocks")
 			switch(new_bible)
@@ -92,7 +93,8 @@
 			human_spawned.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // also starts off brain damaged as fuck
 		if("servicianism", "partying")
 			holy_bible.desc = "Happy, Full, Clean. Live it and give it."
-		if("weeaboo","kawaii")
+			EXOSTATION EDIT REMOVAL END - MODERATION */
+		if("weeaboo","kawaii") // EXOSTATION EDIT CHANGE - MODERATION : Original ("weeaboo", "kawaii")
 			new_bible = pick("Fanfiction Compendium","Japanese for Dummies","The Manganomicon","Establishing Your O.T.P")
 			holy_bible.deity_name = "Anime"
 		else

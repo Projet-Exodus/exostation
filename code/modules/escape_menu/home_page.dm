@@ -45,7 +45,7 @@
 			/* offset = */ list(-241, 30),
 		)
 	)
-
+/** EXOSTATION EDIT REMOVAL START - MODERATION
 	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/text/clickable/leave_body(
 			null,
@@ -57,7 +57,7 @@
 			/* on_click_callback = */ CALLBACK(src, PROC_REF(open_leave_body)),
 		)
 	)
-
+EXOSTATION EDIT REMOVAL END */
 	//Bottom right buttons, from right to left, starting with the button to open the list.
 	page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small(
 		null,

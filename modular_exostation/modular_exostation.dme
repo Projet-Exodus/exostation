@@ -11,6 +11,7 @@
 #include "holomap/_holomap.dme"
 #include "keybinding/_keybinding.dme"
 #include "local_fixes/_local_fixes.dme"
+#include "moderation/_moderation.dme"
 #include "nanomap/_nanomap.dme"
 #include "pets/_pets.dme"
 // --- MODULES END --- //

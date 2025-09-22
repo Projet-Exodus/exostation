@@ -397,6 +397,7 @@
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	menu_description = "An odd s(w)ord dealing a laughable amount of damage. Fits in pockets. Can be worn on the belt."
+	chaplain_spawnable = FALSE // EXOSTATION EDIT ADDITION - MODERATION : retrait de la sord (piège à nouveaux)
 
 /obj/item/nullrod/sord/suicide_act(mob/living/user) //a near-exact copy+paste of the actual sord suicide_act()
 	user.visible_message(span_suicide("[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so HOLY."), \
@@ -474,7 +475,7 @@
 	user.make_item_prosthetic(src, active.body_zone)
 
 // Clown Dagger - Nothing special, just honks.
-
+/** EXOSTATION EDIT REMOVAL : MODERATION : fun not allowed
 /obj/item/nullrod/clown
 	name = "clown dagger"
 	desc = "Used for absolutely hilarious sacrifices."
@@ -490,7 +491,7 @@
 	attack_verb_continuous = list("attacks", "slashes", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "slice", "tear", "lacerate", "rip", "dice", "cut")
 	menu_description = "A sharp dagger. Fits in pockets. Can be worn on the belt. Honk."
-
+*/
 // Pride-struck Hammer - Transfers reagents in your body to those you hit.
 
 #define CHEMICAL_TRANSFER_CHANCE 30

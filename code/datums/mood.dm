@@ -365,7 +365,7 @@
 			if(81 to INFINITY)
 				msg += "[span_boldwarning("I'm completely wasted.")]<br>"
 
-	msg += span_notice("My current sanity: ") //Long term
+	msg += span_notice("Mon stress actuel : ") //Long term - EXOSTATION EDIT - MODERATION TRADFR
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "[span_boldnicegreen("My mind feels like a temple!")]<br>"
