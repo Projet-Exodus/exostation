@@ -4,5 +4,5 @@
 
 <p><i>Ce serveur est un downstream de /tg/station 13 axé sur le roleplay et la création d'histoires.</i></p>
 
-<p><i>Respectez <a href="https://ss13.thravalgur.ovh/exowiki/index.php/R%C3%A8gles" target="_blank">les règles du serveur</b></u></a>.</i></p>
+<p><i>Respectez <a href="https://exodus.thravalgur.ovh/exowiki/index.php/R%C3%A8gles" target="_blank">les règles du serveur</b></u></a>.</i></p>
 <p><i>L'accès au serveur de test n'est pas restreint, mais vous devez être présents sur Discord pour jouer sur le serveur des parties organisées (système de liste blanche).</i></p>

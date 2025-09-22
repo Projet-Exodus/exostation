@@ -11,24 +11,24 @@
 [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png)
 [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-| Site         | Lien                                                                    |
-| ------------ | ----------------------------------------------------------------------- |
-| Site général | [Site du Projet-Exodus](https://ss13.thravalgur.ovh)                    |
-| Code         | [Repository](https://github.com/Projet-Exodus/exostation)               |
-| Wiki         | [Exowiki](https://ss13.thravalgur.ovh/exowiki)                          |
-| Discord      | [Discord du Projet-Exodus](https://ss13.thravalgur.ovh/exowiki/Discord) |
+| Site         | Lien                                                                      |
+| ------------ | ------------------------------------------------------------------------- |
+| Site général | [Site du Projet-Exodus](https://exodus.thravalgur.ovh)                    |
+| Code         | [Repository](https://github.com/Projet-Exodus/exostation)                 |
+| Wiki         | [Exowiki](https://exodus.thravalgur.ovh/exowiki)                          |
+| Discord      | [Discord du Projet-Exodus](https://exodus.thravalgur.ovh/exowiki/Discord) |
 
 ## /TG/STATION
 
-| Website             | Link                                                                                                 |
-| ------------------- | ---------------------------------------------------------------------------------------------------- |
-| Website             | https://tgstation13.org                                                                              |
-| Code                | https://github.com/tgstation/tgstation                                                               |
-| Server Config       | https://github.com/tgstation-operations/server-config                                                |
-| Wiki                | https://tgstation13.org/wiki/Main_Page                                                               |
-| Codedocs            | https://codedocs.tgstation13.org/                                                                    |
-| /tg/station Discord | https://tgstation13.org/phpBB/viewforum.php?f=60                                                     |
-| Coderbus Discord    | https://discord.gg/Vh8TJp9                                                                           |
+| Website             | Link                                                  |
+| ------------------- | ----------------------------------------------------- |
+| Website             | https://tgstation13.org                               |
+| Code                | https://github.com/tgstation/tgstation                |
+| Server Config       | https://github.com/tgstation-operations/server-config |
+| Wiki                | https://tgstation13.org/wiki/Main_Page                |
+| Codedocs            | https://codedocs.tgstation13.org/                     |
+| /tg/station Discord | https://tgstation13.org/phpBB/viewforum.php?f=60      |
+| Coderbus Discord    | https://discord.gg/Vh8TJp9                            |
 
 This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
 
