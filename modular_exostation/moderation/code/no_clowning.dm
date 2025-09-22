@@ -42,7 +42,7 @@
 	spawner_type -= list(/mob/living/basic/clown/fleshclown, /mob/living/basic/clown/clownhulk, /mob/living/basic/clown/longface, /mob/living/basic/clown/clownhulk/chlown, /mob/living/basic/clown/clownhulk/honkmunculus, /mob/living/basic/clown/mutant/glutton)
 
 /obj/item/grenade/spawnergrenade/clown_broken
-	/var/static/active_grenade_clown_broken = 1
+	var/static/active_grenade_clown_broken = 1
 
 /obj/item/grenade/spawnergrenade/clown_broken/Initialize(mapload)
 	. = ..()
@@ -69,7 +69,7 @@
 	)
 // Override code\modules\antagonists\wizard\equipment\artefact.dm
 /obj/item/veilrender/honkrender/honkhulkrender
-	/var/static/active_honkhulkrender = 1
+	var/static/active_honkhulkrender = 1
 
 /obj/item/veilrender/honkrender/honkhulkrender/Initialize(mapload)
 	. = ..()
