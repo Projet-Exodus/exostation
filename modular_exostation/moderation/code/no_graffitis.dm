@@ -4,6 +4,7 @@
 	. = ..()
 
 	graffiti -= list(
+		"amyjon",
 		"cyka",
 		"matt",
 		"uboa"
