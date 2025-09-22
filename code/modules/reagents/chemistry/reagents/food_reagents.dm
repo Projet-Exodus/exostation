@@ -1220,18 +1220,19 @@
 
 /datum/reagent/consumable/mintextract
 	name = "Mint Extract"
-	description = "Useful for dealing with undesirable customers."
+	description = "Extrait de menthe concentré." // EXOSTATION EDIT CHANGE - MODERATION : Original "Useful for dealing with undesirable customers."
 	color = "#CF3600" // rgb: 207, 54, 0
 	taste_description = "mint"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
+/** EXOSTATION EDIT START - MODERATION : stupid interaction with fatness
 /datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
-	/** EXOSTATION
 	if(HAS_TRAIT(affected_mob, TRAIT_FAT))
 		affected_mob.investigate_log("has been gibbed by consuming [src] while fat.", INVESTIGATE_DEATHS)
 		affected_mob.inflate_gib()
-*/
+EXOSTATION EDIT END - MODERATION*/
+
 /datum/reagent/consumable/worcestershire
 	name = "Worcestershire Sauce"
 	description = "That's \"Woostershire\" sauce, by the way."

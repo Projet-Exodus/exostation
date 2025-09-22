@@ -1,4 +1,4 @@
-https://github.com/Projet-Exodus/Exostation/pull/
+https://github.com/Projet-Exodus/Exostation/pull/48
 
 ## Modération
 
@@ -33,7 +33,9 @@ Grossophobie
 Religion
 
 - `code\modules\library\bibles.dm` : noms & images
+- `code\modules\jobs\job_types\chaplain\chaplain.dm` : retrait de typesde religions pré-enregistrés
 - `code\modules\jobs\job_types\chaplain\chaplain_nullrod.dm` : retrait de types de nullrod
+- `strings\names\religion.txt` : noms proposés aléatoirement
 
 **Edits non-modulaires**
 
@@ -68,4 +70,5 @@ Verbes et menus
 
 ### Crédits :
 
-Emprunts aux changements faits par TaleStation, Orbstation,
+Thràvalgur
+Emprunts aux changements faits par TaleStation, Orbstation et Dopplershift13

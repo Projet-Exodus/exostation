@@ -25,7 +25,7 @@
 
 /obj/item/gun/magic/staff/honk/Initialize(mapload)
 	. = ..()
-	active_staff_honk_shoes++
+	active_staff_honk++
 	if(active_staff_honk > 1)
 		return INITIALIZE_HINT_QDEL
 
@@ -37,21 +37,51 @@
 
 // Ne devraient pas apparaître en jeu mais on ne sait jamais
 // Override code\game\objects\items\grenades\spawnergrenade.dm
+/obj/item/grenade/spawnergrenade/clown
+	/var/static/active_grenade_clown = 1
+
 /obj/item/grenade/spawnergrenade/clown/Initialize(mapload)
 	. = ..()
-		return INITIALIZE_HINT_QDEL
-/obj/item/grenade/spawnergrenade/clown_broken/Initialize(mapload)
+	spawner_type -= list(/mob/living/basic/clown/fleshclown, /mob/living/basic/clown/clownhulk, /mob/living/basic/clown/longface, /mob/living/basic/clown/clownhulk/chlown, /mob/living/basic/clown/clownhulk/honkmunculus, /mob/living/basic/clown/mutant/glutton)
+
+/obj/item/grenade/spawnergrenade/clown_broken
+	/var/static/active_grenade_clown_broken = 1
+
+/obj/item/grenade/spawnergrenade/clown/Initialize(mapload)
 	. = ..()
+	active_grenade_clown_broken++
+	if(active_grenade_clown_broken > 1)
 		return INITIALIZE_HINT_QDEL
+
+/obj/item/grenade/spawnergrenade/clown/Destroy(force)
+	if(active_grenade_clown_broken > 1)
+		new	/obj/item/grenade/spawnergrenade/spesscarp(loc)
+	active_grenade_clown_broken--
+	return ..()
+
 // Override code\game\objects\structures\spawner.dm
 /obj/structure/spawner/clown/Initialize(mapload)
 	. = ..()
-		return INITIALIZE_HINT_QDEL
+	mob_types -= list(
+		/mob/living/basic/clown/clownhulk,
+		/mob/living/basic/clown/clownhulk/chlown,
+		/mob/living/basic/clown/clownhulk/honkmunculus,
+		/mob/living/basic/clown/fleshclown,
+		/mob/living/basic/clown/mutant/glutton,
+		/mob/living/basic/clown/longface,
+	)
 // Override code\modules\antagonists\wizard\equipment\artefact.dm
-/obj/item/veilrender/honkrender/Initialize(mapload)
-	. = ..()
-		return INITIALIZE_HINT_QDEL
+/obj/item/veilrender/honkrender/honkhulkrender
+	/var/static/active_honkhulkrender = 1
 
 /obj/item/veilrender/honkrender/honkhulkrender/Initialize(mapload)
 	. = ..()
+	active_honkhulkrender++
+	if(active_honkhulkrender > 1)
 		return INITIALIZE_HINT_QDEL
+
+/obj/item/veilrender/honkrender/honkhulkrender/Destroy(force)
+	if(active_honkhulkrender > 1)
+		new	/obj/item/veilrender/honkrender/(loc)
+	active_honkhulkrender--
+	return ..()

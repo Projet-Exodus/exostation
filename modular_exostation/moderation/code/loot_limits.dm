@@ -98,7 +98,7 @@
 		if(77 to 78)
 			new /obj/item/toy/plush/pkplush(src)
 		if(79 to 80)
-			new /obj/item/toy/plush/goatplushie(src)
+			new /obj/item/toy/plush/unicorn(src)
 		if (81 to 82)
 			new /obj/item/toy/plush/shark(src)
 		if (83 to 84)
