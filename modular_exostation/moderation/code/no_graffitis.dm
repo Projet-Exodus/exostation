@@ -4,8 +4,9 @@
 	. = ..()
 
 	graffiti -= list(
-		"prolizard",
-		"antilizard",
+		"cyka",
+		"matt",
+		"uboa"
 	)
 
 	graffiti_large_h -= list(
