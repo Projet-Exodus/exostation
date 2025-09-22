@@ -37,9 +37,6 @@
 
 // Ne devraient pas apparaître en jeu mais on ne sait jamais
 // Override code\game\objects\items\grenades\spawnergrenade.dm
-/obj/item/grenade/spawnergrenade/clown
-	/var/static/active_grenade_clown = 1
-
 /obj/item/grenade/spawnergrenade/clown/Initialize(mapload)
 	. = ..()
 	spawner_type -= list(/mob/living/basic/clown/fleshclown, /mob/living/basic/clown/clownhulk, /mob/living/basic/clown/longface, /mob/living/basic/clown/clownhulk/chlown, /mob/living/basic/clown/clownhulk/honkmunculus, /mob/living/basic/clown/mutant/glutton)
@@ -47,15 +44,15 @@
 /obj/item/grenade/spawnergrenade/clown_broken
 	/var/static/active_grenade_clown_broken = 1
 
-/obj/item/grenade/spawnergrenade/clown/Initialize(mapload)
+/obj/item/grenade/spawnergrenade/clown_broken/Initialize(mapload)
 	. = ..()
 	active_grenade_clown_broken++
 	if(active_grenade_clown_broken > 1)
 		return INITIALIZE_HINT_QDEL
 
-/obj/item/grenade/spawnergrenade/clown/Destroy(force)
+/obj/item/grenade/spawnergrenade/clown_broken/Destroy(force)
 	if(active_grenade_clown_broken > 1)
-		new	/obj/item/grenade/spawnergrenade/spesscarp(loc)
+		new	/obj/item/grenade/spawnergrenade/clown(loc)
 	active_grenade_clown_broken--
 	return ..()
 
@@ -82,6 +79,6 @@
 
 /obj/item/veilrender/honkrender/honkhulkrender/Destroy(force)
 	if(active_honkhulkrender > 1)
-		new	/obj/item/veilrender/honkrender/(loc)
+		new	/obj/item/veilrender/honkrender(loc)
 	active_honkhulkrender--
 	return ..()
