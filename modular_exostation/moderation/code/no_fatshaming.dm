@@ -8,18 +8,10 @@
 	target.set_nutrition(0)
 
 // Renaming fatphobic machine
-// Override code\game\machinery\fat_sucker.dm + 1 remplacement non modulaire
+// Override code\game\machinery\fat_sucker.dm + 2 remplacements non modulaires
 /obj/machinery/fat_sucker
 	name = "nutritional recycler"
 	desc = "Convertit en toute sécurité les nutriments absorbés par le sujet en viande délicieuse."
-	fat_facts = list(\
-	"On mange tellement de choses toxiques que les gens ne devraient plus dire bon appétit aux autres, mais bonne chance !", \
-	"Aucune nourriture n'est bonne, si l'appétit ne l'assaisonne.", \
-	"Les aliments mal revenus font les repas mal partis.", \
-	"Il y a de la lumière dans les frigos pour que les aliments voient en permanence la date avant laquelle ils n'ont pas le droit de pourrir.", \
-	"La gastronomie est l'art d'utiliser la nourriture pour créer le bonheur.", \
-	"Un être vivant est comme une horloge. Il se remonte par la nourriture deux ou trois fois par jour."
-	)
 // Override code\game\objects\items\circuitboards\machines\machine_circuitboards.dm
 /obj/item/circuitboard/machine/fat_sucker
 	name = "Nutritional Recycler"

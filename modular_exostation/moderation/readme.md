@@ -29,6 +29,7 @@ Verbes et menus
 Grossophobie
 
 - `code\modules\reagents\chemistry\reagents\food_reagents.dm` : pas d'effet mortel à l'extrait de menthe (`/datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)`)
+- `code\game\machinery\fat_sucker.dm` : remplacements de textes
 
 Religion
 
