@@ -169,7 +169,7 @@ EXOSTATION EDIT REMOVAL END */
 		/* end_point */ offset_order[1],
 	))
 // EXOSTATION EDIT ADDITION START - EXO_CHANGELOGS
-		offset_order -= offset_order[1]
+	offset_order -= offset_order[1]
 
 	resource_panels += page_holder.give_screen_object(new /atom/movable/screen/escape_menu/lobby_button/small/collapsible(
 		null,
@@ -197,4 +197,3 @@ EXOSTATION EDIT REMOVAL END */
 	client?.prefs.update_static_data(client?.mob)
 	client?.prefs.ui_interact(client?.mob)
 	qdel(src)
-
