@@ -1,0 +1,5 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - qol: "Ajout d'un bouton Changelog dans le menu Echap."
+  - spellcheck: "Traduction du menu Echap."
