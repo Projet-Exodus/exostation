@@ -180,21 +180,21 @@ IPINTEL_REJECT_BAD
 #USEWHITELIST
 
 ## The address shown for the game server in the TGS check command
-PUBLIC_ADDRESS ss13.thravalgur.ovh:5335
+PUBLIC_ADDRESS exodus.thravalgur.ovh:5335
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 ## This is also used to show the server's address in the TGS check command if the public address isn't set
-#SERVER ss13.thravalgur.ovh:5335
+#SERVER exodus.thravalgur.ovh:5335
 
 ## forum address
 FORUMURL https://discord.gg/6mbvStH7t5
 
 ## Wiki address
-WIKIURL https://ss13.thravalgur.ovh/exowiki/
+WIKIURL https://exodus.thravalgur.ovh/exowiki/
 
 ## Rules address
-RULESURL https://ss13.thravalgur.ovh/exowiki/index.php/R%C3%A8gles
+RULESURL https://exodus.thravalgur.ovh/exowiki/index.php/R%C3%A8gles
 
 ## Github address
 GITHUBURL https://www.github.com/Projet-Exodus/exostation

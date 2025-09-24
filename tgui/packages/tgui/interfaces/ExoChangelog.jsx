@@ -192,10 +192,10 @@ export class ExoChangelog extends Component {
         <p>
           <b>Spécificités : </b>
           Exostation est un downstream francophone de /tg/station orienté vers
-          le roleplay non-érotique et la création d&apos;histoires, destiné à
-          une population modeste et à des joueurs débutants. Nous avons
-          reproduit des fonctionnalités communes à de nombreux downstreams de
-          /tg/station.
+          le roleplay (sans ERP) et la création d&apos;histoires, destiné à une
+          population modeste et à des joueurs débutants. Nous avons reproduit
+          des fonctionnalités communes à de nombreux downstreams de /tg/station
+          et ajouté les nôtres.
         </p>
         <p>
           {'Les contributeurs GitHub les plus récents se trouvent '}
@@ -206,14 +206,17 @@ export class ExoChangelog extends Component {
         </p>
         <p>
           {'Vous trouverez aussi le lien de notre wiki '}
-          <a href="/">ici</a>.
+          <a href="https://exodus.thravalgur.ovh/exowiki/index.php/Accueil">
+            ici
+          </a>
+          .
         </p>
         <p>
           <b>Remarque : </b>
           Ce changelog est un quasi-clone de celui de /tg/station, destiné à
           suivre les évolutions propres au serveur Exostaton. Le changelog de
-          /TG/ peut être trouvé dans l&apos;onglet OOC avec le verbe /TG/
-          Changelog.
+          /TG/ peut être trouvé dans le menu Echap ou dans l&apos;onglet OOC
+          avec le verbe /TG/ Changelog.
         </p>
         {dateDropdown}
       </Section>
@@ -221,15 +224,17 @@ export class ExoChangelog extends Component {
 
     const footer_tg = (
       <Section>
-        <h1>Traditional Games Space Station 13</h1>
+        <h1>Downstream de Traditional Games Space Station 13</h1>
         <p>
           <b>Remerciements : </b>
-          Merci aux développeurs de Baystation 12, /vg/station, NTstation, CDK
-          Station, FacepunchStation, GoonStation, aux développeurs originels de
-          Space Station 13, aux utilisateurs GitHub celotajstg pour
-          l&apos;adaptation de ce changelog en TGUI et Invisty pour l&apos;image
-          de titre, et aux innombrables autres qui ont contribué au jeu, au
-          report des erreurs ou au wiki au fil des ans.
+          Merci aux développeurs de Traditional Games Space Station 13
+          (/tg/station). Merci également aux développeurs précédents de
+          Baystation 12, /vg/station, NTstation, CDK Station, FacepunchStation,
+          GoonStation, aux développeurs originels de Space Station 13. Merci
+          enfin aux utilisateurs GitHub celotajstg pour l&apos;adaptation de ce
+          changelog en TGUI et Invisty pour l&apos;image de titre, et aux
+          innombrables autres qui ont contribué au jeu, au report des erreurs ou
+          au wiki au fil des ans.
         </p>
         <p>
           {'Les membres actuels de leur organisation peuvent être trouvés '}
@@ -240,6 +245,13 @@ export class ExoChangelog extends Component {
             ici
           </a>
           .
+        </p>
+        <p>
+          <b>Remerciements aux autres downstreams : </b>
+          Merci aux développeurs de BandaStation, Skyrat Station 13, Nova
+          Sector, IrisStation, BubberStation, MappleStation, Orbstation,
+          DopplerStation et TaleStation, ainsi que de tout autre downstream dont
+          les idées ou le travail ont inspiré les développeurs d'Exostation.
         </p>
       </Section>
     );
@@ -258,9 +270,9 @@ export class ExoChangelog extends Component {
           No
         </p>
         <p>
-          Traditional Games Space Station 13 est aussi reconnaissant envers
-          l&apos;équipe de développement de GoonStation 13 pour son travail
-          jusqu&apos;à la release
+          Avec Traditional Games Space Station 13, Exostation est aussi
+          reconnaissant envers l&apos;équipe de développement de GoonStation 13
+          pour son travail jusqu&apos;à la release
           {
             " r4407. Le changelog pour les changements jusqu'à r4407 peut être consulté "
           }
@@ -275,7 +287,7 @@ export class ExoChangelog extends Component {
           <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a>
           {' exclusivement.'}
         </p>
-        <h3>Traditional Games Space Station 13 License</h3>
+        <h3>Licence pour Exodus et Traditional Games Space Station 13</h3>
         <p>
           {'Tout le code après le '}
           <a
