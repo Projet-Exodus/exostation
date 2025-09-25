@@ -26,3 +26,7 @@
   - balance: Les tables de loot de plusieurs monstres ont été modifiées.
   - rscdel: Certains graffitis ne sont plus disponibles.
   - balance: La potion de changement de genre ne peut s'utiliser que sur soi-même.
+2025-09-25:
+  Thravalgur:
+  - qol: Ajout d'un bouton Changelog dans le menu Echap.
+  - spellcheck: Traduction du menu Echap.
