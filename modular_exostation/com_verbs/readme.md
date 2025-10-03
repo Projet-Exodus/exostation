@@ -10,6 +10,7 @@ Module ID: COM_VERBS
 Ajout d'un canal LOOC : chat OOC de proximité. Ajout d'un canal Whis, similaire au canal Me mais pour chuchoter plutôt que pour emote.
 
 ### Procs ou fichiers de TG changés :
+
 - `code/datums/chatmessage.dm`
 - `tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss`
 - `tgui\packages\tgui-panel\styles\tgchat\chat-light.scss`
@@ -18,6 +19,7 @@ Ajout d'un canal LOOC : chat OOC de proximité. Ajout d'un canal Whis, similaire
 - `\tgui\packages\tgui-say\styles\colors.scss`
 
 **Fichiers de base contenant des éléments de looc**
+
 - `code/_DEFINES/span.dm`
 - `code/_globalvars/admin.dm`
 - `tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss`
@@ -29,11 +31,13 @@ Ajout d'un canal LOOC : chat OOC de proximité. Ajout d'un canal Whis, similaire
 - `/datum/tgui_say/alter_entry(payload)` : proc réutilisé
 
 ### Defines :
+
 - `modular_exostation/_exodefines/code/com_verbs.dm`
 
 ### Fichiers inclus qui ne sont pas contenus dans ce module :
 
-- `tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\game_preferences\looc.tsx`
+- `tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\exostation_preferences\looc.tsx`
 
 ### Crédits :
+
 Thràvalgur (port de la version de Bandastation par larentoun)

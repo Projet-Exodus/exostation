@@ -8,6 +8,7 @@
 #include "changelog/_changelog.dme"
 #include "com_verbs/_com_verbs.dme"
 #include "exomining/_exomining.dme"
+#include "lore/_lore.dme"
 #include "holomap/_holomap.dme"
 #include "keybinding/_keybinding.dme"
 #include "local_fixes/_local_fixes.dme"

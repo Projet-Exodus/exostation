@@ -14,6 +14,9 @@ export type SecurityRecordsData = {
 
 export type SecurityRecord = {
   age: number;
+  // EXOSTATION EDIT ADDITION START - EXOLORE : chronological age
+  age_chronological: number;
+  // EXOSTATION EDIT ADDITION END - EXOLORE
   citations: Crime[];
   crew_ref: string;
   crimes: Crime[];
@@ -26,6 +29,10 @@ export type SecurityRecord = {
   trim: string;
   wanted_status: string;
   voice: string;
+  // EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text
+  past_general_records: string;
+  past_security_records: string;
+  // EXOSTATION EDIT ADDITION END - EXOLORE
 };
 
 export type Crime = {

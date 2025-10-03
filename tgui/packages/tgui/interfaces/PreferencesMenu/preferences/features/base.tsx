@@ -15,6 +15,7 @@ import {
   NumberInput,
   Slider,
   Stack,
+  TextArea /* EXOSTATION EDIT ADDITION - EXOLORE */,
 } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
@@ -259,3 +260,25 @@ export function FeatureShortTextInput(
     />
   );
 }
+
+// EXOSTATION EDIT ADDITION START - EXOLORE
+
+export const FeatureTextInput = (
+  props: FeatureValueProps<string, string, FeatureShortTextData>,
+) => {
+  if (!props.serverData) {
+    return <Box>Loading...</Box>;
+  }
+
+  return (
+    <TextArea
+      height="100px"
+      width="100%"
+      value={props.value}
+      maxLength={props.serverData.maximum_length}
+      onBlur={(value) => props.handleSetValue(value)}
+    />
+  );
+};
+
+// EXOSTATION EDIT ADDITION END - EXOLORE

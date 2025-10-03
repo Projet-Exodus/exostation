@@ -13,8 +13,8 @@ import {
 
 import { CharacterPreview } from '../common/CharacterPreview';
 import { EditableText } from '../common/EditableText';
-import { CRIMESTATUS2COLOR, CRIMESTATUS2DESC } from './constants';
 import { CrimeWatcher } from './CrimeWatcher';
+import { CRIMESTATUS2COLOR, CRIMESTATUS2DESC } from './constants';
 import { getSecurityRecord } from './helpers';
 import { RecordPrint } from './RecordPrint';
 import type { SecurityRecordsData } from './types';
@@ -68,6 +68,11 @@ const RecordInfo = (props) => {
     species,
     wanted_status,
     voice,
+    // EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text
+    past_general_records,
+    past_security_records,
+    age_chronological,
+    // EXOSTATION EDIT ADDITION END - EXOLORE
   } = foundRecord;
 
   const [isValid, setIsValid] = useState(true);
@@ -150,15 +155,17 @@ const RecordInfo = (props) => {
             <LabeledList.Item label="Job">
               <EditableText field="rank" target_ref={crew_ref} text={rank} />
             </LabeledList.Item>
-            <LabeledList.Item label="Age">
+            {/* EXOSTATION EDIT CHANGE START - EXOLORE : physical age */}
+            <LabeledList.Item label="Physical Age">
+              {/* EXOSTATION EDIT CHANGE END - EXOLORE : Original <LabeledList.Item label="Age">  */}
               <RestrictedInput
                 minValue={min_age}
                 maxValue={max_age}
                 onEnter={(value) =>
                   isValid &&
                   act('edit_field', {
-                    crew_ref: crew_ref,
                     field: 'age',
+                    ref: crew_ref,
                     value: value,
                   })
                 }
@@ -166,6 +173,22 @@ const RecordInfo = (props) => {
                 value={age}
               />
             </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION START - EXOLORE : chronological age */}
+            <LabeledList.Item label="Chronological Age">
+              <RestrictedInput
+                minValue={min_age}
+                maxValue={999}
+                onEnter={(value) =>
+                  act('edit_field', {
+                    field: 'age_chronological',
+                    ref: crew_ref,
+                    value: value,
+                  })
+                }
+                value={age_chronological}
+              />
+            </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION END - EXOLORE*/}
             <LabeledList.Item label="Species">
               <EditableText
                 field="species"
@@ -198,6 +221,18 @@ const RecordInfo = (props) => {
                 text={note}
               />
             </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text */}
+            <LabeledList.Item label="General Records">
+              <Box maxWidth="100%" preserveWhitespace>
+                {past_general_records || 'N/A'}
+              </Box>
+            </LabeledList.Item>
+            <LabeledList.Item label="Past Security Records">
+              <Box maxWidth="100%" preserveWhitespace>
+                {past_security_records || 'N/A'}
+              </Box>
+            </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION END - EXOLORE */}
           </LabeledList>
         </Section>
       </Stack.Item>

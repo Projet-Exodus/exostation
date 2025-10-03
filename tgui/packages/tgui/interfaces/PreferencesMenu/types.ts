@@ -141,6 +141,9 @@ export type PreferencesMenuData = {
       random_body: RandomSetting;
       [otherKey: string]: unknown;
     };
+    // EXOSTATION EDIT ADDITION START - EXOLORE
+    exo_lore: Record<string, unknown>;
+    // EXOSTATION EDIT ADDITION END - EXOLORE
     secondary_features: Record<string, unknown>;
     supplemental_features: Record<string, unknown>;
     manually_rendered_features: Record<string, string>;
