@@ -22,7 +22,7 @@ export const flavor_short_desc: Feature<string> = {
 export const flavor_extended_desc: Feature<string> = {
   name: 'Long description',
   description:
-    "Appears when examined further. A lengthy description of your character written as descriptive prose, up to 4096 characters in total length. Your <i>short description</i> will always be shown as your first paragraph, so you don't need to duplicate it again here. ",
+    "Appears when examined further. A lengthy description of your character written as descriptive prose, up to 4096 characters in total length. Your 'short description' will always be shown as your first paragraph, so you don't need to duplicate it again here. ",
   component: FeatureTextInput,
 };
 
