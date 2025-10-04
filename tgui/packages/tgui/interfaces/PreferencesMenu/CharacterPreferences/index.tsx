@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Button, Stack } from 'tgui-core/components';
 import { exhaustiveCheck } from 'tgui-core/exhaustive';
-import { LorePage } from '../CHAR_LOREPage'; /* EXOSTATION EDIT ADDITION - CHAR_LORE */
 import { PageButton } from '../components/PageButton';
+import { LorePage } from '../ExoLorePage'; /* EXOSTATION EDIT ADDITION - CHAR_LORE */
 import type { PreferencesMenuData } from '../types';
 import { AntagsPage } from './AntagsPage';
 import { JobsPage } from './JobsPage';
