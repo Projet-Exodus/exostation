@@ -13,9 +13,9 @@ export type MedicalRecordData = {
 
 export type MedicalRecord = {
   age: number;
-  // EXOSTATION EDIT ADDITION START - EXOLORE : chronological age
+  // EXOSTATION EDIT ADDITION START - CHAR_LORE : chronological age
   age_chronological: number;
-  // EXOSTATION EDIT ADDITION END - EXOLORE
+  // EXOSTATION EDIT ADDITION END - CHAR_LORE
   blood_type: string;
   crew_ref: string;
   dna: string;
@@ -30,10 +30,10 @@ export type MedicalRecord = {
   rank: string;
   species: string;
   trim: string;
-  // EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text
+  // EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text
   past_general_records: string;
   past_medical_records: string;
-  // EXOSTATION EDIT ADDITION END - EXOLORE
+  // EXOSTATION EDIT ADDITION END - CHAR_LORE
 };
 
 export type MedicalNote = {

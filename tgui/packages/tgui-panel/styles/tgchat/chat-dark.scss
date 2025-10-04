@@ -1087,7 +1087,7 @@ em {
   flex-grow: 1;
 }
 
-/* EXOSTATION EDIT ADDITION START - EXOLORE
+/* EXOSTATION EDIT ADDITION START - CHAR_LORE
   Larger images by text, used by flavor-text examines. No flex shenanigans.*/
 .large_img_by_text_container {
   display: inline-block;
@@ -1106,7 +1106,7 @@ em {
 .large_img_by_text_container .img_text {
   flex-grow: 1;
 }
-/*EXOSTATION EDIT ADDITION END - EXOLORE */
+/*EXOSTATION EDIT ADDITION END - CHAR_LORE */
 
 $alert-stripe-colors: (
   'default': hsl(198.6, 100%, 11.4%),
@@ -1287,7 +1287,7 @@ $border-width-px: $border-width * 1px;
   }
 }
 
-// EXOSTATION EDIT ADDITION START - COM_VERBS : LOOC - EXOLORE
+// EXOSTATION EDIT ADDITION START - COM_VERBS : LOOC - CHAR_LORE
 .looc {
   color: hsl(20, 100%, 86%);
   font-weight: bold;
@@ -1316,4 +1316,4 @@ $border-width-px: $border-width * 1px;
   color: #c7b72c;
   font-weight: bold;
 }
-// EXOSTATION EDIT ADDITION END - COM_VERBS : LOOC - EXOLORE
+// EXOSTATION EDIT ADDITION END - COM_VERBS : LOOC - CHAR_LORE

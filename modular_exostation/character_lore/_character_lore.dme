@@ -1,4 +1,4 @@
-#include "_lore.dm"
+#include "_character_lore.dm"
 
 #include "code/age_var.dm"
 #include "code/examine.dm"

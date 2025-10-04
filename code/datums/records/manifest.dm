@@ -103,7 +103,7 @@ GLOBAL_DATUM_INIT(manifest, /datum/manifest, new)
 
 
 /// Injects a record into the manifest.
-/datum/manifest/proc/inject(mob/living/carbon/human/person, atom/appearance_proxy, client/person_client) // DOPPLER EDIT CHANGE - EXOLORE : addition de client/person_client
+/datum/manifest/proc/inject(mob/living/carbon/human/person, atom/appearance_proxy, client/person_client) // EXOSTATION EDIT CHANGE - CHAR_LORE : addition de client/person_client
 	set waitfor = FALSE
 	if(!(person.mind?.assigned_role.job_flags & JOB_CREW_MANIFEST))
 		return
@@ -157,13 +157,13 @@ GLOBAL_DATUM_INIT(manifest, /datum/manifest, new)
 		minor_disabilities = person.get_quirk_string(FALSE, CAT_QUIRK_MINOR_DISABILITY, from_scan = TRUE),
 		minor_disabilities_desc = person.get_quirk_string(TRUE, CAT_QUIRK_MINOR_DISABILITY),
 		quirk_notes = person.get_quirk_string(TRUE, CAT_QUIRK_NOTES),
-		// EXOSTATION EDIT ADDITION START- EXOLORE: records & flavor text
+		// EXOSTATION EDIT ADDITION START- CHAR_LORE: records & flavor text
 		past_general_records = person_client?.prefs.read_preference(/datum/preference/text/past_general_records),
 		past_medical_records = person_client?.prefs.read_preference(/datum/preference/text/past_medical_records),
 		past_security_records = person_client?.prefs.read_preference(/datum/preference/text/past_security_records),
 		exploitable_records = person_client?.prefs.read_preference(/datum/preference/text/exploitable_records),
 		age_chronological = person_client?.prefs.read_preference(/datum/preference/numeric/chronological_age),
-		// DOPPLER EDIT END
+		// EXOSTATION EDIT END
 	)
 
 /// Edits the rank and trim of the found record.

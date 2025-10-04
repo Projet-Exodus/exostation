@@ -553,10 +553,10 @@ Possible to do for anyone motivated enough:
 		hologram.icon = work_off.icon
 		hologram.icon_state = work_off.icon_state
 		hologram.copy_overlays(work_off, TRUE)
-		// EXOSTATION EDIT ADDITION START - EXOLORE : temp flavor text
+		// EXOSTATION EDIT ADDITION START - CHAR_LORE : temp flavor text
 		if (AI.temporary_flavor_text)
 			hologram.overlays += GLOB.temporary_flavor_text_indicator
-		// EXOSTATION EDIT ADDITION END - EXOLORE : temp flavor text
+		// EXOSTATION EDIT ADDITION END - CHAR_LORE : temp flavor text
 		hologram.makeHologram()
 
 		if(AI)

@@ -2,7 +2,7 @@ https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
 
 ## Lore - Flavor text, records, etc.
 
-Module ID: EXOLORE
+Module ID: CHAR_LORE
 
 ### Description :
 
@@ -55,7 +55,7 @@ Ce module ajoute un onglet Lore à la création des personnages, pour rajouter u
 
 **Fichiers TGUI**
 
-- `tgui\packages\tgui\interfaces\PreferencesMenu\ExoLorePage.tsx`
+- `tgui\packages\tgui\interfaces\PreferencesMenu\CHAR_LOREPage.tsx`
 - `tgui\packages\tgui\interfaces\PreferencesMenu\ExoSinglePreference.tsx`
 - `tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\exostation_preferences\lore.tsx`
 
@@ -73,4 +73,4 @@ Ce module ajoute un onglet Lore à la création des personnages, pour rajouter u
 ### Crédits :
 
 Thràvalgur
-Ephemeralis, Nerev4r, Pink-MB (DopplerShift PR [64](https://github.com/DopplerShift13/DopplerShift/pull/64), [262](https://github.com/DopplerShift13/DopplerShift/pull/262), [349](https://github.com/DopplerShift13/DopplerShift/pull/349), [586](https://github.com/DopplerShift13/DopplerShift/pull/586))
+Port et adaptations des PR originaux de Ephemeralis, Nerev4r, Pink-MB (DopplerShift PR [64](https://github.com/DopplerShift13/DopplerShift/pull/64), [262](https://github.com/DopplerShift13/DopplerShift/pull/262), [349](https://github.com/DopplerShift13/DopplerShift/pull/349), [586](https://github.com/DopplerShift13/DopplerShift/pull/586)) (eux-mêmes inspirés d'autres codebases)

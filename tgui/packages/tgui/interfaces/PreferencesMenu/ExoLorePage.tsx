@@ -8,7 +8,7 @@ import type { PreferencesMenuData } from './types';
 
 export const LorePage = () => {
   const { act, data } = useBackend<PreferencesMenuData>();
-  const exoLorePreferences = {
+  const CHAR_LOREPreferences = {
     ...data.character_preferences.exo_lore,
   };
   return (
@@ -26,60 +26,63 @@ export const LorePage = () => {
       >
         <LabeledList>
           <Section title="Character Details">
-            <PreferenceSingle pref_key="age" preferences={exoLorePreferences} />
+            <PreferenceSingle
+              pref_key="age"
+              preferences={CHAR_LOREPreferences}
+            />
             <PreferenceSingle
               pref_key="age_chronological"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="flavor_short_desc"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="flavor_extended_desc"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="headshot_url"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
           </Section>
           <Section title="Silicon">
             <PreferenceSingle
               pref_key="silicon_flavor_short_desc"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="silicon_flavor_extended_desc"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="silicon_headshot_url"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
           </Section>
           <Section title="Records">
             <PreferenceSingle
               pref_key="past_general_records"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="past_medical_records"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="past_security_records"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
             <PreferenceSingle
               pref_key="exploitable_records"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
           </Section>
           <Section title="Notes">
             <PreferenceSingle
               pref_key="ooc_notes"
-              preferences={exoLorePreferences}
+              preferences={CHAR_LOREPreferences}
             />
           </Section>
         </LabeledList>

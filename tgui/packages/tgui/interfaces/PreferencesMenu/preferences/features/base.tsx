@@ -15,7 +15,7 @@ import {
   NumberInput,
   Slider,
   Stack,
-  TextArea /* EXOSTATION EDIT ADDITION - EXOLORE */,
+  TextArea /* EXOSTATION EDIT ADDITION - CHAR_LORE */,
 } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
@@ -261,7 +261,7 @@ export function FeatureShortTextInput(
   );
 }
 
-// EXOSTATION EDIT ADDITION START - EXOLORE
+// EXOSTATION EDIT ADDITION START - CHAR_LORE
 
 export const FeatureTextInput = (
   props: FeatureValueProps<string, string, FeatureShortTextData>,
@@ -281,4 +281,4 @@ export const FeatureTextInput = (
   );
 };
 
-// EXOSTATION EDIT ADDITION END - EXOLORE
+// EXOSTATION EDIT ADDITION END - CHAR_LORE

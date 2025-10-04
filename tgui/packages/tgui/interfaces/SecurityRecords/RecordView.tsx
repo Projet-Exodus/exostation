@@ -68,11 +68,11 @@ const RecordInfo = (props) => {
     species,
     wanted_status,
     voice,
-    // EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text
+    // EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text
     past_general_records,
     past_security_records,
     age_chronological,
-    // EXOSTATION EDIT ADDITION END - EXOLORE
+    // EXOSTATION EDIT ADDITION END - CHAR_LORE
   } = foundRecord;
 
   const [isValid, setIsValid] = useState(true);
@@ -155,9 +155,9 @@ const RecordInfo = (props) => {
             <LabeledList.Item label="Job">
               <EditableText field="rank" target_ref={crew_ref} text={rank} />
             </LabeledList.Item>
-            {/* EXOSTATION EDIT CHANGE START - EXOLORE : physical age */}
+            {/* EXOSTATION EDIT CHANGE START - CHAR_LORE : physical age */}
             <LabeledList.Item label="Physical Age">
-              {/* EXOSTATION EDIT CHANGE END - EXOLORE : Original <LabeledList.Item label="Age">  */}
+              {/* EXOSTATION EDIT CHANGE END - CHAR_LORE : Original <LabeledList.Item label="Age">  */}
               <RestrictedInput
                 minValue={min_age}
                 maxValue={max_age}
@@ -173,7 +173,7 @@ const RecordInfo = (props) => {
                 value={age}
               />
             </LabeledList.Item>
-            {/* EXOSTATION EDIT ADDITION START - EXOLORE : chronological age */}
+            {/* EXOSTATION EDIT ADDITION START - CHAR_LORE : chronological age */}
             <LabeledList.Item label="Chronological Age">
               <RestrictedInput
                 minValue={min_age}
@@ -188,7 +188,7 @@ const RecordInfo = (props) => {
                 value={age_chronological}
               />
             </LabeledList.Item>
-            {/* EXOSTATION EDIT ADDITION END - EXOLORE*/}
+            {/* EXOSTATION EDIT ADDITION END - CHAR_LORE*/}
             <LabeledList.Item label="Species">
               <EditableText
                 field="species"
@@ -221,7 +221,7 @@ const RecordInfo = (props) => {
                 text={note}
               />
             </LabeledList.Item>
-            {/* EXOSTATION EDIT ADDITION START - EXOLORE : records & flavor text */}
+            {/* EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text */}
             <LabeledList.Item label="General Records">
               <Box maxWidth="100%" preserveWhitespace>
                 {past_general_records || 'N/A'}
@@ -232,7 +232,7 @@ const RecordInfo = (props) => {
                 {past_security_records || 'N/A'}
               </Box>
             </LabeledList.Item>
-            {/* EXOSTATION EDIT ADDITION END - EXOLORE */}
+            {/* EXOSTATION EDIT ADDITION END - CHAR_LORE */}
           </LabeledList>
         </Section>
       </Stack.Item>
