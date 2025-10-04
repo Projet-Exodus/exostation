@@ -6,7 +6,7 @@ GLOBAL_VAR_INIT(temporary_flavor_text_indicator, generate_temporary_flavor_text_
 	var/temporary_flavor_text
 
 /proc/generate_temporary_flavor_text_indicator()
-	var/mutable_appearance/temporary_flavor_text_indicator = mutable_appearance('modular_exostation/lore/icons/indicator.dmi', "flavor", FLY_LAYER)
+	var/mutable_appearance/temporary_flavor_text_indicator = mutable_appearance('modular_exostation/character_lore/icons/indicator.dmi', "flavor", FLY_LAYER)
 	temporary_flavor_text_indicator.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	return temporary_flavor_text_indicator
 
