@@ -1,0 +1,4 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - rscadd: "Onglet Lore dans la création de personnage, pour personnaliser sa description et son background."
