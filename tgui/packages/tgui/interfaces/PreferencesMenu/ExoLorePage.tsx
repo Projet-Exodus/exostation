@@ -25,7 +25,7 @@ export const LorePage = () => {
         maxHeight="auto"
       >
         <LabeledList>
-          <Section title="Humanoid Character Details">
+          <Section title="Carbon Character Details">
             <PreferenceSingle
               pref_key="age"
               preferences={CHAR_LOREPreferences}
