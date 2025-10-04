@@ -29,22 +29,8 @@ export const flavor_extended_desc: Feature<string> = {
 export const headshot_url: Feature<string> = {
   name: 'Headshot image (URL)',
   description:
-    "A https link to a hosted image of your character's headshot. Must be: no larger than 250x250px (you can use larger images, but they will be scaled down, and probably poorly above 500px), a jpg/png/jpeg file, and hosted on either Gyazo (i.gyazo.com), Byondhome (files.byondhome.com), Imgbox (images2.imgbox.com) or Catbox (files.catbox.moe). Transparent backgrounds are highly recommended (but only supported on .png files).",
+    "A https link to a hosted image of your character's headshot. Must be: no larger than 250x250px (you can use larger images, but they will be scaled down, and probably poorly above 500px), a jpg/png/jpeg file, and hosted on the wiki (in the dedicated page). Transparent backgrounds are highly recommended (but only supported on .png files).",
   component: FeatureShortTextInput,
-};
-
-export const custom_species_name: Feature<string> = {
-  name: 'Species name',
-  description:
-    'Appears when looked at. Leave blank to match a default coded race (such as Human).',
-  component: FeatureShortTextInput,
-};
-
-export const custom_species_desc: Feature<string> = {
-  name: 'Species description',
-  description:
-    "Appears when examined further. An overview of your species, ideally limited to commonly-known facts such as general physical appearances, origin world/sector, and so on. This should not be excessively long - you're better off sharing that information via IC interactions (or records) instead of expecting people to read it off your examine.",
-  component: FeatureTextInput,
 };
 
 export const silicon_flavor_short_desc: Feature<string> = {
@@ -61,24 +47,10 @@ export const silicon_flavor_extended_desc: Feature<string> = {
   component: FeatureTextInput,
 };
 
-export const silicon_model_name: Feature<string> = {
-  name: 'Model name',
-  description:
-    "Appears when looked at when playing in an AI or cyborg shell. This is your silicon/cyborg's model name, analogous to a custom species name. NOTE: this only applies for CYBORGS, if you're playing a synthetic/IPC, use the species section to describe your model.",
-  component: FeatureShortTextInput,
-};
-
-export const silicon_model_desc: Feature<string> = {
-  name: 'Model description',
-  description:
-    "Appears when examined further when playing in an AI or cyborg shell. An overview of your silicon/cyborg's model, analogous to the description of a custom species. Consider including basic operational information like your publically-known manufacturer, intended model capabilities, or anything else that you think needs to be known immediately and is generally-known knowledge.",
-  component: FeatureTextInput,
-};
-
 export const silicon_headshot_url: Feature<string> = {
   name: 'Silicon headshot image (URL)',
   description:
-    "A https link to a hosted image of your SILICON character's headshot, typically either a specific cyborg shell, or something representing their face or engram if an AI-core. Must be: no larger than 250x250px (you can use larger images, but they will be scaled down, and probably poorly above 500px), a jpg/png/jpeg file, and hosted on either Gyazo (i.gyazo.com), Byondhome (files.byondhome.com), Imgbox (images2.imgbox.com) or Catbox (files.catbox.moe). Transparent backgrounds are highly recommended (but only supported on .png files).",
+    "A https link to a hosted image of your SILICON character's headshot. Must be: no larger than 250x250px (you can use larger images, but they will be scaled down, and probably poorly above 500px), a jpg/png/jpeg file, and hosted on the wiki (in the dedicated page). Transparent backgrounds are highly recommended (but only supported on .png files).",
   component: FeatureShortTextInput,
 };
 
