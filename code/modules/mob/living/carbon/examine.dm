@@ -17,6 +17,14 @@
 	var/t_is = p_are()
 
 	. = list()
+	// EXOSTATION EDIT ADDITION START - CHAR_LORE : flavor text & exploitables
+	if (dna.features["flavor_short_desc"])
+		. += "[dna.features["flavor_short_desc"]] [get_extended_description_href("\[👁️\]")]"
+	if (HAS_TRAIT(user, TRAIT_CRIMINAL_CONNECTIONS) && dna.features["exploitables"])
+		. += " [get_exploitables_href("\[🗝️\]")]"
+	ADD_NEWLINE_IF_NECESSARY(.)
+	. += "[t_He] [t_is] [get_species_description_href(dna.species.name)]."
+	// EXOSTATION EDIT ADDITION END - CHAR_LORE
 	. += get_clothing_examine_info(user)
 	// give us some space between clothing examine and the rest
 	ADD_NEWLINE_IF_NECESSARY(.)
@@ -291,6 +299,10 @@
 	if(isobserver(user))
 		ADD_NEWLINE_IF_NECESSARY(.)
 		. += "<b>Quirks:</b> [get_quirk_string(FALSE, CAT_QUIRK_ALL)]"
+
+	// EXOSTATION EDIT ADDITION START - CHAR_LORE : temporary flavor text
+	get_examine_temporary_flavor(.)
+	// EXOSTATION EDIT ADDITION END
 
 	SEND_SIGNAL(src, COMSIG_ATOM_EXAMINE, user, .)
 	if(length(.))

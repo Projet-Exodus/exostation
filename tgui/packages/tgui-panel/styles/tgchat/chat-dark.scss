@@ -1087,6 +1087,27 @@ em {
   flex-grow: 1;
 }
 
+/* EXOSTATION EDIT ADDITION START - CHAR_LORE
+  Larger images by text, used by flavor-text examines. No flex shenanigans.*/
+.large_img_by_text_container {
+  display: inline-block;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.large_img_by_text_container img {
+  width: 250px;
+  height: auto;
+  margin-right: 12px;
+  margin-top: 4px;
+  float: left;
+}
+
+.large_img_by_text_container .img_text {
+  flex-grow: 1;
+}
+/*EXOSTATION EDIT ADDITION END - CHAR_LORE */
+
 $alert-stripe-colors: (
   'default': hsl(198.6, 100%, 11.4%),
   'green': hsl(120, 100%, 12%),
@@ -1266,9 +1287,33 @@ $border-width-px: $border-width * 1px;
   }
 }
 
-// EXOSTATION EDIT ADDITION START - COM_VERBS : LOOC
+// EXOSTATION EDIT ADDITION START - COM_VERBS : LOOC - CHAR_LORE
 .looc {
   color: hsl(20, 100%, 86%);
   font-weight: bold;
 }
-// EXOSTATION EDIT ADDITION END - COM_VERBS : LOOC
+.pink {
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.brown {
+  color: #3d2009;
+  font-weight: bold;
+}
+
+.cyan {
+  color: #0ea1e6;
+  font-weight: bold;
+}
+
+.orange {
+  color: #b8761a;
+  font-weight: bold;
+}
+
+.yellow {
+  color: #c7b72c;
+  font-weight: bold;
+}
+// EXOSTATION EDIT ADDITION END - COM_VERBS : LOOC - CHAR_LORE

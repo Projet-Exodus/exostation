@@ -4,3 +4,4 @@
 #include "code/com_verbs.dm"
 #include "code/holomap.dm"
 #include "code/holomap_global_lists.dm"
+#include "code/lore.dm"

@@ -1,0 +1,8 @@
+#include "_character_lore.dm"
+
+#include "code/age_var.dm"
+#include "code/examine.dm"
+#include "code/flavor_text.dm"
+#include "code/headshot.dm"
+#include "code/records.dm"
+#include "code/temp_flavor_text.dm"

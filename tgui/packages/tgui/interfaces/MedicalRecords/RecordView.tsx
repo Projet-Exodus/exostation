@@ -48,6 +48,11 @@ export const MedicalRecordView = (props) => {
     quirk_notes,
     rank,
     species,
+    // EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text
+    past_general_records,
+    past_medical_records,
+    age_chronological,
+    // EXOSTATION EDIT ADDITION END - CHAR_LORE
   } = foundRecord;
 
   const minor_disabilities_array = getQuirkStrings(minor_disabilities);
@@ -91,7 +96,9 @@ export const MedicalRecordView = (props) => {
             <LabeledList.Item label="Job">
               <EditableText field="job" target_ref={crew_ref} text={rank} />
             </LabeledList.Item>
-            <LabeledList.Item label="Age">
+            {/* EXOSTATION EDIT CHANGE START - CHAR_LORE : physical age */}
+            <LabeledList.Item label="Physical Age">
+              {/* EXOSTATION EDIT CHANGE END - CHAR_LORE : Original <LabeledList.Item label="Age">  */}
               <RestrictedInput
                 minValue={min_age}
                 maxValue={max_age}
@@ -107,6 +114,22 @@ export const MedicalRecordView = (props) => {
                 value={age}
               />
             </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION START - CHAR_LORE : chronological age */}
+            <LabeledList.Item label="Chronological Age">
+              <RestrictedInput
+                minValue={min_age}
+                maxValue={999}
+                onEnter={(value) =>
+                  act('edit_field', {
+                    field: 'age_chronological',
+                    ref: crew_ref,
+                    value: value,
+                  })
+                }
+                value={age_chronological}
+              />
+            </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION END - CHAR_LORE*/}
             <LabeledList.Item label="Species">
               <EditableText
                 field="species"
@@ -211,6 +234,18 @@ export const MedicalRecordView = (props) => {
                 <Box key={index}>&#8226; {quirk}</Box>
               ))}
             </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text */}
+            <LabeledList.Item label="General Records">
+              <Box maxWidth="100%" preserveWhitespace>
+                {past_general_records || 'N/A'}
+              </Box>
+            </LabeledList.Item>
+            <LabeledList.Item label="Past Medical Records">
+              <Box maxWidth="100%" preserveWhitespace>
+                {past_medical_records || 'N/A'}
+              </Box>
+            </LabeledList.Item>
+            {/* EXOSTATION EDIT ADDITION END - CHAR_LORE */}
           </LabeledList>
         </Section>
       </Stack.Item>

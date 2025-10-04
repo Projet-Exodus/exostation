@@ -130,6 +130,11 @@
 			species = target.species,
 			trim = target.trim,
 			wanted_status = target.wanted_status,
+			// EXOSTATION EDIT ADDITION START - CHAR_LORE : records & flavor text
+			past_general_records = target.past_general_records,
+			past_security_records = target.past_security_records,
+			age_chronological = target.age_chronological,
+			// EXOSTATIION EDIT ADDITION END - CHAR_LORE
 		))
 
 	data["records"] = records

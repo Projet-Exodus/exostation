@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Button, Stack } from 'tgui-core/components';
 import { exhaustiveCheck } from 'tgui-core/exhaustive';
-
 import { PageButton } from '../components/PageButton';
+import { LorePage } from '../ExoLorePage'; /* EXOSTATION EDIT ADDITION - CHAR_LORE */
 import type { PreferencesMenuData } from '../types';
 import { AntagsPage } from './AntagsPage';
 import { JobsPage } from './JobsPage';
@@ -19,6 +19,7 @@ enum Page {
   Species,
   Quirks,
   Loadout,
+  Lore /* EXOSTATION EDIT ADDITION - CHAR_LORE */,
 }
 
 type ProfileProps = {
@@ -63,6 +64,11 @@ export function CharacterPreferenceWindow(props) {
     case Page.Jobs:
       pageContents = <JobsPage />;
       break;
+    // EXOSTATION EDIT ADDITION START - CHAR_LORE
+    case Page.Lore:
+      pageContents = <LorePage />;
+      break;
+    // EXOSTATION EDIT ADDITION END - CHAR_LORE
     case Page.Main:
       pageContents = (
         <MainPage openSpecies={() => setCurrentPage(Page.Species)} />
@@ -118,6 +124,18 @@ export function CharacterPreferenceWindow(props) {
               Character
             </PageButton>
           </Stack.Item>
+
+          {/* // EXOSTATION EDIT ADDITION START - CHAR_LORE */}
+          <Stack.Item grow>
+            <PageButton
+              currentPage={currentPage}
+              page={Page.Lore}
+              setPage={setCurrentPage}
+            >
+              Lore
+            </PageButton>
+          </Stack.Item>
+          {/* // EXOSTATION EDIT ADDITION END - CHAR_LORE */}
 
           <Stack.Item grow>
             <PageButton
