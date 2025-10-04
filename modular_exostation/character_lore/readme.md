@@ -1,4 +1,4 @@
-https://github.com/Projet-Exodus/Exostation/pull/<!--PR Number-->
+https://github.com/Projet-Exodus/Exostation/pull/56
 
 ## Lore - Flavor text, records, etc.
 
