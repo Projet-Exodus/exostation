@@ -4,7 +4,7 @@
 	savefile_key = "headshot_url"
 	maximum_value_length = MAX_MESSAGE_LEN
 	var/list/stored_link = list()
-	var/static/link_regex = regex("thravalgur.ovh")
+	var/static/link_regex = regex("exodus.thravalgur.ovh")
 	var/static/list/valid_extensions = list("jpg", "png", "jpeg")
 
 /datum/preference/text/headshot/apply_to_human(mob/living/carbon/human/target, value)
