@@ -2,7 +2,7 @@
 	/// A string name for the modpack. Used for looking up other modpacks in init.
 	name = "Example modpack"
 	/// A string desc for the modpack. Can be used for modpack verb list as description.
-	desc = "This is an example modpack"
+	desc = "Ce modpack est utilisé pour : example"
 	/// A string with authors of this modpack.
 	author = "XXX"
 
