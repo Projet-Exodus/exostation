@@ -1,5 +1,0 @@
-author: "Thravalgur"
-delete-after: True
-changes:
-  - rscadd: "Onglet Lore dans la création de personnage, pour personnaliser sa description et son background. Ces éléments apparaissent en jeu en examinant le personnage et dans les records."
-  - rscadd: "Verbe Set Temporary Flavor Text dans l'onglet IC pour ajouter des éléments de description temporaires pendant la partie."
