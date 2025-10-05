@@ -11,6 +11,9 @@
       pas devoir les désactiver. Peut mal ressortir dans certaines versions antérieures
       de BYOND (à partir de la version 516.1657)
   - bugfix: Maj+C pour changer de mode de déplacement (courir/marcher)
+2025-05-03:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 29/04/2025 et le 02/05/2025)
 2025-05-04:
   Thravalgur:
   - rscadd: Ajout d'un canal Whisper pour chuchoter sans formatage de texte.
@@ -22,12 +25,21 @@
   - qol: Les holomaps indiquent les escaliers, les ascenseurs et les échelles.
 2025-05-07:
   Thravalgur:
-  - rscadd: ' Ajout de commandes verbales pour Poly'
+  - rscadd: Ajout de commandes verbales pour Poly
+2025-05-08:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 03/05/2025 et le 08/05/2025)
+2025-05-15:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 08/05/2025 et le 15/05/2025)
 2025-05-16:
   Thravalgur:
   - map: Toutes les maps ont été désactivées en dehors de Metastation et d'Icebox
   - config: Metastation est la map par défaut et Icebox n'a plus de limite minimale
       de joueurs
+2025-05-17:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 16/05/2025 et le 17/05/2025)      
 2025-05-18:
   Thravalgur:
   - rscadd: Ajout des nanomaps, des mini-cartes intégrées aux consoles de la sécurité
