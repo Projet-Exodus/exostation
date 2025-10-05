@@ -1,3 +1,6 @@
+2025-09-06:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 01/06/2025 et le 06/09/2025)
 2025-09-15:
   Thravalgur:
   - qol: Les nanomaps des caméras et de la console de suivi de la santé de l'équipage
@@ -26,6 +29,9 @@
   - balance: Les tables de loot de plusieurs monstres ont été modifiées.
   - rscdel: Certains graffitis ne sont plus disponibles.
   - balance: La potion de changement de genre ne peut s'utiliser que sur soi-même.
+2025-09-24:
+  Thravalgur:
+  - server: Intégration des dernières mise à jour de TG (entre le 06/09/2025 et le 24/09/2025)  
 2025-09-25:
   Thravalgur:
   - qol: Ajout d'un bouton Changelog dans le menu Echap.
