@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/_base_config/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/_base_config/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/_base_config/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/_base_config/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2 id="base-de-la-configuration-du-repo">Base de la configuration du repo</h2>
+<p>Module ID: BASE_CONFIG</p>
+<h3 id="description">Description :</h3>
+<p>Tous les fichiers changés ou créés pour l'arborescence de base du repository et sa gestion</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<p>Codeowners</p>
+<ul>
+<li><code>.github/CODEOWNERS</code> : fichier remplacé</li>
+</ul>
+<p>Templates</p>
+<ul>
+<li><code>.github/ISSUE_TEMPLATE/bug_report_form.yml</code> : fichier remplacé</li>
+<li><code>.github/ISSUE_TEMPLATE/config.yml</code> : fichier remplacé</li>
+<li><code>.github/PULL_REQUEST_TEMPLATE.md</code> : fichier remplacé</li>
+</ul>
+<p>Disabled workflows</p>
+<ul>
+<li><code>.github/workflows/gbp_collect.yml</code></li>
+<li><code>.github/workflows/gbp.yml</code></li>
+<li><code>.github/workflows/stale.yml</code></li>
+</ul>
+<p>Modules &amp; CI</p>
+<ul>
+<li><code>.github/workflows/run_linters.yml</code> : ajout de <code>modular_exostation/tools/exostation_check_grep.sh</code></li>
+<li><code>.github/workflows/discord_pr_announce.yml</code> : remplacement de l'avatar</li>
+<li><code>code/_compile_options.dm</code> : édition de <code>#define PRELOAD_RSC 0</code></li>
+<li><code>tools/deploy.sh</code> : ajout de <code>modular_exostation</code> et exclusions pour les tests</li>
+<li><code>tools/build/build.ts</code> : ajout de <code>modular_exostation/**</code></li>
+<li><code>tgstation.dme</code> : ajout de <code>modular_exostation.dme</code></li>
+</ul>
+<p>Config</p>
+<ul>
+<li><code>.gitignore</code> : ajout de <code>config/exostation_secrets.txt</code></li>
+<li><code>config/admins.txt</code> : ajout de Thravalgur comme admin par défaut et du staff</li>
+<li><code>config/config.txt</code> : ajout de <code>$include exostation/exostation_secrets.txt</code> et <code>$ include exostation/exostation_config.txt</code>, réglages de configuration</li>
+<li><code>config/dbconfig.txt</code> : réglages de configuration</li>
+<li><code>config/game_options.txt</code> : réglages de configuration</li>
+<li><code>config/maps.txt</code> : configuration des maps par défaut</li>
+<li><code>config/jobconfig.toml</code> : config des jobs</li>
+<li><code>config/silicons_laws.txt</code> : config des lois IA/cyborgs</li>
+</ul>
+<p>Config blacklist</p>
+<ul>
+<li><code>config/iceruinblacklist.txt</code></li>
+<li><code>config/lavaruinblacklist.txt</code></li>
+<li><code>config/spaceruinblacklist.txt</code></li>
+<li><code>config/unbyableshuttles.txt</code></li>
+</ul>
+<p>Apparence</p>
+<ul>
+<li><code>interface/skin.dmf</code> : changement de l'icône</li>
+</ul>
+<p>Marche par défaut :</p>
+<ul>
+<li><code>code/modules/mob/living/living_defines.dm</code> : édition de <code>var/move_intent</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<p>Templates</p>
+<ul>
+<li><code>.github/ISSUE_TEMPLATE/planification.yml</code> : fichier créé</li>
+</ul>
+<p>Autolaber</p>
+<ul>
+<li><code>.github/workflows/exostation_label.yml</code> : fichier créé</li>
+<li><code>.github/labeler.yml</code> : fichier créé</li>
+</ul>
+<p>Modules &amp; CI</p>
+<ul>
+<li><code>modular_exostation/tools/exostation_check_grep.sh</code> : fichier créé</li>
+</ul>
+<p>Config</p>
+<ul>
+<li><code>exostation/exostation_config.txt</code> : fichier créé</li>
+<li><code>exostation/exostation_secrets.txt</code> : fichier créé (non inclus)</li>
+<li><code>config/exo_motd.txt</code> : fichier créé</li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Général : Thravalgur
+Modularité : inspiration et ports des codebases SS220 (Bandastation), Skyrat/NovaSector, FulpStation, orbstation, BubberStation, MappleStation...</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/moderation/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/moderation/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/moderation/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/moderation/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>https://github.com/Projet-Exodus/Exostation/pull/48</p>
+<h2 id="modération">Modération</h2>
+<p>Module ID: MODERATION</p>
+<h3 id="description">Description :</h3>
+<p>Diverses modifications (suppressions, modifications) de modération.</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<p><strong>Retraits par commentaire</strong></p>
+<p>Clowns et bananium</p>
+<ul>
+<li><code>code\game\objects\effects\anomalies\anomalies_dimensional_themes.dm</code> : pas d'anomalie au bananium</li>
+<li><code>code\modules\cargo\packs\imports.dm</code> : pas de commande de bananium</li>
+<li><code>code\modules\mob_spawn\corpses\mining_corpses.dm</code> : pas de corps de clown</li>
+<li><code>code\game\objects\effects\spawners\random\decoration.dm</code> : pas de statue en bananium</li>
+<li><code>code\game\objects\structures\icemoon\cave_entrance.dm</code> pas de probabilité de bananium</li>
+<li><code>code\modules\mining\lavaland\mining_loot\megafauna\colossus.dm</code> : plus de cristal de résurrection en clown</li>
+</ul>
+<p>Verbes et menus</p>
+<ul>
+<li><code>code\modules\escape_menu\home_page.dm</code> : plus d'accès direct au verbe suicide</li>
+<li><code>code\datums\spawners_menu.dm</code> : retrait des ghost roles afin de privilégier les actions autour de la station</li>
+</ul>
+<p>Grossophobie</p>
+<ul>
+<li><code>code\modules\reagents\chemistry\reagents\food_reagents.dm</code> : pas d'effet mortel à l'extrait de menthe (<code>/datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)</code>)</li>
+<li><code>code\game\machinery\fat_sucker.dm</code> : remplacements de textes</li>
+</ul>
+<p>Religion</p>
+<ul>
+<li><code>code\modules\library\bibles.dm</code> : noms &amp; images</li>
+<li><code>code\modules\jobs\job_types\chaplain\chaplain.dm</code> : retrait de typesde religions pré-enregistrés</li>
+<li><code>code\modules\jobs\job_types\chaplain\chaplain_nullrod.dm</code> : retrait de types de nullrod</li>
+<li><code>strings\names\religion.txt</code> : noms proposés aléatoirement</li>
+</ul>
+<p><strong>Edits non-modulaires</strong></p>
+<p>Bananium</p>
+<ul>
+<li><code>code\modules\research\xenobiology\crossbreeding\charged.dm</code> : pas de spawn de bananium, le slime pyrite spawn à la place des bluespace bananas</li>
+<li><code>code\modules\meteors\meteor_types.dm</code> : pas de météore au bananium, il contient à la place des bluespace bananas</li>
+</ul>
+<p>Grossophobie</p>
+<ul>
+<li><code>code\game\machinery\fat_sucker.dm</code> : remplacement de la phrase grossophobe</li>
+</ul>
+<p>Psychologie</p>
+<ul>
+<li><code>code\datums\mood.dm</code> : remplacement de sanity par stress</li>
+</ul>
+<p>Verbes et menus</p>
+<ul>
+<li><code>code\_onclick\hud\ghost.dm</code> : accès simplifié au verbe Respawn pour les observateurs et les morts - Retrait des mini-jeux</li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<p><strong><em>Voir les commentaires des fichiers du module pour les overrides modulaires</em></strong></p>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thràvalgur
+Emprunts aux changements faits par TaleStation, Orbstation et Dopplershift13</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

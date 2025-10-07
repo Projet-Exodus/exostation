@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/changelog/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/changelog/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/changelog/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/changelog/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2 id="base-de-la-configuration-du-repo">Base de la configuration du repo</h2>
+<p>Module ID: EXO_CHANGELOG</p>
+<h3 id="description">Description :</h3>
+<p>Tous les fichiers changés ou créés pour l'arborescence de base du repository et sa gestion</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<ul>
+<li><code>.github/workflows/compile_changelogs.yml</code> : édition du fichier de destination <code>modular_exostation/changelogs</code></li>
+<li><code>code/_onclick/hud/new_player.dm</code> : édition du changelog affiché <code>usr.client?.exo_changelog()</code></li>
+<li><code>code/modules/client/client_procs.dm</code> : édition du changelog vérifié <code>if(prefs.last_exo_changelog != GLOB.exo_changelog_hash)</code></li>
+<li><code>code/modules/client/preferences_savefile.dm</code> : ajout de <code>savefile.set_entry(&quot;last_exo_changelog&quot;, last_exo_changelog)</code></li>
+<li><code>code/modules/client/preferences.dm</code> : ajout de <code>var/last_exo_changelog = &quot;&quot;</code></li>
+<li><code>interface/interface.dm</code> : renommage de &quot;Changelogs&quot; en &quot;/TG/ Changelogs&quot;</li>
+<li><code>code\modules\escape_menu\home_page.dm</code> : ajout du bouton pour les changelogs d'Exostation</li>
+<li><code>tools/ci/check_changelogs.sh</code> : édition du fichier de destination <code>modular_exostation/changelogs</code></li>
+<li><code>tools/pull_request_hooks/autoChangelog.js</code> : édition du fichier de destination <code>modular_exostation/changelogs</code></li>
+<li><code>tools/makeChangelog.bat</code> : édition du fichier de destination <code>modular_exostation/changelogs</code></li>
+<li><code>tools/ss13_genchangelog.py</code> : ajout de <code>allow_unicode=True</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<ul>
+<li><code>modular_exostation/changelogs</code> : dossier des changelogs archivés</li>
+<li><code>tgui/packages/tgui/interfaces/ExoChangelog.jsx</code> : création du fichier des changelogs</li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thravalgur
+Port de fonctionnalités des codebases Bandastation (Maxiemar) et FulpStation (QuiteLiterallyAnything, FernandoJ8), adaptation du changelog de /tg/ (celotajstg)</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

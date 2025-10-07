@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/nanomap/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/nanomap/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/nanomap/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/nanomap/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>https://github.com/Projet-Exodus/Exostation/pull/</p>
+<h2 id="nanomap">Nanomap</h2>
+<p>Module ID: NANOMAP</p>
+<h3 id="description">Description :</h3>
+<p>Nanomaps</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<p><strong>Jeu</strong></p>
+<ul>
+<li><code>code\modules\mob\living\silicon\ai\freelook\cameranet.dm</code></li>
+<li><code>code/game/machinery/computer/crew.dm</code></li>
+</ul>
+<p><strong>TGUI</strong></p>
+<ul>
+<li><code>tgui\yarn.lock</code></li>
+<li><code>tgui/packages/tgui/package.json</code> : bump marked <code>&quot;^15.0.7&quot;</code>, ajout de <code>&quot;@uidotdev/usehooks&quot;: &quot;^2.4.1&quot;</code>, <code>&quot;marked-base-url&quot;: &quot;^1.1.6&quot;</code>, <code>&quot;marked-smartypants&quot;: &quot;^1.1.9&quot;</code>, <code>&quot;react-zoom-pan-pinch&quot;: &quot;^3.7.0&quot;</code>, <code>&quot;usehooks-ts&quot;: &quot;^3.1.1&quot;</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<p>Console des caméras :</p>
+<ul>
+<li><code>code\game\machinery\computer\camera.dm</code> : <code>/obj/machinery/computer/security/ui_assets(mob/user)</code> / <code>/obj/machinery/computer/security/ui_static_data()</code></li>
+<li><code>code/game/machinery/computer/crew.dm</code> : <code>/obj/machinery/computer/crew/ui_interact(mob/user, datum/tgui/ui)</code></li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<p><strong>CI</strong></p>
+<ul>
+<li><code>.github\workflows\render_nanomaps.yml</code> : fichier de workflow</li>
+<li><code>modular_exostation/tools/nanomap_renderer</code> : dossier</li>
+</ul>
+<p><strong>Interfaces TGUI</strong>
+Dossier interfaces/common</p>
+<ul>
+<li><code>tgui/packages/tgui/interfaces/common/ExoNanoMap.tsx</code>
+Dossier styles/interfaces</li>
+<li><code>tgui/packages/tgui/styles/interfaces/ExoNanoMap.scss</code></li>
+</ul>
+<p>Dossier interfaces</p>
+<ul>
+<li><code>tgui/packages/tgui/interfaces/ExoCameraConsole.tsx</code> : fichier des caméras</li>
+<li><code>tgui/packages/tgui/interfaces/ExoCrewConsole</code> : sous-dossier des crew consoles</li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thràvalgur (Port pour Exostation)
+larentoun, AyIong (SS220 - Bandastation)</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

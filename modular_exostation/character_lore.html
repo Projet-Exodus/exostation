@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/character_lore/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/character_lore/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/character_lore/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/character_lore/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>https://github.com/Projet-Exodus/Exostation/pull/56</p>
+<h2 id="lore-flavor-text-records-etc">Lore - Flavor text, records, etc.</h2>
+<p>Module ID: CHAR_LORE</p>
+<h3 id="description">Description :</h3>
+<p>Ce module ajoute un onglet Lore à la création des personnages, pour rajouter un âge chronologique, une description courte et une description longue, des entrées de leur dossier général, leur dossier médical et leur dossier de sécurité.</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<ul>
+<li><code>code\datums\records\manifest.dm</code> : <code>/datum/manifest/proc/inject</code>, <code>new /datum/record/crew</code> (ajout de variables)</li>
+<li><code>code\datums\records\record.dm</code> : <code>/datum/record/crew/New</code> (ajout de variables), <code>/datum/record/locked/New</code> (ajout de variables), <code>/datum/record/crew/proc/get_rapsheet</code> (ajout d'élements de texte)</li>
+<li><code>code\game\machinery\hologram.dm</code> : <code>/obj/machinery/holopad/proc/activate_holo(mob/living/user)</code> (ajout de l'overlay temporary flavor text)</li>
+<li><code>code\game\machinery\computer\records\medical.dm</code> : <code>/obj/machinery/computer/records/medical/ui_data(mob/user)</code> (ajout dans la liste <code>var/list/records</code>)</li>
+<li><code>code\game\machinery\computer\records\security.dm</code> : <code>/obj/machinery/computer/records/security/ui_data(mob/user)</code> (ajout dans la liste <code>var/list/records</code>)</li>
+<li><code>code\modules\admin\admin_verbs.dm</code> : <code>GLOB.manifest.inject(character)</code> (ajout de character.client)</li>
+<li><code>code\modules\admin\verbs\admingame.dm</code> : <code>GLOB.manifest.inject(character)</code> (ajout de character.client)</li>
+<li><code>code\modules\mob\dead\new_player\new_player.dm</code> : <code>GLOB.manifest.inject(humanc)</code> (ajout de <code>person_client = humanc.client</code>)</li>
+<li><code>code\modules\mob\living\carbon\examine.dm</code> : <code>/mob/living/carbon/examine(mob/user)</code> (ajout des descriptions supplémentaires)</li>
+<li><code>code\modules\mob\living\silicon\ai\examine.dm</code> : <code>/mob/living/silicon/ai/examine(mob/user)</code> (ajout des descriptions supplémentaires)</li>
+<li><code>code\modules\mob\living\silicon\robot\examine.dm</code> : <code>/mob/living/silicon/robot/examine(mob/user)</code> (ajout des descriptions supplémentaires)</li>
+</ul>
+<p><strong>Fichiers TGUI</strong></p>
+<ul>
+<li><code>tgui\packages\tgui\interfaces\MedicalRecords\RecordView.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\MedicalRecords\types.ts</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\types.ts</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\CharacterPreferences\index.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\CharacterPreferences\MainPage.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\base.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\character_preferences\age.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\SecurityRecords\RecordView.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\SecurityRecords\types.ts</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-light.scss</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<ul>
+<li><code>code/game/atom_examine.dm</code></li>
+<li><code>code/modules/mob/living/carbon/human/human.dm</code></li>
+<li><code>code/modules/mob/living/silicon/robot/robot.dm</code></li>
+<li><code>code/modules/mob/living/silicon/ai/ai.dm</code></li>
+<li>``</li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li><code>code\__DEFINES\~exodefines\preferences.dm</code></li>
+<li><code>code\__DEFINES\~exodefines\span.dm</code></li>
+<li><code>code\__DEFINES\~exodefines\traits.dm</code></li>
+<li><code>code/modular_exostation/_exodefines/lore.dm</code></li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<p><strong>Fichiers TGUI</strong></p>
+<ul>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\CHAR_LOREPage.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\ExoSinglePreference.tsx</code></li>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\exostation_preferences\lore.tsx</code></li>
+</ul>
+<h3 id="mise-en-forme-span">Mise en forme : span</h3>
+<p><strong>Defines</strong></p>
+<ul>
+<li><code>code\__DEFINES\~exodefines\span.dm</code></li>
+</ul>
+<p><strong>Fichiers TGUI</strong></p>
+<ul>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-light.scss</code></li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thràvalgur
+Port et adaptations des PR originaux de Ephemeralis, Nerev4r, Pink-MB (DopplerShift PR <a href="https://github.com/DopplerShift13/DopplerShift/pull/64">64</a>, <a href="https://github.com/DopplerShift13/DopplerShift/pull/262">262</a>, <a href="https://github.com/DopplerShift13/DopplerShift/pull/349">349</a>, <a href="https://github.com/DopplerShift13/DopplerShift/pull/586">586</a>) (eux-mêmes inspirés d'autres codebases)</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

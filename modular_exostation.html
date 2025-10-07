@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>Comment fonctionne le code spécifique à Exostation ? <aside>modular_exostation/readme.md</aside> <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>Exostation se base sur le code de /tg/station, mais y apporte des modifications qui lui sont propres ou qui sont empruntées à d'autres codebases, conformément à leur licence.
+Afin de permettre d'intégrer plus facilement les mises à jour vers le code de /tg/station et de réduire le nombre de conflits relatifs au code, les changements apportés sont majoritairement modulaires.</p>
+<p>Il est à noter que les changements liés à la traduction de certains éléments en français ne seront que partiellement modulaires.</p>
+<h2 id="modularité">Modularité</h2>
+<p>La <strong>modularisation</strong> est le fait d'introduire des changements ou des ajouts sans toucher au contenu de base des fichiers ou des dossiers provenant de /tg/station, en les regroupant dans un ou des dossiers spécifiques, ici le dossier <strong><code>modular_exostation/</code></strong>, qui sera aussi indépendant que possible du code principal.</p>
+<h3 id="comment-créer-un-module">Comment créer un module</h3>
+<ul>
+<li>Trouver un nom et un ID pour le module : <code>EXO_CHANGELOGS</code> ou <code>ANIMAUX_DE_COMPAGNIE</code> en majuscules, qui servira pour la documentation future. Ce nom et cet ID doivent rester identiques à chaque occurence afin de faciliter la recherche sensible à la casse.</li>
+<li>Créer le dossier en copiant la structure du dossier : <code>modular_exostation/example</code>. Un sous-dossier icons et/ou sounds peut être ajouté si nécessaire. Les sons et images que l'on retrouverait dans plusieurs modules sont à placer dans un module spécifique.</li>
+<li>Remplir le readme, ajouter des commentaires pour documenter les modifications apportées au code de /tg/ et les éventuels ajouts liés à d'autres modules.</li>
+</ul>
+<h2 id="ajouts-retraits-ou-changements-non-modulaires">Ajouts, retraits ou changements non-modulaires</h2>
+<p>Les ajouts, retraits ou changements qui ne peuvent pas être modularisés ou qui seraient difficile à mettre à jour en étant modularisés devront être renseignés et marqués par des commentaires spécifiant où les changements commencent et s'arrêtent, ainsi qu'à quel module ils se rattachent.</p>
+<p>Une seule ligne avec un ajout, une suppression ou un changement :
+<code>// EXOSTATION EDIT (ADDITION/REMOVAL/CHANGE) - ID du module + Commentaire</code>
+Plusieurs lignes ajoutées, supprimées ou changées, avoir une ligne START et une ligne END :
+<code>// EXOSTATION EDIT (ADDITION/REMOVAL/CHANGE) START - ID du module + Commentaire</code>
+<code>// EXOSTATION EDIT (ADDITION/REMOVAL/CHANGE) END</code>
+Le but de la modularisation est de faciliter le suivi des modifications et des fonctionnalités ajoutées, pour pouvoir intégrer les mises à jour vers TG sans risquer la suppression accidentelle de ces éléments personnalisés.
+Toutes les Pull Requests qui touchent à un fichier de /tg/ ou qui utilisent les sprites/sons de /tg/ doivent remplir le readme.md dans le fichier du module concerné, qui explique ce qui a été fait.</p>
+<p>Indications pour mettre des commentaires dans le code (fichiers en .dm)</p>
+<pre><code class="language-byond">// Commentaires
+</code></pre>
+<pre><code class="language-byond">/**
+* Commentaires sur plusieurs lignes
+*/
+</code></pre>
+<p>Quand les commentaires en // ne sont pas possibles :</p>
+<pre><code class="language-js">&lt;SomeThing someProp=&quot;whatever&quot; /* FONCTIONE */ /&gt;
+</code></pre>
+<pre><code class="language-js">{
+	/* EXOSTATION EDIT ADDITION START */
+}
+&lt;SomeThing&gt;someProp=&quot;whatever&quot;&lt;/SomeThing&gt;;
+{
+	/* EXOSTATION EDIT ADDITION END */
+}
+</code></pre>
+<h2 id="fichiers-spécifiques">Fichiers spécifiques</h2><h3 id="defines">Defines</h3>
+<p>Les &quot;defines&quot; (définitions) ont besoin d'être placées dans le .dme avant les fichiers où elles sont utilisées pour être chargées au bon moment. Cela inclut les &quot;helpers&quot;, certaines constantes (&quot;symbolic constants&quot;), etc.
+De ce fait, un fichier de définitions placé dans le dossier <code>modular_exostation</code> sera chargé avant nos fichiers, mais après les fichiers de TG. Si le define est utilisé en dehors de nos fichiers modulaires, cela posera un problème.
+Pour cette raison, toutes les définitions qui sont utilisées en dehors des modules <strong>doivent</strong> être déclarées dans un sous-dossier appelé <code>~exodefines</code>, dans le dossier <code>code/__DEFINES</code> et incluses dans <code>tgstation.dme</code>.
+Pour les définitions utilisées dans les modules, elles doivent être déclarées dans le module <code>modular_exostation/_exodefines</code>.
+Pour les définitions utilisées dans un seul fichier, les déclarer en début de fichier, puis <code>#undef MY_DEFINE</code> à la fin du fichier, pour éviter toute confusion.</p>
+<h3 id="cartes">Cartes</h3>
+<p>Les cartes (maps) sont en dehors du dossier <code>modular_exostation</code>, et peuvent appartenir à l'un de ces trois cas :</p>
+<ul>
+<li>
+<p>Ce sont des stations et des navettes (shuttles), le code qui charge les cartes nécessite qu'elles soient dans l'arborescence avec les autres stations et navettes; Les fichiers .json et .dmm files doivent donc aller dans le dossier <code>_maps</code> comme si c'était des cartes non-personnalisées.</p>
+</li>
+<li>
+<p>Ce sont des ruines ou toute autre chose n'appartenant pas aux deux catégories pré-citées : ells sont dans le dossier <code>_maps/exomaps</code> pour que l'outil UpdatePaths puisse les trouver et les modifier sans avoir besoin de modifier le script.</p>
+</li>
+<li>
+<p>Ce sont des cartes modèles (templates) utilisés par automapper pour rajouter des pièces à des cartes existantes : elles sont dans le dossier <code>_maps/exomaps/automapper</code>. Nous ne modifions pas directement les cartes de /tg/. Nous</p>
+</li>
+</ul>
+<h3 id="fichiers-tgui">Fichiers TGUI</h3>
+<p>En raison de la façon dont TG gère TGUI, tous les fichiers tgui se trouvent dans le répertoire <code>/tgui/packages/tgui/interfaces</code> et ses sous-répertoires ; il n'existe pas de dossier spécifique pour les interfaces utilisateur d'Exostation.</p>
+<p><strong>IMPORTANT ! Lorsque vous créez un nouveau fichier TGUI de toutes pièces, veuillez ajouter ce qui suit tout en haut du fichier (ligne 1) :</strong></p>
+<pre><code class="language-js">// FICHIER INTERFACE EXODUS - MODULE
+</code></pre></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/exomining/reamde.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/exomining/reamde.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/exomining/reamde.md"><img src="git.png" width="16" height="16" title="modular_exostation/exomining/reamde.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>https://github.com/Projet-Exodus/Exostation/pull/40</p>
+<h2 id="exo-minage">Exo-Minage</h2>
+<p>Module ID: EXOMINING</p>
+<h3 id="description">Description :</h3>
+<p>Diverses modifications (rééquilibrage, qol) pour le minage.</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<ul>
+<li><code>code\modules\mob\living\simple_animal\hostile\megafauna\legion.dm</code> : ajout du sous-type <code>/obj/structure/closet/crate/necropolis/tendril/legion</code></li>
+<li><code>code\modules\mob\living\basic\lavaland\bileworm\bileworm_actions.dm</code> : ajout de <code>target.AddElement(/datum/element/safer_stomach)</code></li>
+<li><code>code\datums\components\chasm.dm</code> : remplacement par le proc <code>on_living_fallen</code> dans le proc <code>/datum/component/chasm/proc/drop(atom/movable/dropped_thing)</code> pour la condition <code>else if(isliving(dropped_thing))</code></li>
+<li><code>code\game\objects\structures\lavaland\ore_vent.dm</code> : édition du proc <code>start_wave_defense()</code></li>
+<li><code>code\modules\unit_tests\fish_unit_tests.dm</code> : édition de <code>/datum/unit_test/fish_rescue_hook/Run()</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<ul>
+<li><code>code\modules\mining\equipment\kheiral_cuffs.dm</code> : procs <code>/obj/item/kheiral_cuffs/Initialize(mapload)</code>, <code>/obj/item/kheiral_cuffs/connect_kheiral_network(mob/living/user)</code>, <code>/obj/item/kheiral_cuffs/remove_kheiral_network(mob/user)</code> overrides dans <code>kheiral_cuffs_alert.dm</code></li>
+<li><code>code\datums\components\chasm.dm</code> : proc <code>/obj/effect/abstract/chasm_storage/proc/on_revive(mob/living/escapee)</code> overrides dans <code>safer_climb_chasm.dm</code></li>
+<li><code>code\game\turfs\open\lava.dm</code> : vars de <code>/turf/open/lava</code> dans <code>safer_lava.dm</code></li>
+<li><code>code\game\objects\structures\lavaland\ore_vent.dm</code> : proc <code>start_wave_defense()</code> override dans <code>modular_exostation\exomining\code\ore_vents_spawn_node_alert.dm</code></li>
+<li><code>code\modules\mob\living\basic\lavaland\node_drone\node_drone.dm</code> : procs <code>/mob/living/basic/node_drone/arrive(obj/structure/ore_vent/parent_vent)</code> &amp; <code>/mob/living/basic/node_drone/pre_escape(success)</code> override dans <code>modular_exostation\exomining\code\ore_vents_spawn_node_alert.dm</code></li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<ul>
+<li>N/A</li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thràvalgur : adaptations pour Exostation &amp; adaptation des ore_vents
+Crédits des PR d'origine :
+IrisStation : coffre du Legion, alerte de travail avec les drones des ore vents (Gboster-0)
+Orbstation : safer climb chasm (Jacquerel, Profakos), alerte sur les kheiral cuffs avec voucher set (VioletN), safer stomach pour les bileworms et les legions, icebox demonic portal et megafauna dormante (Jacquerel),</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>

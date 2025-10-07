@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>modular_exostation/com_verbs/readme.md - /tg/ Station 13</title></head><body><header><a href="index.html">/tg/ Station 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>modular_exostation/com_verbs/readme.md <a href="https://github.com/Projet-Exodus/exostation/blob/38012cf91371c05829f129ec854ceb90c3b6d33f/modular_exostation/com_verbs/readme.md"><img src="git.png" width="16" height="16" title="modular_exostation/com_verbs/readme.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>https://github.com/Projet-Exodus/Exostation/pull/9
+https://github.com/Projet-Exodus/Exostation/pull/22</p>
+<h2 id="verbes-de-communication-additionnels-looc-et-whisper">Verbes de communication additionnels : LOOC et Whisper</h2>
+<p>Module ID: COM_VERBS</p>
+<h3 id="description">Description :</h3>
+<p>Ajout d'un canal LOOC : chat OOC de proximité. Ajout d'un canal Whis, similaire au canal Me mais pour chuchoter plutôt que pour emote.</p>
+<h3 id="procs-ou-fichiers-de-tg-changés">Procs ou fichiers de TG changés :</h3>
+<ul>
+<li><code>code/datums/chatmessage.dm</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-light.scss</code></li>
+<li><code>\tgui\packages\tgui-say\ChannelIterator.test.ts</code></li>
+<li><code>\tgui\packages\tgui-say\ChannelIterator.ts</code></li>
+<li><code>\tgui\packages\tgui-say\styles\colors.scss</code></li>
+</ul>
+<p><strong>Fichiers de base contenant des éléments de looc</strong></p>
+<ul>
+<li><code>code/_DEFINES/span.dm</code></li>
+<li><code>code/_globalvars/admin.dm</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-dark.scss</code></li>
+<li><code>tgui\packages\tgui-panel\styles\tgchat\chat-light.scss</code></li>
+</ul>
+<h3 id="overrides-modulaires">Overrides modulaires :</h3>
+<ul>
+<li><code>/datum/tgui_say/delegate_speech(entry, channel)</code> : proc réutilisé</li>
+<li><code>/datum/tgui_say/alter_entry(payload)</code> : proc réutilisé</li>
+</ul>
+<h3 id="defines">Defines :</h3>
+<ul>
+<li><code>modular_exostation/_exodefines/code/com_verbs.dm</code></li>
+</ul>
+<h3 id="fichiers-inclus-qui-ne-sont-pas-contenus-dans-ce-module">Fichiers inclus qui ne sont pas contenus dans ce module :</h3>
+<ul>
+<li><code>tgui\packages\tgui\interfaces\PreferencesMenu\preferences\features\exostation_preferences\looc.tsx</code></li>
+</ul>
+<h3 id="crédits">Crédits :</h3>
+<p>Thràvalgur (port de la version de Bandastation par larentoun)</p></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/Projet-Exodus/exostation/tree/38012cf91371c05829f129ec854ceb90c3b6d33f">38012cf</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.11.0</a></footer></body></html>
