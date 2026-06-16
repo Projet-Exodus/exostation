@@ -2,18 +2,18 @@
 set /p moduleName="Entrez le nom du module: "
 set "moduleName=%moduleName: =_%"
 
-xcopy "example" "%moduleName%" /s /i
+xcopy "exemple" "%moduleName%" /s /i
 
-ren "%moduleName%\_example.dm" "_%moduleName%.dm"
-ren "%moduleName%\_example.dme" "_%moduleName%.dme"
-ren "%moduleName%\code\example.dm" "%moduleName%.dm"
+ren "%moduleName%\_exemple.dm" "_%moduleName%.dm"
+ren "%moduleName%\_exemple.dme" "_%moduleName%.dme"
+ren "%moduleName%\code\exemple.dm" "%moduleName%.dm"
 
 mkdir "%moduleName%\icons"
 
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'Modpack exemple', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'exemple', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dm'"
-Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'Example modpack', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
-Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'example', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
+Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'Exemple modpack', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
+Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dme') -replace 'exemple', '%moduleName%' | Set-Content '%moduleName%\_%moduleName%.dme'"
 Powershell -Command "(Get-Content '%moduleName%\_%moduleName%.dm') -replace 'XXX', '%USERNAME%' | Set-Content '%moduleName%\_%moduleName%.dm'"
 
 Powershell -Command ^
