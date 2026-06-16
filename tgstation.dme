@@ -427,6 +427,7 @@
 #include "code\__DEFINES\traits\declarations.dm"
 #include "code\__DEFINES\traits\macros.dm"
 #include "code\__DEFINES\traits\sources.dm"
+#include "code\__DEFINES\~exodefines\loadout.dm"
 #include "code\__DEFINES\~exodefines\preferences.dm"
 #include "code\__DEFINES\~exodefines\span.dm"
 #include "code\__DEFINES\~exodefines\traits.dm"

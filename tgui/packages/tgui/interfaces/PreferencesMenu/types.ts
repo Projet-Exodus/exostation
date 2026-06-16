@@ -160,10 +160,11 @@ export type CharacterPreferencesData = {
 
   misc: {
     gender: Gender;
-    joblessrole: JoblessRole;
+    oblessrole: JoblessRole;
     species: string;
-    loadout_list: LoadoutList;
+    loadout_lists: LoadoutList; // EXOSTATION EDIT CHANGE - CHAR_LOADOUTS - Multiple loadouts presets - ORIGINAL: loadout_list: LoadoutList;
     job_clothes: BooleanLike;
+    loadout_index: string; // EXOSTATION EDIT ADDITION - CHAR_LOADOUTS - Multiple loadouts presets
   };
 
   randomization: Record<string, RandomSetting>;

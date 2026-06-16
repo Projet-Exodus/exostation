@@ -1,0 +1,6 @@
+#include "_character_loadout.dm"
+
+#include "code/loadout_briefcase.dm"
+#include "code/loadout_helpers.dm"
+#include "code/loadout_menu.dm"
+#include "code/loadout_prefs.dm"

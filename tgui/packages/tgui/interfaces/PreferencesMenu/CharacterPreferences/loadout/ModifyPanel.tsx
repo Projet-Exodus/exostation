@@ -39,8 +39,11 @@ type ButtonProps = {
 
 function LoadoutModifyButton(props: ButtonProps) {
   const { act, data } = useBackend<LoadoutManagerData>();
-  const { loadout_list } = data.character_preferences.misc;
-  const { button, modifyItemDimmer } = props;
+  // EXOSTATION EDIT CHANGE START - CHAR_LOADOUT : Multiple loadouts presets - ORIGINAL: const { loadout_list } = data.character_preferences.misc;  const { button, modifyItemDimmer } = props;
+  const loadout_list =
+    data.character_preferences.misc.loadout_lists[
+      data.character_preferences.misc.loadout_index
+    ]; // EXOSTATION EDIT CHANGE END - CHAR_LOADOUT : Multiple loadouts presets
 
   const buttonIsActive =
     button.active_key && loadout_list[modifyItemDimmer.path][button.active_key];
@@ -87,7 +90,12 @@ type ButtonsProps = {
 
 function LoadoutModifyButtons(props: ButtonsProps) {
   const { act, data } = useBackend<LoadoutManagerData>();
-  const { loadout_list } = data.character_preferences.misc;
+  // EXOSTATION EDIT CHANGE START - CHAR_LOADOUT : Multiple loadouts presets - ORIGINAL :  const { loadout_list } = data.character_preferences.misc;
+  const loadout_list =
+    data.character_preferences.misc.loadout_lists[
+      data.character_preferences.misc.loadout_index
+    ]; // EXOSTATION EDIT CHANGE END - CHAR_LOADOUT : Multiple loadouts presets
+
   const { modifyItemDimmer } = props;
 
   function isActive(item: LoadoutItem, reskin: ReskinOption) {

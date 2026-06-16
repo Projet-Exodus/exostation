@@ -214,23 +214,23 @@
 /datum/loadout_item/pocket_items/lipstick/handle_loadout_action(datum/preference_middleware/loadout/manager, mob/user, action, params)
 	switch(action)
 		if("select_lipstick_style")
-			var/list/their_loadout = manager.preferences.read_preference(/datum/preference/loadout)
+			var/list/their_loadout = manager.get_current_loadout() // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original :var/list/their_loadout = manager.preferences.read_preference(/datum/preference/loadout)
 			var/old_style = their_loadout?[item_path]?[INFO_LAYER] || MIDDLE_LIP
 			var/chosen = tgui_input_list(user, "Pick a lipstick style. (This determines where it sits on your sprite.)", "Pick a style", list(UPPER_LIP, MIDDLE_LIP, LOWER_LIP), old_style)
-			their_loadout = manager.preferences.read_preference(/datum/preference/loadout) // after sleep: sanity check
+			their_loadout = manager.get_current_loadout() // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : their_loadout = manager.preferences.read_preference(/datum/preference/loadout) // after sleep: sanity check
 			if(their_loadout?[item_path]) // Validate they still have it equipped
 				their_loadout[item_path][INFO_LAYER] = chosen
-				manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], their_loadout)
+				manager.save_current_loadout(their_loadout) // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], their_loadout)
 			return TRUE // Update UI
 
 		if("select_lipstick_color")
-			var/list/their_loadout = manager.preferences.read_preference(/datum/preference/loadout)
+			var/list/their_loadout = manager.get_current_loadout() // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original :var/list/their_loadout = manager.preferences.read_preference(/datum/preference/loadout)
 			var/old_color = their_loadout?[item_path]?[INFO_GREYSCALE] || /obj/item/lipstick::lipstick_color
 			var/chosen = tgui_color_picker(user, "Pick a lipstick color.", "Pick a color", old_color)
-			their_loadout = manager.preferences.read_preference(/datum/preference/loadout) // after sleep: sanity check
+			their_loadout = manager.get_current_loadout() // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : their_loadout = manager.preferences.read_preference(/datum/preference/loadout) // after sleep: sanity check
 			if(their_loadout?[item_path]) // Validate they still have it equipped
 				their_loadout[item_path][INFO_GREYSCALE] = chosen
-				manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], their_loadout)
+				manager.save_current_loadout(their_loadout) // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], their_loadout)
 			return TRUE // Update UI
 
 	return ..()

@@ -128,7 +128,11 @@ function sortByGroup(items: LoadoutItem[]): LoadoutGroup[] {
 
 export function ItemListDisplay(props: ListProps) {
   const { data } = useBackend<LoadoutManagerData>();
-  const { loadout_list } = data.character_preferences.misc;
+  // EXOSTATION EDIT CHANGE START - CHAR_LOADOUT : Multiple loadouts presets - ORIGINAL :  const { loadout_list } = data.character_preferences.misc;
+  const loadout_list =
+    data.character_preferences.misc.loadout_lists[
+      data.character_preferences.misc.loadout_index
+    ]; // EXOSTATION EDIT CHANGE END - CHAR_LOADOUT : Multiple loadouts presets
   const itemGroups = sortByGroup(props.items);
 
   return (

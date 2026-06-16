@@ -39,7 +39,7 @@
 	if(!can_be_layer_adjusted)
 		return FALSE
 
-	var/list/loadout = manager.preferences.read_preference(/datum/preference/loadout)
+	var/list/loadout = manager.get_current_loadout(loadout) // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : var/list/loadout = manager.preferences.read_preference(/datum/preference/loadout)
 	if(!loadout?[item_path])
 		return FALSE
 
@@ -47,13 +47,24 @@
 		loadout[item_path][INFO_LAYER] = FALSE
 
 	loadout[item_path][INFO_LAYER] = !loadout[item_path][INFO_LAYER]
-	manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], loadout)
+	manager.save_current_loadout(loadout) // EXOSTATION EDIT CHANGE - CHAR_LOADOUT : Multiple loadouts presets -  Original : manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], loadout)
 	return TRUE // Update UI
 
+/** EXOSTATION EDIT CHANGE START - CHAR_LOADOUT :
 /datum/loadout_item/accessory/insert_path_into_outfit(datum/outfit/outfit, mob/living/carbon/human/equipper, visuals_only = FALSE)
 	if(outfit.accessory)
 		LAZYADD(outfit.backpack_contents, outfit.accessory)
 	outfit.accessory = item_path
+**/
+/datum/loadout_item/accessory/insert_path_into_outfit(datum/outfit/outfit, mob/living/carbon/human/equipper, visuals_only = FALSE, override_items = LOADOUT_OVERRIDE_BACKPACK)
+	if(override_items == LOADOUT_OVERRIDE_BACKPACK && !visuals_only)
+		if(outfit.accessory)
+			LAZYADD(outfit.backpack_contents, outfit.accessory)
+		outfit.accessory = item_path
+	else
+		outfit.accessory = item_path
+
+// EXOSTATION EDIT CHANGE END - CHAR_LOADOUT
 
 /datum/loadout_item/accessory/on_equip_item(obj/item/equipped_item, list/item_details, mob/living/carbon/human/equipper, datum/outfit/job/outfit, visuals_only = FALSE)
 	. = ..()
