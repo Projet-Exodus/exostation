@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	qdel(src)
 
 /**
- * Drops loot from the portal
+ * Drops loot from the portal - EXOSTATION OVERRIDE CHANGE - MODERATION : Overriden in modular_exostation\moderation\code\loot_limits.dm
  *
  */
 /obj/effect/collapsing_demonic_portal/proc/drop_loot()
