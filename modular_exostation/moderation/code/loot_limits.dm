@@ -74,7 +74,7 @@
 		if(14)
 			new /obj/item/disk/design_disk/modkit_disc/bounty(loc)
 		if(15)
-			new /obj/item/slimepotion/slime/sentience(loc)
+			new /obj/item/slimepotion/sentience(loc)
 			new /obj/item/ship_in_a_bottle(loc)
 			new /obj/item/oar(loc)
 		if(16)
