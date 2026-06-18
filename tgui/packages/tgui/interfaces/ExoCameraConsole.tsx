@@ -104,7 +104,7 @@ export const CameraContent = (props) => {
   const [tab, setTab] = useState('Carte');
   const decideTab = (tab) => {
     switch (tab) {
-      case 'List':
+      case 'Liste':
         return (
           <CameraListSelector
             searchText={searchText}
