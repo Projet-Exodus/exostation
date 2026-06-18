@@ -108,14 +108,28 @@
 
 	SEND_SIGNAL(src, COMSIG_LIVING_UPDATE_BLOOD_STATUS, had_blood, has_blood, old_blood_volume, new_blood_volume)
 
+/// A one-time coagulating effect of the mob's bloodiest cut/stab
+/// Returns TRUE if a wound was affected, FALSE if no wound was found
+/mob/living/proc/coagulant_effect(amount_to_heal = 1)
+	return FALSE
+
+/mob/living/carbon/coagulant_effect(amount_to_heal = 1)
+	var/datum/wound/bloodiest_wound
+	for(var/datum/wound/iter_wound as anything in all_wounds)
+		if(iter_wound.blood_flow && iter_wound.blood_flow > bloodiest_wound?.blood_flow)
+			bloodiest_wound = iter_wound
+
+	bloodiest_wound?.adjust_blood_flow(-1 * abs(amount_to_heal))
+	return !!bloodiest_wound
+
 // Takes care blood loss and regeneration
-/mob/living/carbon/human/handle_blood(seconds_per_tick, times_fired)
+/mob/living/carbon/human/handle_blood(seconds_per_tick)
 	// Under these circumstances blood handling is not necessary
 	if(bodytemperature < BLOOD_STOP_TEMP || HAS_TRAIT(src, TRAIT_FAKEDEATH))
 		return
 
 	// Run the signal, still allowing mobs with noblood to "handle blood" in their own way
-	var/sigreturn = SEND_SIGNAL(src, COMSIG_HUMAN_ON_HANDLE_BLOOD, seconds_per_tick, times_fired)
+	var/sigreturn = SEND_SIGNAL(src, COMSIG_HUMAN_ON_HANDLE_BLOOD, seconds_per_tick)
 	if((sigreturn & HANDLE_BLOOD_HANDLED) || !CAN_HAVE_BLOOD(src))
 		return
 
