@@ -1,7 +1,7 @@
 // FICHIER TGUI EXOSTATION
 import type { BooleanLike } from 'tgui-core/react';
 
-import type { MapData } from '../common/NanoMap';
+import type { MapData } from '../common/ExoNanoMap';
 
 export type CrewSensor = {
   name: string;
