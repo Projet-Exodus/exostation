@@ -124,7 +124,6 @@
 
 ///dummy fish item used for the tests, as well with related subtypes and datums.
 /obj/item/fish/testdummy
-	grind_results = list()
 	average_weight = FISH_GRIND_RESULTS_WEIGHT_DIVISOR * 2
 	average_size = FISH_SIZE_BULKY_MAX
 	num_fillets = 2
@@ -133,7 +132,12 @@
 	breeding_timeout = 0
 	fish_flags = parent_type::fish_flags & ~(FISH_FLAG_SHOW_IN_CATALOG|FISH_FLAG_EXPERIMENT_SCANNABLE)
 	fish_id_redirect_path = /obj/item/fish/goldfish //Stops SSfishing from complaining
-	var/expected_num_fillets = 0 //used to know how many fillets should be gotten out of this fish
+
+	///used to know how many fillets should be gotten out of this fish
+	var/expected_num_fillets = 0
+
+/obj/item/fish/testdummy/fish_grind_results()
+	return null
 
 /obj/item/fish/testdummy/small
 	// The parent type is too big to reproduce inside the more compact fish tank
@@ -311,9 +315,13 @@
 	run_loc_floor_bottom_left.ChangeTurf(/turf/open/chasm)
 	var/turf/open/chasm/the_hole = run_loc_floor_bottom_left
 
+// EXOSTATION EDIT ADDITION START - EXOMINING : safer_chasm
+	for(var/mob/living/mob_spawned in mobs_spawned)
+		mob_spawned.death()
+// EXOSTATION EDIT ADDITION END - EXOMINING
+
 	// into the hole they go
-	for(var/mob/living/mob_spawned in mobs_spawned) //EXOSTATION EDIT CHANGE - EXOMINING : These are all living mobs, so I cast them so we can kill them - Original : 	for(var/mob/mob_spawned
-		mob_spawned.death() //EXOSTATION EDIT ADDITION - EXOMINING :  prevents them from climbing out
+	for(var/mob/living/mob_spawned in mobs_spawned)
 		the_hole.drop(mob_spawned)
 		sleep(0.2 SECONDS) // we have to WAIT because the drop() proc sleeps.
 

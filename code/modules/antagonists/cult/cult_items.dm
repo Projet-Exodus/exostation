@@ -13,6 +13,7 @@
 	icon = 'icons/obj/weapons/khopesh.dmi'
 	icon_state = "render"
 	inhand_icon_state = "cultdagger"
+	worn_icon = null
 	worn_icon_state = "render"
 	icon_angle = -45
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -55,7 +56,7 @@ Striking a noncultist, however, will tear their flesh."}
 	if(owner.get_active_held_item() != src)
 		block_message = "[owner] parries [attack_text] with [src] in their offhand"
 
-	if(IS_CULTIST(owner) && prob(final_block_chance) && attack_type != (PROJECTILE_ATTACK || OVERWHELMING_ATTACK))
+	if(IS_CULTIST(owner) && prob(final_block_chance) && (attack_type != PROJECTILE_ATTACK || attack_type != OVERWHELMING_ATTACK))
 		new /obj/effect/temp_visual/cult/sparks(get_turf(owner))
 		owner.visible_message(span_danger("[block_message]"))
 		return TRUE
@@ -88,6 +89,7 @@ Striking a noncultist, however, will tear their flesh."}
 	icon = 'icons/obj/weapons/sword.dmi'
 	icon_state = "cultblade"
 	inhand_icon_state = "cultblade"
+	worn_icon = 'icons/mob/clothing/back.dmi'
 	worn_icon_state = "cultblade"
 	icon_angle = -45
 	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
