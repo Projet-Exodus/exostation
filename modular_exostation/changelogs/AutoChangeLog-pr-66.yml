@@ -1,0 +1,5 @@
+author: "Thravalgur"
+delete-after: True
+changes:
+  - server: "Intégration des dernières mise à jour de TG (entre le 30/11/2025 et le 31/12/2025)"
+  - balance: "Atterrir sur un terrain sûr n'est plus garanti en remontant d'un gouffre."
