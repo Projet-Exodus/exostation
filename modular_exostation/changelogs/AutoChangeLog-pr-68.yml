@@ -1,4 +1,0 @@
-author: "Thravalgur"
-delete-after: True
-changes:
-  - bugfix: "La liste des caméras sur une console de caméras s'affiche à nouveau correctement."
