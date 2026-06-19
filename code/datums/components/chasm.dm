@@ -184,6 +184,7 @@
 		if (get_turf(falling_mob) != get_turf(parent))
 			REMOVE_TRAIT(falling_mob, TRAIT_NO_TRANSFORM, REF(src))
 			falling_mob.Paralyze(17 SECONDS, ignore_canstun = TRUE) // Wow nice job
+			LAZYREMOVE(falling_atoms, falling_ref) //EXOSTATION EDIT ADDITION - EXOMINING
 			return
 
 	dropped_thing.visible_message(span_boldwarning("[dropped_thing] falls into [parent]!"), span_userdanger("[oblivion_message]"))
@@ -224,11 +225,11 @@
 		parent.visible_message(span_boldwarning("[parent] spits out [dropped_thing]!"))
 		dropped_thing.throw_at(get_edge_target_turf(parent, pick(GLOB.alldirs)), rand(1, 10), rand(1, 10))
 
-	else if(isliving(dropped_thing))
+	else if (isliving(dropped_thing))
 		var/mob/living/fallen_mob = dropped_thing
 		REMOVE_TRAIT(fallen_mob, TRAIT_NO_TRANSFORM, REF(src))
+		/** EXOSTATION EDIT REMOVAL START - EXOMINING : Ne plus mourir en tombant
 		if (fallen_mob.stat != DEAD)
-			/* EXOSTATION EDIT REMOVAL START - EXOMINING : Ne plus mourir en tombant
 			fallen_mob.investigate_log("has died from falling into a chasm.", INVESTIGATE_DEATHS)
 			if(issilicon(fallen_mob))
 				//Silicons are held together by hopes and dreams, unfortunately, I'm having a nightmare
@@ -236,8 +237,17 @@
 				fallen_borg.mmi = null
 			fallen_mob.death(TRUE)
 			fallen_mob.apply_damage(300)
-			EXOSTATION EDIT REMOVAL END */
-			on_living_fallen(fallen_mob) // EXOSTATION EDIT ADDITION - EXOMINING : Ne plus mourir en tombant
+		EXOSTATION EDIT REMOVAL END - EXOSTATION EDIT ADDITION START */
+		fallen_mob.apply_damage(20)
+		var/mob/living/carbon/carbon_mob = fallen_mob
+		if (istype(carbon_mob))
+			var/obj/item/bodypart/wound_part = pick(carbon_mob.bodyparts)
+			if (IS_ORGANIC_LIMB(wound_part))
+				wound_part.force_wound_upwards(/datum/wound/blunt/bone/moderate)
+			if (fallen_mob.stat == DEAD)
+				fallen_mob.investigate_log("a fait une chute mortelle dans un gouffre.", INVESTIGATE_DEATHS)
+			else try_climb_out(fallen_mob)
+		// EXOSTATION EDIT ADDITION END
 
 	LAZYREMOVE(falling_atoms, falling_ref)
 
