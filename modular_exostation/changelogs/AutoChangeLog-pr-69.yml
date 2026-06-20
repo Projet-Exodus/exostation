@@ -1,4 +1,0 @@
-author: "Thravalgur"
-delete-after: True
-changes:
-  - bugfix: "Les records et le crew manifest fonctionnent de nouveau pour les joueurs prêts au début du round."

@@ -7,3 +7,10 @@
 2026-06-19:
   Thravalgur:
   - bugfix: La liste des caméras sur une console de caméras s'affiche à nouveau correctement.
+2026-06-20:
+  Thravalgur:
+  - bugfix: Les records et le crew manifest fonctionnent de nouveau pour les joueurs
+      prêts au début du round.
+  - server: Intégration des dernières mise à jour de TG (entre le 30/11/2025 et le
+      31/12/2025)
+  - balance: Atterrir sur un terrain sûr n'est plus garanti en remontant d'un gouffre.
