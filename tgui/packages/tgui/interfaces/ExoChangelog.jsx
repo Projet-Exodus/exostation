@@ -116,6 +116,7 @@ export class ExoChangelog extends Component {
   render() {
     const { data, selectedDate, selectedIndex } = this.state;
     const {
+      act,
       data: { dates },
     } = useBackend();
     const { dateChoices } = this;
@@ -214,9 +215,23 @@ export class ExoChangelog extends Component {
         <p>
           <b>Remarque : </b>
           Ce changelog est un quasi-clone de celui de /tg/station, destiné à
-          suivre les évolutions propres au serveur Exostaton. Le changelog de
-          /TG/ peut être trouvé dans le menu Echap ou dans l&apos;onglet OOC
-          avec le verbe /TG/ Changelog.
+          suivre les évolutions propres au serveur Exostaton.
+          <br />
+          Tout changement qui ne figure pas ici vient probablement de
+          modifications effectuées sur le code original de /tg/station.
+          <br />
+          Le changelog de /TG/ peut être trouvé dans le menu Echap ou dans
+          l&apos;onglet OOC avec le verbe /TG/ Changelog ou en{' '}
+          <Button
+            mx={-0.5}
+            compact
+            textColor="blue"
+            color="transparent"
+            onClick={() => act('open_tg_log')}
+          >
+            cliquant ici
+          </Button>
+          .
         </p>
         {dateDropdown}
       </Section>
@@ -250,8 +265,9 @@ export class ExoChangelog extends Component {
           <b>Remerciements aux autres downstreams : </b>
           Merci aux développeurs de BandaStation, Skyrat Station 13, Nova
           Sector, IrisStation, BubberStation, MappleStation, Orbstation,
-          DopplerStation et TaleStation, ainsi que de tout autre downstream dont
-          les idées ou le travail ont inspiré les développeurs d'Exostation.
+          DopplerStation, FulpStation et TaleStation, ainsi que de tout autre
+          downstream dont les idées ou le travail ont inspiré les développeurs
+          d'Exostation.
         </p>
       </Section>
     );
