@@ -18,7 +18,7 @@ GLOBAL_DATUM_INIT(manifest, /datum/manifest, new)
 			log_manifest(readied_player.ckey, readied_player.new_character.mind, readied_player.new_character)
 			players_to_log[readied_player.ckey] = readied_player.new_character
 		if(ishuman(readied_player.new_character))
-			inject(readied_player.new_character)
+			inject(readied_player.new_character, person_client = readied_player.client) // EXOSTATION EDIT CHANGE - CHAR_LORE : addition de  person_client = readied_player.client
 		CHECK_TICK
 	if(length(players_to_log))
 		SSblackbox.ReportRoundstartManifest(players_to_log)
