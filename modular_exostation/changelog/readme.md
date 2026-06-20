@@ -36,4 +36,4 @@ Tous les fichiers changés ou créés pour l'arborescence de base du repository 
 ### Crédits :
 
 Thravalgur
-Port de fonctionnalités des codebases Bandastation (Maxiemar) et FulpStation (QuiteLiterallyAnything, FernandoJ8), adaptation du changelog de /tg/ (celotajstg)
+Port de fonctionnalités des codebases Bandastation (Maxiemar) et FulpStation (QuiteLiterallyAnything, FernandoJ8, JohnFulpWillard), adaptation du changelog de /tg/ (celotajstg)

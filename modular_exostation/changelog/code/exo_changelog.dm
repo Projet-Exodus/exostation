@@ -23,6 +23,10 @@ GLOBAL_VAR_INIT(exo_changelog_hash, "")
 			exo_changelog_item = new /datum/asset/exo_changelog_item(params["date"])
 			exo_changelog_items[params["date"]] = exo_changelog_item
 		return ui.send_asset(exo_changelog_item)
+	if(action == "open_tg_log") // action supplémentaire : bouton vers TG changelog.
+		var/mob/user = ui.user
+		user.client.changelog()
+		return TRUE
 
 /datum/exo_changelog/ui_static_data()
 	var/list/data = list( "dates" = list() )
