@@ -19,20 +19,15 @@
 		duct_layer = layer_of_duct
 
 	if(PERFORM_ALL_TESTS(maptest_log_mapping))
-		var/turf/destination = get_turf(src)
-
-		//check for overlapping ducts
-		for(var/obj/machinery/duct/other in destination)
-			if(other != src && (duct_layer & other.duct_layer))
-				log_mapping("Overlapping ducts at [GLOB.plumbing_layer_names["[duct_layer]"]] detected at [AREACOORD(src)].")
-				return INITIALIZE_HINT_QDEL
-
-		//check for overlapping machines
-		for(var/obj/machinery/machine in destination)
-			for(var/datum/component/plumbing/plumber as anything in machine.GetComponents(/datum/component/plumbing))
-				if(plumber.ducting_layer & duct_layer)
-					log_mapping("Overlapping machine at [GLOB.plumbing_layer_names["[duct_layer]"]] detected at [AREACOORD(src)].")
-					return INITIALIZE_HINT_QDEL
+		var/datum/overlap = ducting_layer_check(src, duct_layer)
+		if(!isnull(overlap))
+			var/message = GLOB.plumbing_layer_names["[duct_layer]"]
+			if(istype(overlap, /obj/machinery/duct))
+				message = "duct on [message]"
+			else
+				message = "machine on [message]"
+			log_mapping("Overlapping plumbing [message] detected at [AREACOORD(src)]")
+			return INITIALIZE_HINT_QDEL
 
 	. = ..()
 
@@ -184,7 +179,6 @@
 			var/atom/movable/node = popleft(queue)
 			if(visited[node])
 				continue
-			visited[node] = TRUE
 
 			//visit all neighbours of this pipe as well
 			pipe = node
@@ -200,15 +194,22 @@
 				for(var/atom/movable/subnode in pipe.neighbours)
 					queue += subnode
 
+				visited[node] = TRUE
 				continue
 
 			//assign machines to new network
 			for(var/datum/component/plumbing/plumbing as anything in node.GetComponents(/datum/component/plumbing))
+				//disconnect old net
 				for(var/dirtext in plumbing.ducts)
 					if(plumbing.ducts[dirtext] == net)
 						net.remove_plumber(plumbing)
-						if(newnet)
-							newnet.add_plumber(plumbing, text2num(dirtext))
+				//assign new net
+				if(newnet)
+					for(pipe as anything in newnet.ducts)
+						var/dir = pipe.neighbours[node]
+						if(dir)
+							newnet.add_plumber(plumbing, REVERSE_DIR(dir))
+
 	disconnect()
 
 	return ..()
@@ -305,18 +306,16 @@
 	if(!user.is_holding(src))
 		return
 	if(new_layer)
-		duct_layer = new_layer
+		duct_layer = GLOB.plumbing_layers[new_layer]
 	var/new_color = tgui_input_list(user, "Select a color", "Color", GLOB.pipe_paint_colors, GLOB.pipe_color_name[duct_color])
 	if(!user.is_holding(src))
 		return
 	if(new_color)
-		duct_color = new_color
-		add_atom_colour(GLOB.pipe_paint_colors[new_color], FIXED_COLOUR_PRIORITY)
+		duct_color = GLOB.pipe_paint_colors[new_color]
+		add_atom_colour(duct_color, FIXED_COLOUR_PRIORITY)
 
 /obj/item/stack/ducts/wrench_act(mob/living/user, obj/item/tool)
-	. = check_attach_turf(loc)
-	if(!.)
-		. = ITEM_INTERACT_FAILURE
+	return check_attach_turf(loc)
 
 /obj/item/stack/ducts/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	// Turn into a duct stack and then merge to the in-hand stack.
@@ -333,20 +332,11 @@
 /obj/item/stack/ducts/proc/check_attach_turf(turf/open_turf, mob/user)
 	. = NONE
 	if(isopenturf(open_turf))
-		//check for overlapping ducts
-		for(var/obj/machinery/duct/other in open_turf)
-			if(other != src && (duct_layer & other.duct_layer))
-				if(user)
-					balloon_alert(user, "overlapping duct detected!")
-				return ITEM_INTERACT_FAILURE
-
-		//check for overlapping machines
-		for(var/obj/machinery/machine in open_turf)
-			for(var/datum/component/plumbing/plumber as anything in machine.GetComponents(/datum/component/plumbing))
-				if(plumber.ducting_layer & duct_layer)
-					if(user)
-						balloon_alert(user, "overlapping machine detected!")
-					return ITEM_INTERACT_FAILURE
+		var/datum/overlap = ducting_layer_check(open_turf, duct_layer)
+		if(!isnull(overlap))
+			if(user)
+				open_turf.balloon_alert(user, "overlapping [istype(overlap, /obj/machinery/duct) ? "duct" : "machine"] detected!")
+			return ITEM_INTERACT_FAILURE
 
 		new /obj/machinery/duct(open_turf, duct_color, duct_layer)
 		playsound(open_turf, 'sound/machines/click.ogg', 50, TRUE)
