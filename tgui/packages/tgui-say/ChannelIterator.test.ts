@@ -16,6 +16,7 @@ describe('ChannelIterator', () => {
     expect(channelIterator.next()).toBe('Whis'); // EXOSTATION EDIT ADDITION - COM_VERBS : WHIS
     expect(channelIterator.next()).toBe('LOOC'); // EXOSTATION EDIT ADDITION - COM_VERBS : LOOC
     expect(channelIterator.next()).toBe('OOC');
+    expect(channelIterator.next()).toBe('Pray');
     expect(channelIterator.next()).toBe('Say'); // Admin is blacklisted so it should be skipped
   });
 

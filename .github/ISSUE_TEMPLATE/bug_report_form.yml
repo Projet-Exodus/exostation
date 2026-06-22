@@ -30,6 +30,7 @@ body:
       label: "Reproduction du bug:"
       description: |
         Description des étapes de reproduction en incluant les étapes utiles (map, etc.).
+        Merci d'indiquer tous les éléments utiles (erreurs éventuelles) et de vérifier que le bug s'est produit dans des circonstances normales de jeu (pas une animation organisée sur le serveur).
       placeholder: |
         1. Aller à l'endroit X
         2. Faire l'action Y
