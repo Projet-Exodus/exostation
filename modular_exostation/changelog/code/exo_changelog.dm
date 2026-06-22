@@ -56,7 +56,7 @@ GLOBAL_VAR_INIT(exo_changelog_hash, "")
 /// EXO CHANGELOG ITEM ASSET ///
 
 /datum/asset/exo_changelog_item
-	_abstract = /datum/asset/exo_changelog_item
+	abstract_type = /datum/asset/exo_changelog_item
 	var/item_filename
 
 /datum/asset/exo_changelog_item/New(date)

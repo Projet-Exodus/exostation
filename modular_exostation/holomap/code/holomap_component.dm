@@ -10,7 +10,10 @@
 	var/atom/holder = null
 	var/datum/component/holomap/newholomap = null
 
-/datum/action/toggle_holomap/Trigger(trigger_flags)
+/datum/action/toggle_holomap/Trigger(mob/clicker, trigger_flags)
+	. = ..()
+	if(!.)
+		return
 	toggle_summon(holder)
 
 /datum/action/toggle_holomap/proc/toggle_summon(mob/living/user)
