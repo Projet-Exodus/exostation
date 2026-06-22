@@ -16,7 +16,7 @@
 SUBSYSTEM_DEF(holomaps)
 	name = "Holomaps"
 	init_stage = INITSTAGE_LAST
-	flags = SS_NO_FIRE
+	ss_flags = SS_NO_FIRE
 
 	var/static/list/valid_map_indexes = list()
 	var/static/list/holomaps = list()
@@ -26,7 +26,7 @@ SUBSYSTEM_DEF(holomaps)
 	var/static/list/holomap_pod_locations = list() //! Escape pods locations displayed when evac is relevant.
 
 /datum/controller/subsystem/holomaps/Recover()
-	flags |= SS_NO_INIT // Make extra sure we don't initialize twice.
+	ss_flags |= SS_NO_INIT // Make extra sure we don't initialize twice.
 
 /datum/controller/subsystem/holomaps/Initialize(timeofday)
 	return generate_holomaps() ? SS_INIT_SUCCESS : SS_INIT_FAILURE
