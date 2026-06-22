@@ -55,7 +55,7 @@ Psychologie
 
 Verbes et menus
 
-- `code\_onclick\hud\ghost.dm` : accès simplifié au verbe Respawn pour les observateurs et les morts - Retrait des mini-jeux
+- `code\_onclick\hud\screen_objects\ghost.dm` : accès simplifié au verbe Respawn pour les observateurs et les morts - Retrait des mini-jeux
 
 ### Overrides modulaires :
 
