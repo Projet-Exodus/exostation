@@ -1,8 +1,8 @@
-/*
- "Short descs" are a brief one to three sentence written text block that describes the core, immediately-recognizable aspects of a given character. As a general rule
+/**
+"Short descs" are a brief one to three sentence written text block that describes the core, immediately-recognizable aspects of a given character. As a general rule
 
- Example:
- "Standing at roughly five foot ten in height, this grizzled male human sports a great array of old laser scars, poorly healed-over."
+Example:
+"Standing at roughly five foot ten in height, this grizzled male human sports a great array of old laser scars, poorly healed-over."
 */
 /datum/preference/text/flavor_short_desc
 	category = PREFERENCE_CATEGORY_EXO_LORE // probably not appropriate, need to make a new lore category one
@@ -22,7 +22,7 @@
 /datum/preference/text/flavor_extended_desc/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["flavor_extended_desc"] = value
 
-/*
+/**
 	Silicon specific things
 */
 
