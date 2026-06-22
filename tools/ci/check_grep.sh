@@ -19,17 +19,17 @@ if command -v rg >/dev/null 2>&1; then
 	if [ ! rg -P '' >/dev/null 2>&1 ] ; then
 		pcre2_support=0
 	fi
-	code_files=( . -g '*.dm' -g '!DMCompiler_linux-x64/**' -g '!tools/ci/od_lints.dm' -g '!tools/CatchUnescapedBrackets/**' -g '!html/changelogs/**' )
+	code_files=( code modular_exostation -g '*.dm' -g '!DMCompiler_linux-x64/**' -g '!tools/ci/od_lints.dm' -g '!tools/CatchUnescapedBrackets/**' -g '!html/changelogs/**' )  # EXOSTATION EDIT CHANGE - BASE_CONFIG : Original : ( . -g
 	map_files="_maps/**/**.dmm"
 	shuttle_map_files="_maps/shuttles/**.dmm"
-	code_x_515="code/**/!(__byond_version_compat).dm"
+	code_x_515="code/**/!(__byond_version_compat).dm modular_exostation/**/!(__byond_version_compat).dm" # EXOSTATION EDIT ADDITION - BASE_CONFIG : modular_exostation
 else
 	pcre2_support=0
 	grep=grep
-	code_files=( -r --include='*.dm' --exclude-dir='DMCompiler_linux-x64' --exclude='od_lints.dm' --exclude-dir='CatchUnescapedBrackets' --exclude-dir='changelogs' . )
+	code_files=( -r --include='*.dm' --exclude-dir='DMCompiler_linux-x64' --exclude='od_lints.dm' --exclude-dir='CatchUnescapedBrackets' --exclude-dir='changelogs' code modular_exostation ) # EXOSTATION EDIT CHANGE - BASE_CONFIG : Original : . )
 	map_files="-r --include=_maps/**/**.dmm"
 	shuttle_map_files="-r --include=_maps/shuttles/**.dmm"
-	code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
+	code_x_515="-r --include=code/**/!(__byond_version_compat).dm --include=modular_exostation/**/!(__byond_version_compat).dm" # EXOSTATION EDIT ADDITION - BASE_CONFIG : modular_exostation
 fi
 
 echo -e "${BLUE}Using grep provider at $(which $grep)${NC}"

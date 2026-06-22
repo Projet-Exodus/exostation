@@ -19,5 +19,5 @@
 /// Registered to the COMSIG_LIVING_DEATH signal. Sends out an alert over alert_channels when the wearer dies.
 /obj/item/clothing/accessory/kheiral_cuffs/proc/send_death_alert(mob/living/wearer, gibbed)
 	var/area/location = get_area(wearer)
-	for(var/radio_channel as anything in alert_channels)
+	for(var/radio_channel in alert_channels)
 		radio.talk_into(src, "Alerte minage ! [wearer ? wearer : "Quelqu'un"] a [gibbed ? "eu le corps détruit" : "été tué"] à [location ? location : "un emplacement inconnu"] !", radio_channel)

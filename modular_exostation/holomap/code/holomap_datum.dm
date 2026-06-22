@@ -74,7 +74,7 @@
 
 		base_map.add_overlay(cursor)
 
-	for(var/overlay as anything in overlays_to_use)
+	for(var/overlay in overlays_to_use)
 		if(overlay in disabled_overlays)
 			continue
 
